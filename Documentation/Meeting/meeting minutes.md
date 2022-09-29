@@ -37,3 +37,18 @@
 3. The user will be able to save and download the relevant information to its local machine. The information can be pictures, as well as CSV files that contain the photo vector. (the output is unclear as of yet)
 
 
+
+## Actionable steps to development
+
+- **Blender**: This will be our main tool for prototyping. We will use Blender to generate simulations of different debris inside the water pipelines. These data will be used to train our machine learning algorithm
+
+- **Research** implementable ML algorithms. A suggested option is VGG16 network encoder. From the meeting, the **ML algorithm seems to be the priority**. 
+
+
+
+<br>
+
+
+*Future meetings will be held at Tuesdays 1:30pm, location remains TBD. Future meetings may be held as online meetings via Microsoft Teams.*
+
+
