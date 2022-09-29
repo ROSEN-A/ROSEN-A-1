@@ -26,8 +26,23 @@ VGG16 Architecture
 -	Image Embedding Vectors –
     - After popping out the top output layer, the model can be used to train to create image embedding vectors which can be used for a problem like face verification using VGG16 inside a Siamese network. 
 
-## Advantage of VGG16
+## Advantages of VGG16
 - Accuracy of VGG16 is known as one of the best in training model
 - Don't require mastery in Deep Learning to use pretrained models.
 - Easily modify use cases to align with requirements
 - It will be more efficient in terms of size and training time(because there may be less number of layers as compared to any pretrained model trained for more than one purpose)
+- Popular tools that can be easily embedded and/ train in many softwares such by
+    - MATLAB
+    - Keras
+    - Tensorflow
+
+## Why do we need this tool for the project?
+- Client deals with water inspections using the tool that takes snapshots in 360 degrees flowing in a pipeline from one end to the other
+- Client needs to detect and filter objects which will be used to filter thousand or millions images from database
+- VGG16 can be trained to achieve the intended goal of the objects to be filtered such as leaves, roots, trashes, fishes, etc..
+
+# How to use VGG16? 
+- There are different way to train VGG16 model, the most common ones are:
+    - Keras
+    - Tensorflow
+- With these tools, which is easily embedded in Python, which will be our main backend, this tool is very helpful to filter images as needed from the datasource, once it’s trained
