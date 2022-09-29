@@ -1,4 +1,4 @@
-# Development Framework
+# Web Development Framework
 ## Angular
 ### What is Angular?
 AngularJS is an open-source, JavaScript framework written in TypeScript. It is an leading framework for building JavaScript-heavy single page-based web applications. Single page-based applications (SPA) load the entire content of a site within a single page, which is usually an index.html file. This means that once the main page is loaded, clicking on links will not reload the entire page, instead, it will simply update sections within the page itself. 
@@ -41,6 +41,12 @@ D3.js is a JavaScript library for manipulating documents based on data. It allow
 - D3 is extremely fase with minimal overhead
 - D3 supports large sets and dynamic behaviours for interaction and animation
 - D3’s functional style allows code reuse through a diverse collection of official and community-developed modules
+#### Prerequisites
+- JavaScript
+- CSS
+- Method chaining
+- SVG
+- Block programming
 ### Why use Angular for this project?
 - JavaScript was recomended as the main development language, Angular is heavy JavaScript based. Therefore, Angular could be a good option of frameworks for this project.
 - This project is a long-term project and a lot of modifications are potentially needed. Since Angular enables users to manipulate web page elements through a web browse without complex scripting or programming, this framework could be a good option. 
@@ -106,6 +112,9 @@ Django-dash (later on named Dash) is a customisable, modular dashboard applicati
 - Multiple workspaces
 - Tunable access permissions to plugins
 - Cloneable workplaces
+#### Prerequisites
+- Python
+- OOP
 ### Why use Django for this project?
 - Django is implemented in Python, this project's backnd might be mainly built in Python. Therefore, using Django as the web development language makes it consistent with the backend.
 - Dash is the library recomended by the client, which is beneficial for data visualization. Moreover, it is also a framework for Django. Hence, Django is a good option for this project. 
