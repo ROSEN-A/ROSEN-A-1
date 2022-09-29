@@ -28,3 +28,12 @@
 
 
 
+## How the Web Application will work
+
+1. A data scientist from ROSEN will upload a sample photo into the web application (the user may be able to create labels to classify what he/she is looking for) The user may also input vectors that contain photos.
+
+2. The active learning algorithm will analyze the picture and find all similar pictures from a database that matches the uploaded picture. The system will pick 20 relevant pictures to output.
+
+3. The user will be able to save and download the relevant information to its local machine. The information can be pictures, as well as CSV files that contain the photo vector. (the output is unclear as of yet)
+
+
