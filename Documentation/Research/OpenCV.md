@@ -38,4 +38,14 @@ The library has more than 2500 optimized algorithms, which includes a comprehens
 - Open source means free to use
 - Operate under BSD license, which imposes minimal restriction for the library use
 - It uses of hardware acceleration and multi-core systems to deploy for efficient solution
--	
+
+## Why do we need this tool for the project?
+- Client deals with water inspections using the tool that takes snapshots in 360 degrees flowing in a pipeline from one end to the other
+- OpenCV would be very helpful in this case to be used to determine any impurities in the water or the pipeline.
+- Our client’s backend will be built mainly in python, hence OpenCV will be a library to be used in this project
+
+## How to use OpenCV (in Python)?
+OpenCV is a library of python bindings designed for computer vision, which make it very simple to use in Python.
+- To use: Simply `import cv2 (as cv)` in python
+- There are several functions from this library itself that will very useful for image processing such as:
+- Image processing in OpenCV like changing colorspace, image thresholding, smoothing images, etc..
