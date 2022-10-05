@@ -62,4 +62,51 @@ Following from [design firefox photon guidelines](https://design.firefox.com/pho
     - Fun to use product
     - i.e: highly interactive responses, but not intimidating
 
+## Privacy By Design by Ann Cavoukian
+- "data protection through technology design"
+- Privacy can't be assured solely by compliance, but it needs to be default mode of operation in software development process
+- 7 foundational principles:
+    1) Proactive not Reactive; Preventative not Remedial
+    2) Privacy is the Default Setting
+    3) Privacy Embedded into Design
+    4) Full Functionality — Positive-Sum, not Zero-Sum
+    5) End-to-End Security — Full Lifecycle Protection
+    6) Visibility and Transparency — Keep it Open
+    7) Respect for User Privacy — Keep it User-Centric Incorporate 
 
+## Design database technology
+For our projects, we will be dealing with thousands or millions possible data source that will be sourced by our client. The purpose of this data is to be ran against our soon to be created Active Learning Algorithm. 
+Focusing on the tools that we will be creating, the data will be utilized in the following manner:
+Given:
+- Working Active Learning Algorithm (ALA)
+- User Interface - Website in our case
+ 
+To do:
+- Create a database to store data source (pictures)
+- Create a back-end to process the data source (pictures)
+- Connect back-end and front-end framework
+    - front-end giving user the output as will be discussed/intended
+    - back-end use to run the data source against the ALA created
+
+## Database Technology
+(To be changed)
+Re-iterating what has been mentioned earlier, given the circumstances that the final product requirements is still unknown at the time this document is being made.
+We will find a suitable database that can be easily connected and compatible to the front-end tools we will be using.
+However, to our knowledge we know that efficieny and performance is at utmost importance in deciding which database to be used, hence:
+1) Data model: 
+    - Relational database or non-relational database
+    - our data will mostly be used to store pictures
+    - the affect on performance is quite large when storing images/videos
+    - We might end up using MySQL (if we are looking at relational database)
+    - with these points in mind, MongoDB is the safest to use at the moment regarding performance
+    - Relatively quick retrieval using MongoDB will save us a lot of time when retrieving images
+
+2) Storage model:
+    - Column-oriented data model
+    - Excellency in compression in column-oriented data model
+    - faster performance compared to a row-oriented one
+
+3) Distributed vs. Centralized:
+    - We will be using centralized database
+    - easier to access and coordinate data
+    - confidentiality in client is very important in our project, hence we will lean to avoid using distributed database
