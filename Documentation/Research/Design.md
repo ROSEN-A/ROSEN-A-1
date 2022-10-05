@@ -62,4 +62,15 @@ Following from [design firefox photon guidelines](https://design.firefox.com/pho
     - Fun to use product
     - i.e: highly interactive responses, but not intimidating
 
+## Privacy By Design by Ann Cavoukian
+- "data protection through technology design"
+- Privacy can't be assured solely by compliance, but it needs to be default mode of operation in software development process
+- 7 foundational principles:
+    1) Proactive not Reactive; Preventative not Remedial
+    2) Privacy is the Default Setting
+    3) Privacy Embedded into Design
+    4) Full Functionality — Positive-Sum, not Zero-Sum
+    5) End-to-End Security — Full Lifecycle Protection
+    6) Visibility and Transparency — Keep it Open
+    7) Respect for User Privacy — Keep it User-Centric Incorporate 
 
