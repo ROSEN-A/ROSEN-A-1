@@ -31,3 +31,35 @@ Once we are clear with what our requirements are and specifications, we will com
 - Design is an iteration. Revisions are necessary
 - Be cautious of requirements, you don't want requirements to adversely affect the design, consequently the project
 - Keep components and design updates in your mind as revisions are made
+
+## What design architecture tools will we use? [To be changed]
+With the given circumstances of not having specific requirements , we cannot really tell what design architecture we will be moving forward with. (To be changed)
+There will be a couple of options that we could use to designing and extracting software architecture:
+- Doxygen (as given in the lecture)
+- Gitbook
+- Swagger.io
+- Confluence
+- MkDocs
+- Sphinx
+
+## Applying UI Design
+There are some guidelines that we will have to adhere to in terms of making UI design
+Following from [design firefox photon guidelines](https://design.firefox.com/photon/introduction/principles.html) is the closest we can get to achieving best interface for our client. Since our product will deal with web application, this following points are necessary to be kept in mind as we are progressing through our project
+1) Adaptable
+    - Simple features that will be easy to use for new users regardless of tech experience
+2) Quick
+    - Responsive features
+    - Give accurate animation on task completion (and make sure it's fast!)
+3) Aware
+    - Prompt user to make them feel safe to browse around
+    - Act upon users' agreement
+4) Approachable
+    - Welcoming design, minimalistic, and inclusive
+5) Supportive
+    - Provide as much as we can to meet as much users' need and desires
+    - i.e: proactive website
+6) Whimsical
+    - Fun to use product
+    - i.e: highly interactive responses, but not intimidating
+
+
