@@ -21,19 +21,23 @@ In simpler terms, uses cases are goals with various processes; and a scenario re
 
 Use cases are valuable because they help explain how the system should behave and in the process, help brainstorm what could go wrong.
 
+They provide a list of goals and this list can be used to establish the cost and complexity of the system.
 
-## Main Scenario
+
+## Use case structures
 
 Use Case No.
 Use Case Application
 Use Case name
 Use Case Description
-Actor
-Stakeholder
-Primary Actor
+Actor - who is using the system
+Stakeholder - someone or something with vested interests in the behavior of the system
+Primary Actor - stakeholder who initiaties an interaction with the system to achieve a goal
 Triggers
 Basic Flow
 Alternative path
+Who is using the website
+what the user want to do
+The user goal
+How the website should respond to an action
 
-
-## Relationship to Test Cases
