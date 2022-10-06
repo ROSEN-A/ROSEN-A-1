@@ -28,6 +28,19 @@
 
 - The video will be uploaded from local file system
 
+- there is no solution to databse as of yet, we will use our own computer for data storage.
+
+- no cloud implementation planned for the project
+
+- The website will not be hosted on the internet, it will be a local system running from git repository
+
+- use VGG16 to encode our photos
+
+- One datapoint for each photo
+
+- Use Blender file, render one Blender video, put fish (or something else) in it to test the system 
+
+Make a script to automate steps (give me more fish, change the surface material…) for generating videos 
 
 
 ## Potential Questions for next meeting
@@ -52,3 +65,35 @@ With all the requirements we have to fulfill in the course itself, we need to ha
 
 
 *Upcoming meeting is TBD. the proposed settings are: Tuesday 13.30 in person*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
