@@ -14,3 +14,6 @@
 ### ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt
 - The mobilenet-ssd model is a Single-Shot multibox Detection (SSD) network, intended to perform object detection. 
 - In simple words, this file is a pre-trained Tensorflow model and has already been trained on the COCO dataset.
+
+
+
