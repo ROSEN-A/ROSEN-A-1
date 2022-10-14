@@ -13,3 +13,24 @@ Keep in mind that our project will deal mainly with 1) Web interface, 2) Process
     a. Software will ensure the integrity of our client's information
     b. Software will not save client's data automatically, to prevent any access to sensitive information
     c. No database, only local storage. We will rely on full-disk encryption deal with confidential data
+
+3. Portability and Compatibility
+    a. Software must be able to run in end-users' machine (for details refer to Environmental constraint)
+
+4. Reliability
+    a. Software will be able to process large amount of data without failure
+    b. Software would be able to be re-used by different users at a different time without failure
+
+5. Usability
+    a. Navigation: User will be able to learn and navigate fairly easily through the interface
+    b. Features: Intuitive features will be integrated such as use of magnifying glass in images to zoom on images
+
+6. Robustness
+    a. Catching invalid input to avoid any problems
+    b. Prevent any unwanted behaviour when image processing is interrupted
+    c. Fail-safe software and provide meaningful response to UI when software fails at any point
+
+7. Data Integrity
+    a. Ensure that software will be classifying objects with close to a 100% accuracy
+    b. Ensure enough training on ALA to minimize any image processing error
+    c. Consistency in output/computation over the lifecycle of the software
