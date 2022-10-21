@@ -26,10 +26,14 @@ The technologies our team plans to implement for the Web User Interface are Dash
 
 The technologies our team plans to implement for the Prototype Modelling and the Active Learning Algorithm are OpenCV, Blender, and VGG-16.
 
-- OpenCV will be used for processing the images/video frames.
+- OpenCV will be used for processing the video frame images.
 
 - Blender will be used to simulate models for the pipeline prototypes.
 
-- VGG-16 is the neural network encoder that converts images to vectors, which will be used as input for our active learning algorithm.
+- VGG-16 is the neural network encoder that converts the video frame images to vectors, which will be used as input for our active learning algorithm.
+
 
 We are currently still researching what active learning algorithm to implement, one possibility is ModAL, an active learning framework for Python with lots of flexibility.
+The active learning algorithm is first pre-trained by the development team, using manual labelling.
+
+- The active learning algorithm will be used to classify video frame images that have been encoded by VGG-16.
