@@ -24,3 +24,5 @@ The application should be able to handle the large amount of photos without fail
 
 
 ##### Source code should be integrated into a private GitHub repository.
+
+The development process and the code base should be held on our ROSEN GitHub repository.
