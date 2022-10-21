@@ -43,3 +43,7 @@ Keep in mind that our project will deal mainly with 1) Web interface, 2) Process
     a. Ensure that software will be classifying objects with close to a 100% accuracy
     b. Ensure enough training on ALA to minimize any image processing error
     c. Consistency in output/computation over the lifecycle of the software
+
+8. Scalability.
+    a. Program will be made based on local system (of developers), which might not be able to handle large amount of rendering or processing since it might take a large computer requirements.
+    b. Ensuring that program will run without issues for certain set amount of data (minimum requirements from client)
