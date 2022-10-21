@@ -1,15 +1,15 @@
 # Functional Requirements 
-### 1. Browsing and selecting a group of wanted images from users’ local machines
-  - Firstly, our application will access users' local file systems for browsing images. 
+### 1. Selecting a video from the local machine
+  - Firstly, our application will access users' local file systems for browsing video files. 
 
-### 2. Uploading a group of images to be classified or filtered to the software
-  - Our product must allow users to select and upload a group of images for their classification tasks.
+### 2. Uploading a video to the software
+  - Our product must allow users to select and upload a video file for their classification tasks. The video will be cut into a series of frames. 
 
-### 3. Specifying object(s)/class(es) to be classified or filtered
-  - After uploading is finished, users should be able to define what they are looking for in the images uploaded (for example, fish or AmEX ceilings in the pipelines)
+### 3. Uploading a sample image of an object which user is interested in
+  - After the video is chopped into a series of frames, the user will upload a sample image of an object which user is interested in (for example, fish or AmEX ceilings in the pipelines)
 
 ### 4. Creating one or more projects on the same set of images
-  - After images have finished being uploaded, the system shall allow users to create multiple projects on the same set of images without the need of repetitive uploading of the same set of images. 
+  - After the sample image has being uploaded, the system shall allow users to create multiple projects on the same video. 
 
 ### 5. Displaying a set of images with object(s) defined by users
   - The system will proccess and classify images using a trained active learning algorithm togetehr with pre-trained machine learning algorithms. 
