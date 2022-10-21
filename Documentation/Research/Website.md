@@ -9,7 +9,7 @@ The interface should be as simple as possible for the user to navigate.
 The user should be able to view and select the video footage they want to encode from their computer's file explorer/manager through the application.
 The web application must allow for large batches of data to be loaded in at once.
 The web application will process the video frames as images using OpenCV in the backend.
-After the video frames are processed as images, these images will run through the pre-trained algorithm.
+After the video frames are processed as images, these images will run through VGG-16 in the backend to convert them to data points, and then these data points will run through the pre-trained algorithm in the backend.
 The web application should provide feedback to the user after the algorithm runs, and show if any objects have been filtered out.
 
 - The user should not be labelling any of the video frame images; labelling only occurs during the training phase by the developers.

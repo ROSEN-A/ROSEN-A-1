@@ -8,7 +8,11 @@ It is a semi-supervised method of learning, using both labeled and unlabeled dat
 The active learning algorithm can query the user to label data with the desired output during the training phase, so that the algorithm can identify what label it can best learn from.
 After training on the labeled data, the algorithm can then predict the classification of unlabeled data.
 
+
+
 ## How to Use
+
+### Implementation
 
 - modAL requires Python version 3.5 or greater, NumPy version 1.13 or greater, SciPy version 0.18 or greater, and scikit-learn version 0.18 or greater.
 - Install ModAL using `pip install modAL` in the terminal, or alternatively `pip install git+https://github.com/modal-python/modal.git`.
@@ -31,10 +35,26 @@ After training on the labeled data, the algorithm can then predict the classific
 }
 ```
 
+### Pre-Training the Algorithm
+
+- Before implementing it to the web application, we will need to train the algorithm.
+- This will require processing the simulated video footage of the water pipelines from Blender to images with OpenCV.
+- The video frame images will then have to be converted to data points (vectors) with VGG-16.
+- 10 video frame images will be chosen at random and they will be manually labelled.
+- A sample image of an object of interest (for example, a fish) will also have to be converted to a data point and manually labelled.
+- After labelling the 11 total images vectors (sample included), they go back into the algorithm.
+- The algorithm will output the 11 vectors, plus another 10 to be classified.
+- This process will be repeated until all the video frames are converted and manually labelled.
+- The algorithm is now trained and ready to use for actual pipeline footage that will be input into the software.
+
+
+
 ## Advantages and Disadvantages
 
 - The advantage of using ModAL is that it has a wide range of methods provided right away, and that it is open-source and modular.
 - The disadvantage of using ModAL is that it does not include any annotation interfaces, and that the user still has to work to host a model and connect it to annotation interfaces.
+
+
 
 ## Why do we need this tool for the project?
 
