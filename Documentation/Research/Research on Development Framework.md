@@ -111,6 +111,8 @@ Django-dash (later on named Dash) is a customisable, modular dashboard applicati
 - The purpose of django-plotly-dash is to enable Plotly Dash applications to be served up as part of a Django application, in order to provide these features:
   - Multiple dash applications can be used on a single page
   - Separate instances of a dash application can persist along with internal state
+  - Leverage user management and access control and other parts of the Django infrastructure
+  - Consolidate into a single server process to simplify scaling
 #### Advantages
 - Customisale layouts
 - Multiple workspaces
