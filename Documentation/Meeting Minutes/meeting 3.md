@@ -57,8 +57,6 @@
 
         We first will start off with creating a prototype using Blender. This will be really important for the future of this project. A working prototype of the water pipeline shuold be set up properly to train our machine learning algorithm.
 
-        
-
 
 
 
