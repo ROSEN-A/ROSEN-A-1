@@ -2,27 +2,15 @@
 
 ---
 
-### Environmental Constraints
+## Environmental Constraints
 
-##### The application should be able to run on Google Chrome browser
+In software development, constraints are restrictions on the degree of freedom the developers are offered  in implementing a solution. They are effectively global requirements that specify device capabilities, system representations for which the application will be operated on. For our project, our client from ROSEN has detailed a series of constraints that we will adhere to when developing the application. We have classified the requirements into three classes:
 
-The web application should be designed to be operated smoothly on the Google Chrome browser.
-
-
-
-##### The application should work on a standard Data scientist development environment
-
-Laptop: 16GB RAM, Intel core i5/i7 11th gen, SSD 256 GB)
-Desktop: 16/32 GB RAM, 512 GB / 1 TB SSD, Core i7 and Dedicated GPU
+##### *Programming Language and Framework Constraints*
+The target users for our web application are mainly data scientists from ROSEN, whose programming background revolves heavily around Python. To ease daily user interaction and future maintenance, the client has requested our team to use Python as the main development language. Our client also requested the use of Javascript when developing the web application. Though not required, frameworks such as Dash, D3 and Plotly are recommended to us for adding features to the application.
 
 
-
-##### The application should be able to work with 150,000 frames and at most 500,000 frames.
-
-The application should be able to handle the large amount of photos without failing.
-
-
-
-##### Source code should be integrated into a private GitHub repository.
-
-The development process and the code base should be held on our ROSEN GitHub repository.
+##### *Equipment Constraints*
+The client has required the application to be operable on a standard data scientist development system with the following configuration:
+Laptop: CPU - Intel core i5/i7 11th gen, RAM - 16GB, Hard-disk space - 256GB SSD
+Desktop: CPU - Intel core i5/i7 11th gen, RAM - 16/32GB, Hard-disk space - 512GB/1TB SSD
