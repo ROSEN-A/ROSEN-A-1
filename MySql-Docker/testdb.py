@@ -39,3 +39,18 @@ for i in range(0, 4):
 print("Insertion finished.", rows_affected, "rows were affected.")
 # output should be "Insertion finished. 4 rows were affected."
 print("\n")
+print("Test #4: Test if records were inserted correctly")
+cur.execute("SELECT * FROM image")
+result = cur.fetchall()
+for x in result:
+    print(x)
+    # output should be
+    # (1, 'Users/mp/Desktop', 'image0')
+    # (2, 'Users/mp/Desktop', 'image1')
+    # (3, 'Users/mp/Desktop', 'image2')
+    # (4, 'Users/mp/Desktop', 'image3')
+cur.execute("TRUNCATE TABLE image")
+mydb.commit()
+
+cur.close()
+mydb.close()
