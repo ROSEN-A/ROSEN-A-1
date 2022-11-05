@@ -28,3 +28,14 @@ for x in cur:
     # output should be
     # ('image',)
 print("\n")
+print("Test #3: Test if records can be inserted into 'image'")
+rows_affected = 0
+for i in range(0, 4):
+    query = "INSERT INTO image (dir, name) VALUES (%s, %s)"
+    val = ("Users/mp/Desktop", "image"+str(i))
+    cur.execute(query, val)
+    mydb.commit()
+    rows_affected+= cur.rowcount
+print("Insertion finished.", rows_affected, "rows were affected.")
+# output should be "Insertion finished. 4 rows were affected."
+print("\n")
