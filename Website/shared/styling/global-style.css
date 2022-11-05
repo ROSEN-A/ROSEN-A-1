@@ -1,4 +1,10 @@
 /* Global Stylings */
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
 html {
     font-family: "Arial";
 }
@@ -87,7 +93,7 @@ html p {
 /* Styles for image.html */
 
 body {
-    max-width: 1440px;
+    max-width: 100%;
     background-color: white;
 }
 
@@ -96,13 +102,15 @@ body {
     display: block;
     position: relative;
     height: 100px;
+    overflow: hidden;
 }
 
 .rosen-logo {
-    display: block;
-    position: relative;
+    position:relative;
+    display: flex;
     left: 20px;
 }
+
 
 .images {
     display: block;
@@ -185,4 +193,58 @@ body {
     display: block;
     position: relative;
     height: 20px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(54, 85, 120);
+    height: auto;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.drop-zone {
+    max-width: 80%;
+    height: 200px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(54, 85, 120);
+    border: 4px dashed grey;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.drop-zone--over {
+    border-style: solid;
+}
+
+.drop-zone__input {
+    display: none;
+}
+
+.drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    
+}
+
+.run-button {
+    background-color: rgb(54, 85, 120);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    width: 100px;
+    height: 50px;
 }
