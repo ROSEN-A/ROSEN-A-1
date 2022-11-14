@@ -248,3 +248,8 @@ footer{
     width: 100px;
     height: 50px;
 }
+
+.run-button:hover {
+    cursor: pointer;
+    background-color: rgb(60, 80, 100);
+}
