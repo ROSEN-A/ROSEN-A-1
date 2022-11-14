@@ -173,6 +173,23 @@ body {
     position: absolute;
 }
 
+
+.homepage-button {
+    background-color: rgb(54, 85, 120);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 48px;
+    width: 243px;
+    height: 98px;
+}
+
+/* Change colour when hovering over the Rerun Button */
+.homepage-button:hover {
+    cursor: pointer;
+    background-color: rgb(60, 80, 100);
+}
+
 .rerun-button {
     background-color: rgb(54, 85, 120);
     color: white;
@@ -185,6 +202,7 @@ body {
 
 /* Change colour when hovering over the Rerun Button */
 .rerun:hover .rerun-button {
+    cursor: pointer;
     background-color: rgb(60, 80, 100);
 }
 
@@ -247,4 +265,9 @@ footer{
     font-size: 16px;
     width: 100px;
     height: 50px;
+}
+
+.run-button:hover {
+    cursor: pointer;
+    background-color: rgb(60, 80, 100);
 }

@@ -2,14 +2,14 @@
       <html lang="en">
       <head>
             <title>Home</title>
-            <link rel="stylesheet" href="../shared/styling/global-style.css">
+            <link rel="stylesheet" href="{{ url_for('static',filename='styles/global-style.css') }}">
       </head>
 
       <body>
             <!--NavBar-->
             <div class="top-border">
                   <div class="rosen-logo">
-                        <img src="../shared/images/ROSEN_Logo_White_220.png" id="logo">
+                        <img src="{{url_for('static', filename='images/ROSEN_Logo_White_220.png')}}" id="logo">
                   </div>
             </div>
 
@@ -41,9 +41,12 @@
 
             <!--Run button-->
             <div class="run">
-                  <button class="run-button">
-                      <b>Run</b>
-                  </button>
+                  <!--a href to redirect page to image.html-->
+                  <a href=image>
+                        <button class="run-button">
+                        <b>Run</b>
+                        </button>
+                  </a>
             </div>
 
 
