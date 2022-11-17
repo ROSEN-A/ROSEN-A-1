@@ -105,12 +105,27 @@ body {
     overflow: hidden;
 }
 
-.rosen-logo {
-    position:relative;
+.rosen {
+    position: relative;
     display: flex;
     left: 20px;
 }
 
+.rosen-logo {
+    display: block;
+}
+
+.rosen-logo:hover {
+    cursor: pointer;
+}
+
+.label-message {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    color: rgb(54, 85, 120);
+}
 
 .images {
     display: block;
@@ -130,6 +145,39 @@ body {
     width: 240px;
 }
 
+.image {
+    display: block;
+}
+
+/* Enlarge button appears when hovering over an image */
+.enlarge-button {
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 44px;
+    height: 42px;
+    background-color: transparent;
+    border: black;
+  }
+
+  .enlarge-image {
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .image-box:hover .enlarge-button {
+    display: block;
+  }
+
+  .enlarge-button:hover {
+    display: block;
+    background-color: rgb(243, 243, 243);
+    border: black;
+    border-width: 3px;
+    cursor: pointer;
+  }
+
 /* May switch x button and check button out for box selection */
 .x-check {
     display: block;
@@ -143,10 +191,18 @@ body {
     border: none;
 }
 
+.x-button:hover {
+    cursor: pointer;
+}
+
 .check-button {
     border: none;
     background-color: transparent;
     margin-left: 10px;
+}
+
+.check-button:hover {
+    cursor: pointer;
 }
 
 .toolbar-rerun {
@@ -161,10 +217,15 @@ body {
     top: 40px;
 }
 
-/* Need to add functionality to change image colors/swap for darker images when hovering over tool icons */
+/* Tool icons */
 .tools {
+    display: block;
     background-color: transparent;
     border: none;
+}
+
+.tools:hover {
+    cursor: pointer;
 }
 
 .rerun {
@@ -173,21 +234,20 @@ body {
     position: absolute;
 }
 
-
-.homepage-button {
-    background-color: rgb(54, 85, 120);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 48px;
-    width: 243px;
-    height: 98px;
+.homepage {
+    display: block;
+    text-align: center;
 }
 
-/* Change colour when hovering over the Rerun Button */
+
+.homepage-button {
+    background-color: transparent;
+    border: none;
+}
+
+/* Change colour when hovering over the Home Button */
 .homepage-button:hover {
     cursor: pointer;
-    background-color: rgb(60, 80, 100);
 }
 
 .rerun-button {
