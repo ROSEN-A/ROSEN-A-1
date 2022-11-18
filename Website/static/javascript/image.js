@@ -30,6 +30,28 @@ for (var i = 0; i < images.length; i++) {
 
 
 // trying to make an event listener to select images for rerun
+// trying with boolean true/false for labelling interested/not interested
 
 var imagesAreSelected = new Array(images.length).fill(false);
 var selected = new Array();
+
+// function to select images
+var selectImages = function(i) {
+    if (imagesAreSelected[i] == false) {
+        selected.push(images[i])
+        imagesAreSelected[i] = true;
+        images[i].style.border = "5px solid blue";
+    } else if (imagesAreSelected[i] == true) {
+        selected.pop(images[i])
+        imagesAreSelected[i] = false;
+        images[i].style.border = "none";
+    }
+}
+
+// add event listener to every image, and ...
+for (var i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", selectImages(i));
+}
+
+
+// add functionality to submit images in selected array after pressing rerun
