@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+}
+body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: white;
+}
+.drag-area{
+        border: 2px dashed rgb(54, 85, 120);
+        height: 500px;
+        width: 700px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px;
+        background-color: #abc2db;
+}
+.drag-area.active{
+        border: 2px solid rgb(54, 85, 120);
+}
+.drag-area .icon{
+        font-size: 100px;
+        color: rgb(54, 85, 120);
+}
+.drag-area header{
+        font-size: 30px;
+        font-weight: 500;
+        color: rgb(54, 85, 120);
+}
+.drag-area span{
+        font-size: 25px;
+        font-weight: 500;
+        color: rgb(54, 85, 120);
+        margin: 10px 0 15px 0;
+}
+.drag-area button{
+        padding: 10px 25px;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        background: rgb(54, 85, 120);
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+}
+.drag-area img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+}
+
+
+
+
+
+.top-border {
+        background-color: rgb(54, 85, 120);
+        display: block;
+        position: fixed;
+        height: 100px;
+        overflow: hidden;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+}
+
+.run-button {
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        width: 100px;
+        height: 50px;
+        position: fixed;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        
+        
+}
+
+footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(54, 85, 120);
+        height: auto;
+        width: 100%;
+        padding-top: 30px;
+}
+
+.top-border .rosen-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+}
