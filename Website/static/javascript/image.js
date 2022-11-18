@@ -1,3 +1,5 @@
+// currently all functions are not working, unable to test
+
 // get modal from html (by id)
 var modal = document.getElementById("modal");
 // get images (by class name), and get modal image (by id)
@@ -17,12 +19,17 @@ for (var i = 0; i < images.length; i++) {
     images[i].addEventListener("dblclick", openModal);
 }
 
-
-
-
+// variation of openModal with onclick instead of addEventListener, check if syntax is correct
 // for (var i = 0; i < images.length; i++) {
 //   images.onclick = function() {
 //     modal.style.display = "block";
 //     modalImage.src = this.src;
 //   }
 // }
+
+
+
+// trying to make an event listener to select images for rerun
+
+var imagesAreSelected = new Array(images.length).fill(false);
+var selected = new Array();
