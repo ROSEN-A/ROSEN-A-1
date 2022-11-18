@@ -119,6 +119,7 @@ body {
     cursor: pointer;
 }
 
+/* Instruction message above images */
 .label-message {
     display: block;
     position: relative;
@@ -127,6 +128,7 @@ body {
     color: rgb(54, 85, 120);
 }
 
+/* Class for grouping all image boxes */
 .images {
     display: block;
     position: relative;
@@ -145,11 +147,75 @@ body {
     width: 240px;
 }
 
+/* Actual image */
 .image {
     display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.image:hover {
+    opacity: 0.7;
 }
 
-/* Enlarge button appears when hovering over an image */
+/* Modal for expanding image upon click */
+.modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;        /* comment out to display for testing */
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+  
+.modal-image {
+    display: block;
+    margin: auto;
+    width: 60%;
+    max-width: 500px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.5s;
+    animation-name: zoom;
+    animation-duration: 0.5s;
+}
+
+/* Optional animation */
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    } 
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+  
+@keyframes zoom {
+    from {
+      transform: scale(0)
+    }
+    to {
+      transform: scale(1)
+    }
+}
+  
+.close {
+    color: white;
+    position: absolute;
+    right: 15px;
+    font-size: 56px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover { 
+    cursor: pointer;
+    color: rgb(207, 207, 207);
+}
+
+/* Enlarge button appears when hovering over an image, might remove and just enlarge by clicking image? */
 .enlarge-button {
     display: none;
     position: absolute;
@@ -159,26 +225,26 @@ body {
     height: 42px;
     background-color: transparent;
     border: black;
-  }
+}
 
-  .enlarge-image {
+.enlarge-image {
     position: relative;
     margin: 0 auto;
-  }
+}
   
-  .image-box:hover .enlarge-button {
+.image-box:hover .enlarge-button {
     display: block;
-  }
+}
 
-  .enlarge-button:hover {
+.enlarge-button:hover {
     display: block;
     background-color: rgb(243, 243, 243);
     border: black;
     border-width: 3px;
     cursor: pointer;
-  }
+}
 
-/* May switch x button and check button out for box selection */
+/* May switch x button and check button out for box selection? */
 .x-check {
     display: block;
     position: relative;
@@ -211,15 +277,22 @@ body {
     margin-left: 20px;
 }
 
+/* Tool grouping */
 .toolbar {
-    display: inline-block;
-    position: relative;
-    top: 40px;
+    /* display: inline-block;
+    position: absolute;
+    margin-left: 20px;
+    bottom: 30px;                 uncomment to move to bottom left */ 
+    display: block;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 30px;
 }
 
 /* Tool icons */
 .tools {
-    display: block;
+    display: inline-block;
     background-color: transparent;
     border: none;
 }

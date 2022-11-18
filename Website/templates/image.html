@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-    
+
     <head>
-        <link rel="stylesheet" href="{{ url_for('static',filename='styles/global-style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/global-style.css') }}">
+        <script type="text/javascript" src="{{url_for('static', filename='javascript/image.js')}}"></script>  
     </head>
 
     <body>
@@ -29,9 +30,7 @@
 
         <div class="images">
             <div class="image-box">
-                <div class="image">
-                    <img src="{{url_for('static', filename='images/fish.png')}}" width="240px" height="240px">
-                </div>
+                    <img class="image" src="{{url_for('static', filename='images/fish.png')}}" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
@@ -46,9 +45,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -63,9 +60,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -80,9 +75,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -97,9 +90,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -116,9 +107,7 @@
             <br><br>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -133,9 +122,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -150,9 +137,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -167,9 +152,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -184,9 +167,7 @@
             </div>
 
             <div class="image-box">
-                <div class="image">
-                    <img src="" width="240px" height="240px">
-                </div>
+                    <img class="image" src="" id="image" width="240px" height="240px">
                 <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" width="40px" height="40px">
                 </button>
@@ -199,44 +180,49 @@
                     </button>
                 </div>
             </div>
+
+        </div>
+
+
+
+        <div class="modal" id="modal">
+            <span class="close" id="close">
+                &times;
+            </span>
+            <img class="modal-image" src="" id="modal-img">
+
+            <div class="toolbar">
+                <button class="tools">
+                    <img src="{{url_for('static', filename='images/select-button-white.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/select-button-grey.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/select-button-white.svg')}}'" width="40px" height="40px">
+                </button>
+
+                <button class="tools">
+                    <img src="{{url_for('static', filename='images/pan-button-white.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/pan-button-grey.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/pan-button-white.svg')}}'" width="40px" height="40px">
+                </button>
+
+                <button class="tools" style="margin-left: 10px;">
+                    <img src="{{url_for('static', filename='images/zoom-in-button-white.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/zoom-in-button-grey.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/zoom-in-button-white.svg')}}'" width="40px" height="40px">
+                </button>
+
+                <button class="tools" style="margin-left: 5px;">
+                    <img src="{{url_for('static', filename='images/zoom-out-button-white.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/zoom-out-button-grey.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/zoom-out-button-white.svg')}}'" width="40px" height="40px">
+                </button>
+            </div>
+
         </div>
 
         <br><br><br><br>
 
         <div>
-
             <div class="toolbar-rerun">
-                <div class="toolbar">
-                    <button class="tools">
-                        <img src="{{url_for('static', filename='images/select-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/select-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/select-button.svg')}}'" width="40px" height="40px">
-                    </button>
-                </div>
-
-                <div class="toolbar" style="margin-left: -5px;">
-                    <button class="tools">
-                        <img src="{{url_for('static', filename='images/pan-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/pan-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/pan-button.svg')}}'" width="40px" height="40px">
-                    </button>
-                </div>
-
-                <div class="toolbar" style="margin-left: 5px">
-                    <button class="tools">
-                        <img src="{{url_for('static', filename='images/zoom-in-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/zoom-in-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/zoom-in-button.svg')}}'" width="40px" height="40px">
-                    </button>
-                </div>
-
-                <div class="toolbar">
-                    <button class="tools">
-                        <img src="{{url_for('static', filename='images/zoom-out-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/zoom-out-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/zoom-out-button.svg')}}'" width="40px" height="40px">
-                    </button>
-                </div>
-
-                <a href=image>
-                    <div class="rerun">
+                <div class="rerun">
+                    <!--a href to redirect page to rerun.html-->
+                    <a href=image>
                         <button class="rerun-button">
                             <b>Rerun</b>
                         </button>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
 
             <br><br>
@@ -246,7 +232,6 @@
                 <a href=index>
                     <button class="homepage-button">
                         <img src="{{url_for('static', filename='images/home-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/home-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/home-button.svg')}}'" width="50px" height="50px">
-
                     </button>
                 </a>
             </div>
