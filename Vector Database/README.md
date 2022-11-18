@@ -19,8 +19,17 @@ Download [milvus-standalone-docker-compose.yml](./docker-compose.yml) and save i
 2. To delete data after stopping Milvus, run:
 > sudo rm -rf  volumes
 
-
-
+## Milvus SDK (PyMilvus)
+### Requirements
+- Python 3.6 or later is required.
+- Google protobuf is installed. You can install it with the command 
+> pip3 install protobuf==3.20.0
+- grpcio-tools is installed. You can install it with the command 
+> pip3 install grpcio-tools.
+### Install PyMilvus via pip
+> python3 -m pip install pymilvus==2.1.3
+### Verify Installation
+> python3 -c "from pymilvus import Collection"
 
 
 
