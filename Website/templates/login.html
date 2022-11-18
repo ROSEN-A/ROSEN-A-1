@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+            <title>Home</title>
+            <link rel="stylesheet" href="{{ url_for('static',filename='styles/global-style.css') }}">
+      </head>
+
+      <body>
+        <!--NavBar-->
+        <div class="top-border">
+            <div class="rosen-logo">
+                <img src="{{url_for('static', filename='images/ROSEN_Logo_White_220.png')}}" id="logo">
+            </div>
+        </div>
+
+        <!-- Input Form-->
+        <div class="input-form-container">
+            <form class="input-form">
+                <label for="username"><b>Username</b></label>
+                <br>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                <br><br>
+
+                <label for="password"><b>Password</b></label>
+                <br>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <br><br>
+
+                <button type="submit">Login</button>
+                <label>
+            </form>
+        </div>
+        
+        <!--Footer div-->
+        <div>
+                <footer>
+                </footer>
+        </div>
+      </body>
+</html>
