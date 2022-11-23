@@ -1,11 +1,13 @@
 // currently all functions are not working, unable to test
 
-// get modal from html (by id)
-var modal = document.getElementById("modal");
-// get images (by class name), and get modal image (by id)
+// get images (by class name)
 var images = document.getElementsByClassName("image");
 
-/* var modalImage = document.getElementById("modal-img");
+/* 
+// get modal from html (by id)
+var modal = document.getElementById("modal");
+
+var modalImage = document.getElementById("modal-img");
 // get close button (by id)
 var close = document.getElementById("close");
 
