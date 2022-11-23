@@ -4,7 +4,8 @@
 var modal = document.getElementById("modal");
 // get images (by class name), and get modal image (by id)
 var images = document.getElementsByClassName("image");
-var modalImage = document.getElementById("modal-img");
+
+/* var modalImage = document.getElementById("modal-img");
 // get close button (by id)
 var close = document.getElementById("close");
 
@@ -16,7 +17,7 @@ var openModal = function() {
 
 // add event listener to every image, and show modal on double click
 for (var i = 0; i < images.length; i++) {
-    images[i].addEventListener("dblclick", openModal);
+    // images[i].addEventListener("dblclick", openModal);
 }
 
 // variation of openModal with onclick instead of addEventListener, check if syntax is correct
@@ -55,3 +56,5 @@ for (var i = 0; i < images.length; i++) {
 
 
 // add functionality to submit images in selected array after pressing rerun
+
+*/
