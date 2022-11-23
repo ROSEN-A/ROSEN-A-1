@@ -1,7 +1,20 @@
 // currently all functions are not working, unable to test
+window.onload = function() { 
+    // get images (by class name)
+    // var imagebox1 = document.getElementsByClassName("image-box1");
+    var image = document.getElementsByClassName("image1").image1;
+    console.log(image);
 
-// get images (by class name)
-var images = document.getElementsByClassName("image");
+    image.addEventListener('click', function() { 
+        console.log("IT GETS CLICKED");
+        let imagebox1 = document.getElementsByClassName("image-box1")[0];
+        imagebox1.style.border = "2px solid";
+        console.log(imagebox1);
+    });
+}
+
+
+
 
 /* 
 // get modal from html (by id)
