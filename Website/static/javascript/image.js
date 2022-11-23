@@ -5,11 +5,19 @@ window.onload = function() {
     var image = document.getElementsByClassName("image1").image1;
     console.log(image);
 
+    var isInterested = false;
+
     image.addEventListener('click', function() { 
-        console.log("IT GETS CLICKED");
         let imagebox1 = document.getElementsByClassName("image-box1")[0];
-        imagebox1.style.border = "2px solid";
-        console.log(imagebox1);
+        // console.log(imagebox1);
+        if ( isInterested == false) {
+            imagebox1.style.border = "2px green solid";
+            isInterested = true;
+        } else {
+            imagebox1.style.border = "";
+            isInterested = false;
+        }
+        
     });
 }
 
