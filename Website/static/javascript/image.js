@@ -1,7 +1,28 @@
 // currently all functions are not working, unable to test
+window.onload = function() { 
+    // get images (by class name)
+    // var imagebox1 = document.getElementsByClassName("image-box1");
+    var image = document.getElementsByClassName("image1").image1;
+    console.log(image);
 
-// get images (by class name)
-var images = document.getElementsByClassName("image");
+    var isInterested = false;
+
+    image.addEventListener('click', function() { 
+        let imagebox1 = document.getElementsByClassName("image-box1")[0];
+        // console.log(imagebox1);
+        if ( isInterested == false) {
+            imagebox1.style.border = "2px green solid";
+            isInterested = true;
+        } else {
+            imagebox1.style.border = "";
+            isInterested = false;
+        }
+        
+    });
+}
+
+
+
 
 /* 
 // get modal from html (by id)
