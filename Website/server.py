@@ -6,15 +6,14 @@ app = Flask(__name__)
 def home():
    return render_template('login.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
-   #  error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-           return redirect(url_for('index'))
-            # error = 'Invalid Credentials. Please try again.'
-        else:
-            return redirect(url_for('login'))
+   error = None
+   if request.method == 'POST':
+      if request.form['username'] != 'RosenA' or request.form['password'] != 'RosenA':
+         return home()
+      else:
+         return redirect(url_for('index'))
  
 
 @app.route('/index')
