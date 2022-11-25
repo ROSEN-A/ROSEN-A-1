@@ -1,61 +1,56 @@
 <!DOCTYPE html>
       <html lang="en">
       <head>
-            <title>Home</title>
-            <link rel="stylesheet" href="{{ url_for('static',filename='styles/global-style.css') }}">
-            <script src="../../drop_area.js"></script>
+                <title>Home</title>
+                <link rel="stylesheet" href="{{ url_for('static',filename='styles/indexPage.css') }}">
+                
       </head>
 
       <body>
-            <!--NavBar-->
-            <div class="top-border">
-                  <div class="rosen-logo">
-                        <img src="{{url_for('static', filename='images/ROSEN_Logo_White_220.png')}}" id="logo">
-                  </div>
-            </div>
+                <!--NavBar-->
+                <div class="top-border">
+                        <div class="rosen-logo">
+                                <img src="{{url_for('static', filename='images/ROSEN_Logo_White_220.png')}}" id="logo">
+                        </div>
+                </div>
 
+                <!--Preview Photo area-->
+                <div class="drag-area-photo">
+                        <header id="dragText">Select Photo to Upload</header>
+                        <span></span>
+                        <button id="photoUpload">Browse Photo</button>
+                        <input id="photoInput" type="file" hidden>
+                </div>
 
-            <!--File upload area-->
-            <div class="drag-area">
-                  <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                  <header>Drag & Drop to Upload File</header>
-                  <span>OR</span>
-                  <button>Browse File</button>
-                  <input type="file" hidden>
-            </div>
+                
 
+                <!--Preview Video area-->
+                <div class="drag-area-video">
+                        <header id="videoDragText">Select Video to Upload</header>
+                        <span id="videoSpacing"></span>
+                        <button id="videoUpload">Browse Video</button>
+                        <input id="videoInput" type="file" hidden>
+                        <video id="video" width="300" height="300" controls></video>
+                        
+                </div>
 
+                <!--Run button-->
+                <div class="run">
+                        <!--a href to redirect page to image.html-->
+                        <a href=image>
+                                <button class="run-button">
+                                <b>Run</b>
+                                </button>
+                        </a>
+                </div>
 
-            <!--Preview Photo area-->
-            <div>
-                  <p>Uploaded Photo</p>
-            </div>
+                <!--Footer div-->
+                <div>
+                        <footer>
+                        </footer>
+                </div>
 
-
-
-            <!--Preview Video area-->
-            <div>
-                  <p>Uploaded Video</p>
-            </div>
-
-
-
-            <!--Run button-->
-            <div class="run">
-                  <!--a href to redirect page to image.html-->
-                  <a href=image>
-                        <button class="run-button">
-                        <b>Run</b>
-                        </button>
-                  </a>
-            </div>
-
-
-
-            <!--Footer div-->
-            <div>
-                  <footer>
-                  </footer>
-            </div>
+                <script src="../static/javascript/indexPage.js"></script>
+                
       </body>
 </html>
