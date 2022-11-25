@@ -15,12 +15,13 @@
             </div>
         </div>
 
-        <div class="login-title">
-            <b>Login<b>
-        </div>
-
         <!-- Input Form-->
         <div class="input-form-container">
+            
+            <div class="login-title">
+                <b>Login<b>
+            </div>
+
             <form class="input-form" action="" method="POST">
                 <label for="username"><b>Username</b></label>
                 <br>
@@ -34,7 +35,7 @@
                 <input class="text-box" type="password" placeholder="Enter Password" name="password" required {{
                     request.form.password }}
                 >
-                <br><br>
+                <br><br><br>
         
                 <a href=index>
                     <button type="submit" class="login-button"><b>Login<b></button>
