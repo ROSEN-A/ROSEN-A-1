@@ -8,30 +8,37 @@
       <body>
         <!--NavBar-->
         <div class="top-border">
-            <div class="rosen-logo">
-                <img src="{{url_for('static', filename='images/ROSEN_Logo_White_220.png')}}" id="logo">
+            <div class="rosen">
+                <a href=".">
+                    <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                </a>
             </div>
         </div>
 
         <!-- Input Form-->
         <div class="input-form-container">
+            
+            <div class="login-title">
+                <b>Login<b>
+            </div>
+
             <form class="input-form" action="" method="POST">
                 <label for="username"><b>Username</b></label>
                 <br>
-                <input type="text" placeholder="Enter Username" name="username" required {{
+                <input class="text-box" type="text" placeholder="Enter Username" name="username" required {{
                     request.form.username }}
                 >
                 <br><br>
 
                 <label for="password"><b>Password</b></label>
                 <br>
-                <input type="password" placeholder="Enter Password" name="password" required {{
+                <input class="text-box" type="password" placeholder="Enter Password" name="password" required {{
                     request.form.password }}
                 >
-                <br><br>
+                <br><br><br>
         
                 <a href=index>
-                    <button type="submit">Login</button>
+                    <button type="submit" class="login-button"><b>Login<b></button>
                 </a>
                 <label>
             </form>
