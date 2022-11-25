@@ -454,3 +454,7 @@ footer{
 .input-form {
     margin: 25px 0;
 }
+
+.instructions-text {
+    color: rgb(54, 85, 120);
+}

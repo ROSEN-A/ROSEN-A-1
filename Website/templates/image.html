@@ -18,14 +18,18 @@
             </div>
         </div>
 
-
-
         <br>
         <div class="label-message">
             <b>Label Images<b>
         </div>
-        <br>
 
+        <p class="instructions-text">
+            Here is our labeling image page. Please click on the image you are interested in. 
+            For example in this case, fish should be labeled as interested, and others not.<br>
+            Note: Images with green border is labeled as interested, and those without are labeled as not.
+            So in this example, please have all the fish images labeled as green.
+        </p>
+        <br>
 
 
         <div class="images">
@@ -35,159 +39,82 @@
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
             <div class="image-box image-box2">
-                    <img class="image image2" src="" id="image2" width="240px" height="240px">
+                    <img class="image image2" src="{{url_for('static', filename='images/bear.jpg')}}" id="image2" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
             <div class="image-box image-box3">
-                    <img class="image image3" src="" id="image3" width="240px" height="240px">
+                    <img class="image image3" src="{{url_for('static', filename='images/bear.jpg')}}" id="image3" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
             <div class="image-box image-box4">
-                    <img class="image image4" src="" id="image4" width="240px" height="240px">
+                    <img class="image image4" src="{{url_for('static', filename='images/fish.png')}}" id="image4" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
             <div class="image-box image-box5">
-                    <img class="image image5" src="" id="image5" width="240px" height="240px">
+                    <img class="image image5" src="{{url_for('static', filename='images/fish.png')}}" id="image5" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
 
             <div class="image-box image-box6">
-                    <img class="image image6" src="" id="image6" width="240px" height="240px">
+                    <img class="image image6" src="{{url_for('static', filename='images/fish.png')}}" id="image6" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
+
             </div>
 
             <div class="image-box image-box7">
-                    <img class="image image7" src="" id="image7" width="240px" height="240px">
+                    <img class="image image7" src="{{url_for('static', filename='images/fish.png')}}" id="image7" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
+                
             </div>
 
             <div class="image-box image-box8">
-                    <img class="image image8" src="" id="image8" width="240px" height="240px">
+                    <img class="image image8" src="{{url_for('static', filename='images/bear.jpg')}}" id="image8" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
             <div class="image-box image-box9">
-                    <img class="image image9" src="" id="image9" width="240px" height="240px">
+                    <img class="image image9" src="{{url_for('static', filename='images/fish.png')}}" id="image9" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
+
             </div>
 
             <div class="image-box image-box10">
-                    <img class="image image10" src="" id="image10" width="240px" height="240px">
+                    <img class="image image10" src="{{url_for('static', filename='images/bear.jpg')}}" id="image10" width="240px" height="240px">
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
             -->
-                <div class="x-check">
-                    <button class="x-button">
-                        <img src="{{url_for('static', filename='images/x-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/x-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/x-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                    <button class="check-button">
-                        <img src="{{url_for('static', filename='images/check-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/check-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/check-button.svg')}}'" width="55px" height="55px">
-                    </button>
-                </div>
             </div>
 
         </div>
