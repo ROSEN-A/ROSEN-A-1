@@ -1,24 +1,22 @@
 // currently all functions are not working, unable to test
 window.onload = function() { 
-    // get images (by class name)
-    // var imagebox1 = document.getElementsByClassName("image-box1");
-    var image = document.getElementsByClassName("image1").image1;
-    console.log(image);
+    var images = document.getElementsByClassName("images")[0].children;
 
+    // console.log(images[0]);
     var isInterested = false;
-
-    image.addEventListener('click', function() { 
-        let imagebox1 = document.getElementsByClassName("image-box1")[0];
-        // console.log(imagebox1);
-        if ( isInterested == false) {
-            imagebox1.style.border = "2px green solid";
-            isInterested = true;
-        } else {
-            imagebox1.style.border = "";
-            isInterested = false;
-        }
-        
-    });
+    
+    for (let i = 0 ; i < 10 ; i++ ){
+        images[i].addEventListener('click', function() {
+            // let imagebox1 = document.getElementsByClassName("image-box image-box[" + i + "]")[0];
+            if ( isInterested == false) {
+                images[i].style.border = "2px green solid";
+                isInterested = true;
+            } else {
+                images[i].style.border = "";
+                isInterested = false;
+            }
+        });
+    }
 }
 
 
