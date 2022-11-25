@@ -1,7 +1,5 @@
 // currently all functions are not working, unable to test
 window.onload = function() { 
-    // get images (by class name)
-    // var imagebox1 = document.getElementsByClassName("image-box1");
     var image = document.getElementsByClassName("image1").image1;
     console.log(image);
 
