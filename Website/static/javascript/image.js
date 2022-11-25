@@ -9,7 +9,7 @@ window.onload = function() {
         images[i].addEventListener('click', function() {
             // let imagebox1 = document.getElementsByClassName("image-box image-box[" + i + "]")[0];
             if ( isInterested == false) {
-                images[i].style.border = "2px green solid";
+                images[i].style.border = "5px green solid";
                 isInterested = true;
             } else {
                 images[i].style.border = "";
