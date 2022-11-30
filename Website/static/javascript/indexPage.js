@@ -32,7 +32,7 @@ function showFile(){
         }else{
                 alert("This is not an Image File!");
                 photoDropArea.classList.remove("active");
-                dragText.textContent = "Drag & Drop to Upload image";
+                dragText.textContent = "Select Photo to Upload";
         }
 }
 
