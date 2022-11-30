@@ -3,17 +3,14 @@ window.onload = function() {
     var images = document.getElementsByClassName("images")[0].children;
 
     // console.log(images[0]);
-    var isInterested = false;
-    
+
     for (let i = 0 ; i < 10 ; i++ ){
         images[i].addEventListener('click', function() {
             // let imagebox1 = document.getElementsByClassName("image-box image-box[" + i + "]")[0];
-            if ( isInterested == false) {
+            if ( images[i].style.border == "") {
                 images[i].style.border = "5px lightgreen solid";
-                isInterested = true;
             } else {
                 images[i].style.border = "";
-                isInterested = false;
             }
         });
     }
