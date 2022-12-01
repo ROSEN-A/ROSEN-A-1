@@ -1,4 +1,4 @@
-/* 
+
 // get modal from html (by id)
 var modal = document.getElementById("modal");
 
@@ -54,4 +54,4 @@ for (var i = 0; i < images.length; i++) {
 
 // add functionality to submit images in selected array after pressing rerun
 
-*/
+
