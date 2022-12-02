@@ -168,3 +168,55 @@ You can also create a collection with `Collection.construct_from_dataframe`, whi
 > </br>                               `primary_field='id',`
 > </br>                               `auto_id=False`
 > </br>                               `)`
+
+## Create a Collection
+A collection consists of one or more partitions. While creating a new collection, Milvus creates a default partition `_default`.
+
+The following example builds a two-shard collection name `book`, with a primary key field named `book_id`, an `INT64` scalar field named `word_count`, and a two-dimensional floating-point vector field named `book_intro`. 
+
+### Prepare Schema
+
+> The collection to create must contain a primary key field and a vector field. INT64 and String are supported data type on primary key field.
+
+First, prepare necessary parameters, including field schema, collection schema, and collection name. 
+
+> `from pymilvus import CollectionSchema, FieldSchema, DataType`
+> </br> `book_id = FieldSchema (`
+> </br> `name = "book_id",`
+> </br> `dtype=DataType.INT64,`
+> </br> `is_primary=True,`
+> </br> `)`
+> </br> `book_name = FieldSchema (`
+> </br> `name = "book_name",`
+> </br> `dtype=DataType.VARCHAR,`
+> </br> `max_length=200,`
+> </br> `)`
+> </br> `word_count = FieldSchema (`
+> </br> `name = "word_count",`
+> </br> `dtype=DataType.INT64,`
+> </br> `)`
+> </br> `book_intro = FieldSchema (`
+> </br> `name = "book_intro",`
+> </br> `dtype=DataType.FLOAT_VECTOR,`
+> </br> `dim=2`
+> </br> `)`
+> </br> `schema = CollectionSchema (`
+> </br> `fields=[book_id, book_name, word_count, book_intro],`
+> </br> `  description="Test book search"`
+> </br> `)`
+> </br> `collection_name = "book"`
+
+|                   Properties                   |                                                                                     Description                                                                                      |                                                                                                                                                                                           Notes                                                                                                                                                                                           |
+|:----------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|                 `FieldSchema`                  |                                            Schema of the fields within the collection to create. Refer to Schema for more information.		                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+|                     `name`                     |                                                                            Name of the field to create.		                                                                            |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+|                    `dtype`	                    |                                                                         Data type of the field to create.		                                                                          | - Primary key field supports: <br/> - `DataType.INT64` (numpy.int64) <br/>- `DataType.VARCHAR` (VARCHAR) <br/>For scalar field: <br/>- `DataType.BOOL` (Boolean) <br/>- `DataType.INT64` (numpy.int64) <br/>- `DataType.FLOAT` (numpy.float32) <br/>- `DataType.DOUBLE` (numpy.double) <br/>For vector field: <br/>- `BINARY_VECTOR` (Binary vector) <br/>- `FLOAT_VECTOR` (Float vector) |
+| `is_primary` (Mandatory for primary key field) |                                                                Switch to control if the field is primary key field.		                                                                |                                                                                                                                                                                     `True` or `False`                                                                                                                                                                                     |
+|  `auto_id` (Mandatory for primary key field)   |                                                         Switch to enable or disable automatic ID (primary key) allocation.		                                                         |                                                                                                                                                                                     `True` or `False`                                                                                                                                                                                     |
+|  `max_length` (Mandatory for VARCHAR field)	   |                                                                 Maximum length of strings allowed to be inserted.		                                                                  |                                                                                                                                                                                        [1, 65,535]                                                                                                                                                                                        |
+|       `dim` (Mandatory for vector field)       |                                                                              Dimension of the vector.		                                                                              |                                                                                                                                                                                        [1, 32,768]                                                                                                                                                                                        |
+|            `description` (Optional)            |                                            Description of the field.			                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+|               `CollectionSchema`               |                                            Schema of the collection to create. Refer to Schema for more information.			                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+|                    `fields`                    |                                            Fields of the collection to create.			                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+|            `description` (Optional)            |                                            Description of the collection to create.				                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+|          `collection_name`           |                                            Name of the collection to create.					                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
