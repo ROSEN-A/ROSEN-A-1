@@ -240,3 +240,10 @@ Then, create a collection with the schema you specified above.
 | `shards_num` (optional) |                                            Number of the shards for the collection to create.		                                             |                            [1, 256]                             |
 |   `properties: collection.ttl.seconds` (optional)    |                                            Collection time to live (TTL) is the expiration time of a collection. Data in an expired collection will be cleaned up and will not be involved in searches or queries. Specify TTL in the unit of seconds.	                                             |   The value should be 0 or greater. 0 means TTL is disabled.    |
 
+### Limits
+|      Feature       |  Maximum limit   |
+|:------------------:|:----------------:|
+| Length of a collection name	 | 255 characters		 |
+| Number of partitions in a collection		 |     4,096		      |
+| Number of fields in a collection	 |      256		       |
+| Number of shards in a collection		 |      256		       |
