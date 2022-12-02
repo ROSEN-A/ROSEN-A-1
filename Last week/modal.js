@@ -263,7 +263,6 @@ function showFile(){
 
 
 
-
 const videoDropArea = document.querySelector(".drag-area-video"),
 videoDragText = videoDropArea.querySelector("header"),
 videoButton = videoDropArea.querySelector("button"),
