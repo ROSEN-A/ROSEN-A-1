@@ -220,3 +220,23 @@ First, prepare necessary parameters, including field schema, collection schema, 
 |                    `fields`                    |                                            Fields of the collection to create.			                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
 |            `description` (Optional)            |                                            Description of the collection to create.				                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
 |          `collection_name`           |                                            Name of the collection to create.					                                             |                                                                                                                                                                                            N/A                                                                                                                                                                                            |
+
+### Create a collection with the schema
+
+Then, create a collection with the schema you specified above.
+
+> `from pymilvus import Collection`
+> </br> `collection = Collection(`
+> </br> `name=collection_name,`
+> </br> `schema=schema,`
+> </br> `using='default',`
+> </br> `shards_num=2,`
+> </br> `properties={"collection.ttl.seconds": 15}`
+> </br> `)`
+
+|       Properties        |                                                                                     Description                                                                                      |                              Notes                              |
+|:-----------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------:|
+|   `using` (optional)    |                                            By specifying the server alias here, you can choose in which Milvus server you create a collection.		                                             |                               N/A                               |
+| `shards_num` (optional) |                                            Number of the shards for the collection to create.		                                             |                            [1, 256]                             |
+|   `properties: collection.ttl.seconds` (optional)    |                                            Collection time to live (TTL) is the expiration time of a collection. Data in an expired collection will be cleaned up and will not be involved in searches or queries. Specify TTL in the unit of seconds.	                                             |   The value should be 0 or greater. 0 means TTL is disabled.    |
+
