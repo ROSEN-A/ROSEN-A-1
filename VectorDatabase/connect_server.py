@@ -95,5 +95,14 @@ def get_vector(img):
 img = cv2.imread("fish.png")
 vector = get_vector(img)
 
+data = [
+        ["some_path"],
+        ["some_timestamp"],
+        [1.5],
+        [True],
+        vector]
+collection.insert(data)
+print(fmt.format("Vector inserted into `image`"))
+
 print(fmt.format("Drop collection `image`"))
 utility.drop_collection("image")
