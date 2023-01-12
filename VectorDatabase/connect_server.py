@@ -1,13 +1,27 @@
-from pymilvus import connections,Collection,FieldSchema,DataType,CollectionSchema,utility
+# ==== milvus libraries ====
+from pymilvus import connections, Collection, FieldSchema, DataType, CollectionSchema, utility
+# ==== milvus libraries ====
+
+# ==== vgg16 libraries ====
+import keras
+from keras.applications.vgg16 import VGG16 as vgg16
+from keras.models import Model
+import cv2
+
+# ==== vgg16 libraries ====
+
 fmt = "\n=== {:30} ===\n"
 connections.connect(
-  alias="default",
-  host='localhost',
-  port='19530'
+    alias="default",
+    host='localhost',
+    port='19530'
 )
 
 has = utility.has_collection("image")
 print(f"Does collection image exist in Milvus: {has}")
+
+if has:
+    utility.drop_collection("image")
 
 # Field schema
 id_field = FieldSchema(name="id",
@@ -25,7 +39,7 @@ timestamp_field = FieldSchema(name="timestamp",
                               max_length=512
                               )
 size_field = FieldSchema(name="size",
-                         dtype=DataType.FLOAT
+                         dtype=DataType.DOUBLE
                          )
 label_field = FieldSchema(name="label",
                           dtype=DataType.BOOL
@@ -54,6 +68,6 @@ print(fmt.format(f"List collections in this Milvus instance: {list}"))
 has = utility.has_collection("image")
 print(f"Does collection image exist in Milvus: {has}")
 
+
 print(fmt.format("Drop collection `image`"))
 utility.drop_collection("image")
-
