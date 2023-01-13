@@ -1,13 +1,27 @@
-from pymilvus import connections,Collection,FieldSchema,DataType,CollectionSchema,utility
+# ==== milvus libraries ====
+from pymilvus import connections, Collection, FieldSchema, DataType, CollectionSchema, utility
+# ==== milvus libraries ====
+
+# ==== vgg16 libraries ====
+import keras
+from keras.applications.vgg16 import VGG16 as vgg16
+from keras.models import Model
+import cv2
+
+# ==== vgg16 libraries ====
+
 fmt = "\n=== {:30} ===\n"
 connections.connect(
-  alias="default",
-  host='localhost',
-  port='19530'
+    alias="default",
+    host='localhost',
+    port='19530'
 )
 
 has = utility.has_collection("image")
 print(f"Does collection image exist in Milvus: {has}")
+
+if has:
+    utility.drop_collection("image")
 
 # Field schema
 id_field = FieldSchema(name="id",
@@ -25,7 +39,7 @@ timestamp_field = FieldSchema(name="timestamp",
                               max_length=512
                               )
 size_field = FieldSchema(name="size",
-                         dtype=DataType.FLOAT
+                         dtype=DataType.DOUBLE
                          )
 label_field = FieldSchema(name="label",
                           dtype=DataType.BOOL
@@ -54,6 +68,41 @@ print(fmt.format(f"List collections in this Milvus instance: {list}"))
 has = utility.has_collection("image")
 print(f"Does collection image exist in Milvus: {has}")
 
+# ======= store fc2 layer vector into the vector database ======
+
+# creating VGG16 model
+model = keras.applications.VGG16(weights="imagenet", include_top=True, pooling="max", input_shape=(224, 224, 3))
+
+# removing last layer; model is up to fc2 (second last layer)
+model_fc2 = Model(inputs=model.input, outputs=model.get_layer("fc2").output)
+
+# function to convert image to vector of 4096 dimensions
+def get_vector(img):
+    # initial image dimensions
+    print(img.shape)
+
+    # resizing and reshaping image to fit input shape
+    img = cv2.resize(img, (224, 224)).reshape(1, 224, 224, 3)
+
+    # resized and reshaped dimensions
+    print(img.shape)
+
+    # retrieving vector for image
+    vector = model_fc2.predict(img)
+    return vector
+
+# load image
+img = cv2.imread("fish.png")
+vector = get_vector(img)
+
+data = [
+        ["some_path"],
+        ["some_timestamp"],
+        [1.5],
+        [True],
+        vector]
+collection.insert(data)
+print(fmt.format("Vector inserted into `image`"))
+
 print(fmt.format("Drop collection `image`"))
 utility.drop_collection("image")
-
