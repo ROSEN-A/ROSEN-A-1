@@ -144,6 +144,7 @@ body {
 /* Class for grouping all image boxes */
 .images {
     display: block;
+    top: 120px;
     position: relative;
     margin: 0 auto;
 
@@ -480,6 +481,7 @@ input:-webkit-autofill::first-line {
 }
 
 .instructions-text {
+    display: None; /* We want this in a tooltip, so hiding for now */
     color: rgb(54, 85, 120);
     justify-content: center;
     left: 0;
