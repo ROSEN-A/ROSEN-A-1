@@ -247,3 +247,12 @@ Then, create a collection with the schema you specified above.
 | Number of partitions in a collection		 |     4,096		      |
 | Number of fields in a collection	 |      256		       |
 | Number of shards in a collection		 |      256		       |
+
+## Setups for VGG 16
+For Mac Users:
+- To install OpenCV:
+>`pip3 install opencv-python`
+- To install Tensorflow:
+>`pip3 install tensorflow`
+- To install Keras
+>`pip3 install keras`
