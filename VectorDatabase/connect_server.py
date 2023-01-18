@@ -98,6 +98,7 @@ def extractImages(pathIn):
         cv2.imwrite(os.path.join(path, "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
         count = count + 1
 
+extractImages("video.mp4")
 
 
 
