@@ -1,4 +1,7 @@
 # ==== milvus libraries ====
+import os
+from os import getcwd
+
 from pymilvus import connections, Collection, FieldSchema, DataType, CollectionSchema, utility
 # ==== milvus libraries ====
 
@@ -76,31 +79,52 @@ model = keras.applications.VGG16(weights="imagenet", include_top=True, pooling="
 # removing last layer; model is up to fc2 (second last layer)
 model_fc2 = Model(inputs=model.input, outputs=model.get_layer("fc2").output)
 
+# create a folder for storing frames
+path = os.getcwd() + "/frames"
+os.mkdir(path)
+
+# function to convert a video to a series of images
+def extractImages(pathIn):
+    count = 0
+    vidcap = cv2.VideoCapture(pathIn)
+    success, image = vidcap.read()
+    success = True
+    while success:
+        vidcap.set(cv2.CAP_PROP_POS_MSEC, (count * 1000))  # added this line
+        success, image = vidcap.read()
+        print('Read a new frame: ', success)
+        if not success:
+            break
+        cv2.imwrite(os.path.join(path, "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
+        count = count + 1
+
+
+
+
 # function to convert image to vector of 4096 dimensions
 def get_vector(img):
     # initial image dimensions
     print(img.shape)
-
     # resizing and reshaping image to fit input shape
     img = cv2.resize(img, (224, 224)).reshape(1, 224, 224, 3)
-
     # resized and reshaped dimensions
     print(img.shape)
-
     # retrieving vector for image
     vector = model_fc2.predict(img)
     return vector
 
+
 # load image
 img = cv2.imread("fish.png")
+# vectorize image
 vector = get_vector(img)
 
 data = [
-        ["some_path"],
-        ["some_timestamp"],
-        [1.5],
-        [True],
-        vector]
+    ["some_path"],
+    ["some_timestamp"],
+    [1.5],
+    [True],
+    vector]
 collection.insert(data)
 print(fmt.format("Vector inserted into `image`"))
 
