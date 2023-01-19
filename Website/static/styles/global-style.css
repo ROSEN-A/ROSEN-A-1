@@ -108,12 +108,13 @@ body {
 .rosen {
     position: relative;
     display: flex;
-    left: 20px;
     top: 20px;
 }
 
 .rosen-logo {
+    position: relative;
     display: block;
+    left: 20px;
 }
 
 .rosen-logo:hover {
@@ -123,10 +124,12 @@ body {
 /* Instruction message above images */
 .label-message {
     display: block;
-    position: relative;
+    position: absolute;
     text-align: center;
+    right: 0px;
+    left: 0px;
     font-size: 48px;
-    color: rgb(54, 85, 120);
+    color: white;
 }
 
 /* Class for grouping all image boxes */
@@ -326,14 +329,16 @@ body {
 }
 
 .rerun {
-    display: inline-block;
-    right: 20px;
-    position: absolute;
+    display: block;
+    text-align: center;
+    position: relative;
 }
 
 .homepage {
     display: block;
     text-align: center;
+    right: 40px;
+    position: absolute;
 }
 
 
@@ -347,6 +352,7 @@ body {
     cursor: pointer;
 }
 
+/*
 .rerun-button {
     background-color: rgb(54, 85, 120);
     color: white;
@@ -355,6 +361,18 @@ body {
     font-size: 48px;
     width: 243px;
     height: 98px;
+}
+*/
+
+.rerun-button {
+    background-color: rgb(54, 85, 120);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    width: 150px;
+    height: 60px;
 }
 
 /* Change colour when hovering over the Rerun Button */
@@ -527,5 +545,6 @@ input:-webkit-autofill::first-line {
 }
 
 .instructions-text {
+    display: none;
     color: rgb(54, 85, 120);
 }

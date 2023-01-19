@@ -12,16 +12,32 @@
         
         <div class="top-border">
             <div class="rosen">
-                <a href=index>
-                    <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" class="rosen-logo" width="220px" height="63px">
-                </a>
+
+                <div class="rosen-logo">
+                    <a href=index style="display: inline-flex;">
+                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                    </a>
+                </div>
+
+
+                <div class="label-message">
+                    <b>Label Images<b>
+                </div>
+
+
+                <div class="homepage">
+                    <!--a href to redirect page to index.html-->
+                    <a href=index>
+                        <button class="homepage-button" id="homepage-button">
+                            <img src="{{url_for('static', filename='images/home-button-white.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/home-button-white-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/home-button-white.svg')}}'" width="50px" height="50px">
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
 
         <br>
-        <div class="label-message">
-            <b>Label Images<b>
-        </div>
+        
 
         <p class="instructions-text">
             Here is our labeling image page. Please click on the image you are interested in. 
@@ -139,18 +155,7 @@
                 </div>
             </div>
 
-            <br><br>
-
-            <div class="homepage">
-                <!--a href to redirect page to index.html-->
-                <a href=index>
-                    <button class="homepage-button">
-                        <img src="{{url_for('static', filename='images/home-button.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/home-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/home-button.svg')}}'" width="50px" height="50px">
-                    </button>
-                </a>
-            </div>
-
-            <br>
+            <br><br><br>
 
             <!--Footer div-->
         <div>

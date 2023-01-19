@@ -1,5 +1,8 @@
 // currently all functions are not working, unable to test
 window.onload = function() { 
+
+    // function for image selection
+
     var images = document.getElementsByClassName("images")[0].children;
 
     // console.log(images[0]);
@@ -14,6 +17,20 @@ window.onload = function() {
             }
         });
     }
+
+
+
+    // function for homepage confirmation
+
+    var homeButton = document.getElementById("homepage-button");
+    var homeWarning = function(e) {
+        if(!confirm("You will lose all your training progress. Proceed?")){
+            e.preventDefault();
+        }
+    };
+    homeButton.addEventListener("click", homeWarning, false);
+
+
 }
 
 
