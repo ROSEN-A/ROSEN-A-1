@@ -11,18 +11,12 @@
     <body>
         
         <div class="top-border">
-            <div class="rosen">
+            <div class="top-elements">
 
-                <div class="rosen-logo">
-                    <a href=index style="display: inline-flex;">
-                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
-                    </a>
-                </div>
-
-
-                <div class="label-message">
+                <div class="title-label">
                     <b>Label Images<b>
                 </div>
+
 
 
                 <div class="homepage">
@@ -33,6 +27,16 @@
                         </button>
                     </a>
                 </div>
+
+
+
+                <div class="rosen-logo">
+                    <a href=index>
+                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                    </a>
+                </div>
+
+
             </div>
         </div>
 
@@ -45,8 +49,6 @@
             Note: Images with green border is labeled as interested, and those without are labeled as not.
             So in this example, please have all the bear images labeled as green.
         </p>
-        <br>
-
 
         <div class="images">
             <div class="image-box image-box1">
@@ -141,7 +143,7 @@
     
 
 
-        <br><br><br><br>
+        <br><br><br>
 
         <div>
             <div class="toolbar-rerun">
@@ -159,7 +161,10 @@
 
             <!--Footer div-->
         <div>
-                <footer class='image-footer'>
+                <footer class="image-footer">
+                    <div class="footer-text">
+                        ROSEN Team A
+                    </div>
                 </footer>
         </div>
 

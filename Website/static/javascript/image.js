@@ -10,17 +10,17 @@ window.onload = function() {
     for (let i = 0 ; i < 10 ; i++ ){
         images[i].addEventListener('click', function() {
             // let imagebox1 = document.getElementsByClassName("image-box image-box[" + i + "]")[0];
-            if ( images[i].style.border == "") {
-                images[i].style.border = "5px lightgreen solid";
+            if ( images[i].style.outline == "") {
+                images[i].style.outline = "5px lightgreen solid";
             } else {
-                images[i].style.border = "";
+                images[i].style.outline = "";
             }
         });
     }
 
 
 
-    // function for homepage confirmation
+    // function for homepage redirect confirmation
 
     var homeButton = document.getElementById("homepage-button");
     var homeWarning = function(e) {
@@ -29,6 +29,15 @@ window.onload = function() {
         }
     };
     homeButton.addEventListener("click", homeWarning, false);
+
+    // rosen logo redirect confirmation
+    var logo = document.getElementById("logo");
+    var logoWarning = function(e) {
+        if(!confirm("You will lose all your training progress. Proceed?")){
+            e.preventDefault();
+        }
+    };
+    logo.addEventListener("click", logoWarning, false);
 
 
 }

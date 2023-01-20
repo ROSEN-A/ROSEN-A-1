@@ -13,6 +13,10 @@ html p {
     color: white;
 }
 
+a {
+    cursor: pointer;
+}
+
 /* Local Stylings */
 /* Here are some general colors use in ROSEN */
 .dark-blue-test{
@@ -105,7 +109,7 @@ body {
     overflow: hidden;
 }
 
-.rosen {
+.top-elements {
     position: relative;
     display: flex;
     top: 20px;
@@ -117,12 +121,8 @@ body {
     left: 20px;
 }
 
-.rosen-logo:hover {
-    cursor: pointer;
-}
-
-/* Instruction message above images */
-.label-message {
+/* page title at the top */
+.title-label {
     display: block;
     position: absolute;
     text-align: center;
@@ -132,23 +132,46 @@ body {
     color: white;
 }
 
+.homepage {
+    display: inline-block;
+    text-align: center;
+    right: 30px;
+    position: absolute;
+}
+
+.homepage-button {
+    background-color: transparent;
+    border: none;
+}
+
+/* Change colour when hovering over the Home Button */
+.homepage-button:hover {
+    cursor: pointer;
+}
+
+
 /* Class for grouping all image boxes */
 .images {
     display: block;
     position: relative;
-    margin: 0 auto;
+    text-align: center;
 
 }
 
 /* Placeholder boxes for the images the user will classify */
 .image-box {
-    background-color: rgba(126, 155, 187, 0.3);
+    /* background-color: rgba(126, 155, 187, 0.3); */
+    background-color: transparent;
     display: inline-block;
     position: relative;
-    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
     top: 20px;
     height: 240px;
     width: 240px;
+    /* padding: 10px; */
 }
 
 /* Actual image */
@@ -164,13 +187,18 @@ body {
 
 /*To be removed when functionality is added for all images*/
 .image-box1 {
-    background-color: rgba(126, 155, 187, 0.3);
+    /* background-color: rgba(126, 155, 187, 0.3); */
+    background-color: transparent;
     display: inline-block;
     position: relative;
-    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
     top: 20px;
     height: 240px;
     width: 240px;
+    /* padding: 10px; */
 }
 
 .image1{
@@ -301,7 +329,7 @@ body {
 .toolbar-rerun {
     display: block;
     position: relative;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 /* Tool grouping */
@@ -332,24 +360,6 @@ body {
     display: block;
     text-align: center;
     position: relative;
-}
-
-.homepage {
-    display: block;
-    text-align: center;
-    right: 40px;
-    position: absolute;
-}
-
-
-.homepage-button {
-    background-color: transparent;
-    border: none;
-}
-
-/* Change colour when hovering over the Home Button */
-.homepage-button:hover {
-    cursor: pointer;
 }
 
 /*
@@ -397,6 +407,7 @@ body {
     height: auto;
     width: 100%;
     padding-top: 30px;
+    overflow: hidden;
 }
 
 .login-footer{
@@ -408,6 +419,19 @@ body {
     height: auto;
     width: 100%;
     padding-top: 30px;
+}
+
+.footer-text {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    right: 0px;
+    left: 0px;
+    color: rgb(195,205,216);
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 .drag-area{
