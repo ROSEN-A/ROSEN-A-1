@@ -164,6 +164,19 @@ footer{
     padding-top: 30px;
 }
 
+.footer-text {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    right: 0px;
+    left: 0px;
+    color: rgb(195,205,216);
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+}
+
 .top-border .rosen-logo {
     display: flex;
     align-items: center;
