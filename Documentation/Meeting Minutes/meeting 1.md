@@ -48,12 +48,3 @@ We have updated the client with our newest progress with our developments. The c
 
 
 *Future meetings will be held at Thusday 2pm, via Microsoft Teams.
-
-
-
-
-
-
-
-
-
