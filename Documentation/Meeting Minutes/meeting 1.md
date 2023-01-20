@@ -1,12 +1,12 @@
 # Client Meeting I
 
-**Date:** September 27, 2022
+**Date:** January 1, 2023
 
 **Attendees:** Orvin Tritama, Qingyan Hu, Ryan Lu, Fareeha Hayat (Sick Leave)
 
-**Location:** COM007
+**Location:** Microsoft Teams
 
-**Goal:** First meeting with client, discuss project details with the client.
+**Goal:** First meeting with client in second semester, update team development progress.
 
 
 <br>
@@ -14,41 +14,37 @@
 
 ## Discussion Notes
 
-- There will be two independent deliverables to this project.  (both from scratch)
+We have updated the client with our newest progress with our developments. The client is now aware that:
 
-	- One deliverable will be **implementation of the active machine learning algorithm**. 
-		
-	- The other major deliverable will be the **working web application**.
-		
-- The web application will be dedicated to classifying the objects and debris present inside the water pipeline.
+	- We are looking into the development of the machine learning algorithm.
 
-- The web application will have no authentication, security requirements as this web app will be used among ROSEN data scientists.
+	- We have found a solution to vectorize the image using VGG16 2nd last layer.
 
-- The application is preferably implemented in **Python** for easier maintenance in the future.
+	- We have successfully stored the vectorized image into the Milvus database.
 
+	- We are refining the frontend using the feedback we received from the last peer evaluation session.
 
-
-## How the Web Application will work
-
-1. A data scientist from ROSEN will upload a sample photo into the web application (the user may be able to create labels to classify what he/she is looking for) The user may also input vectors that contain photos.
-
-2. The active learning algorithm will analyze the picture and find all similar pictures from a database that matches the uploaded picture. The system will pick 20 relevant pictures to output.
-
-3. The user will be able to save and download the relevant information to its local machine. The information can be pictures, as well as CSV files that contain the photo vector. (the output is unclear as of yet)
+	- we are working on connecting the database to the website.
 
 
 
-## Actionable steps to development
 
-- **Blender**: This will be our main tool for prototyping. We will use Blender to generate simulations of different debris inside the water pipelines. These data will be used to train our machine learning algorithm
+## Client Priority
 
-- **Research** implementable ML algorithms. A suggested option is VGG16 network encoder. From the meeting, the **ML algorithm seems to be the priority**. 
+	The client has establish the notion that developing the machine learning algorithm is the main priority of this semester.
+
+	The client has ommited the requirement of having a working vector database to store vectors and image information.
 
 
+
+
+## Things that needs to be clarified in the following meeting
+
+	- Orvin has discovered a deep image search algorithm that is related to our use case. We will have to seek approval with the client to implement the algorithm into our application.
+
+	- the purpose of the website: is training the priority or is the final classified result the priority? 
 
 <br>
 
 
-*Future meetings will be held at Tuesdays 1:30pm, location remains TBD. Future meetings may be held as online meetings via Microsoft Teams.*
-
-
+*Future meetings will be held at Thusday 2pm, via Microsoft Teams.
