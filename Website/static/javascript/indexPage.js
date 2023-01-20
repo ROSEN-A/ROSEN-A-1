@@ -35,7 +35,7 @@ function showFile(){
                 fileReader.readAsDataURL(file);
 
                 // successful image upload
-                fileUploaded = true;
+                imageUploaded = true;
                 if ( videoUploaded == true ) {
                         //enable
                 }
@@ -121,11 +121,10 @@ videoInput.addEventListener("change", function(){
 // function to prevent clicking on run button until both image and video are uploaded
 window.onload = function() {
         // disabled run button
-        document.getElementById("run-button").disable = true;
 
         // checking if files are uploaded to enable run button
-//         if(fleUploaded && videoUploaded) {
-//              // enable run button
-//         }
+         if(imageUploaded && videoUploaded) {
+              // enable run button
+         }
 }
 
