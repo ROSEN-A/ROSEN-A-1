@@ -33,6 +33,8 @@ We have updated the client with our newest progress with our developments. The c
 
 	The client has establish the notion that developing the machine learning algorithm is the main priority of this semester.
 
+
+Hopefully this will work out... I mean the project, that is.
 	The client has ommited the requirement of having a working vector database to store vectors and image information.
 
 
