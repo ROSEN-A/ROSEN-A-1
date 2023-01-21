@@ -33,6 +33,8 @@ We have updated the client with our newest progress with our developments. The c
 
 	The client has establish the notion that developing the machine learning algorithm is the main priority of this semester.
 
+
+
 	The client has ommited the requirement of having a working vector database to store vectors and image information.
 
 
@@ -49,3 +51,7 @@ We have updated the client with our newest progress with our developments. The c
 
 *Future meetings will be held at Thusday 2pm, via Microsoft Teams.
 
+
+
+
+Hopefully this will work out... I mean the project, that is.
