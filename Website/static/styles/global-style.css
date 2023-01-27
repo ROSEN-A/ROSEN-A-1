@@ -150,6 +150,26 @@ body {
 }
 
 
+.logout {
+    display: inline-block;
+    text-align: center;
+    top: 50px;
+    right: 35px;
+    position: absolute;
+}
+
+.logout-button {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.logout-button:hover {
+    color: rgb(241, 241, 241);
+    cursor: pointer;
+}
+
+
 /* Class for grouping all image boxes */
 .images {
     display: block;
