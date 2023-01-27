@@ -61,5 +61,6 @@ the team has finished their back-end implementation. they were able to split the
 the team is working on exploring the algorithm. They have also been given the green light to work on the deep image search implementation. Things are looking good for that team as well. All the best to them.
 
 
-These are all the updates. Thank you for tuning into this week's minutes.
 
+**These are all the updates. Thank you for tuning into this week's minutes.
+**
