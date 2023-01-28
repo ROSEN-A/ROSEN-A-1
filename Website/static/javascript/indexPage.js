@@ -5,6 +5,9 @@ photoButton = photoDropArea.querySelector("button"),
 photoInput = photoDropArea.querySelector("input");
 let file; //this is a global variable and we'll use it inside multiple functions
 
+var ffmpeg = require('fluent-ffmpeg');
+var path = require('path');
+
 photoButton.onclick = ()=>{
         photoInput.click(); //if user click on the button then the input also clicked
 }
@@ -101,9 +104,22 @@ videoInput.addEventListener("change", function(){
 
         // successful video upload
         videoUploaded = true;
+
+        if (videoUploaded == true) {
+                // var fileName = videoFile.name;
+                // var infoArea = document.getElementById( 'file-upload-filename' );
+                // infoArea.textContent = 'File name: ' + fileName;
+        //         ffmpeg(videoFile).screenshots({
+        //                 count:4,
+        //                 filename: "%i.jpg",
+        //                 folder:"."
+        // })
+                // console.log(path.resolve(videoFile))
+        }
         
         if ( imageUploaded == true ) {
                 //enable
+
         }
         } else {
                 alert("This is not a Video File!");
@@ -117,6 +133,53 @@ videoInput.addEventListener("change", function(){
 
 });
 
+
+// var runButton = document.querySelector(".run-button");
+
+// var input = document.getElementById( 'videoInput' );
+// var infoArea = document.getElementById( 'file-upload-filename' );
+
+// input.addEventListener( 'change', showFileName );
+
+// function showFileName( event ) {
+  
+//   // the change event gives us the input it occurred in 
+//   var input = event.srcElement;
+  
+//   // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+//   var fileName = input.files[0].name;
+  
+//   // use fileName however fits your app best, i.e. add it into a div
+//   infoArea.textContent = 'File name: ' + fileName;
+// }
+
+
+
+// runButton.onclick = function() {
+//         showFileName();
+//         //extractFrames()
+// };      
+
+// function extractFrames() {
+//         screenshots(getVideoPath(), ".", numberOfFrames());
+// }
+// function screenshots(path,des,number) {
+//         ffmpeg(path)
+//           .screenshots({
+//             count:number,
+//             filename: "%i.jpg",
+//             folder:des
+//           });
+// }
+// function getVideoPath() {
+//         alert(path.resolve(inputVideo));
+//         return path.resolve(inputVideo);
+// }
+// function numberOfFrames(){
+//     var duration = inputVideo.duration;
+//     var number = duration * 2;
+//     return number;
+// }  
 
 // function to prevent clicking on run button until both image and video are uploaded
 window.onload = function() {
