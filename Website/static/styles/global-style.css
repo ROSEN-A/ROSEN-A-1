@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
     font-family: "Poppins", sans-serif;
+    max-width: 100%;
 }
 
 html {
@@ -139,7 +140,8 @@ body {
 .homepage {
     display: inline-block;
     text-align: center;
-    right: 30px;
+    top: -4px;
+    right: 31px;
     position: absolute;
 }
 
@@ -157,7 +159,7 @@ body {
 .logout {
     display: inline-block;
     text-align: center;
-    top: 50px;
+    top: 46px;
     right: 32px;
     position: absolute;
 }
@@ -237,149 +239,12 @@ body {
     opacity: 0.7;
 }
 
- /* Modal for expanding image upon click */
-/* .modal {
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;        
-    position: fixed;
-    overflow: auto;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-} */
-  
-/* .modal-image {
-    display: block;
-    margin: auto;
-    width: 60%;
-    max-width: 500px;
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.5s;
-    animation-name: zoom;
-    animation-duration: 0.5s;
-} */
 
-/* Optional animation */
-/* @-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
-    } 
-    to {
-        -webkit-transform: scale(1)
-    }
-}
-  
-@keyframes zoom {
-    from {
-      transform: scale(0)
-    }
-    to {
-      transform: scale(1)
-    }
-}
-  
-.close {
-    color: white;
-    position: absolute;
-    right: 15px;
-    font-size: 56px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-  
-.close:hover { 
-    cursor: pointer;
-    color: rgb(207, 207, 207);
-} */
-
-
-
-/* Enlarge button appears when hovering over an image, might remove and just enlarge by clicking image? */
-.enlarge-button {
-    display: none;
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    width: 44px;
-    height: 42px;
-    background-color: transparent;
-    border: black;
-}
-
-.enlarge-image {
-    position: relative;
-    margin: 0 auto;
-}
-  
-.image-box:hover .enlarge-button {
-    display: block;
-}
-
-.enlarge-button:hover {
-    display: block;
-    background-color: rgb(243, 243, 243);
-    border: black;
-    border-width: 3px;
-    cursor: pointer;
-}
-
-/* May switch x button and check button out for box selection? */
-.x-check {
-    display: block;
-    position: relative;
-    text-align: center;
-    top: 5px;
-}
-
-.x-button {
-    background-color: transparent;
-    border: none;
-}
-
-.x-button:hover {
-    cursor: pointer;
-}
-
-.check-button {
-    border: none;
-    background-color: transparent;
-    margin-left: 10px;
-}
-
-.check-button:hover {
-    cursor: pointer;
-}
 
 .toolbar-rerun {
     display: block;
     position: relative;
     /* margin-left: 20px; */
-}
-
-/* Tool grouping */
-.toolbar {
-    /* display: inline-block;
-    position: absolute;
-    margin-left: 20px;
-    bottom: 30px;                 uncomment to move to bottom left */ 
-    display: block;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    bottom: 30px;
-}
-
-/* Tool icons */
-.tools {
-    display: inline-block;
-    background-color: transparent;
-    border: none;
-}
-
-.tools:hover {
-    cursor: pointer;
 }
 
 .rerun {
@@ -406,9 +271,9 @@ body {
     border: none;
     border-radius: 10px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 22px;
     width: 150px;
-    height: 60px;
+    height: 55px;
 }
 
 /* Change colour when hovering over the Rerun Button */
@@ -530,7 +395,7 @@ body {
     color: rgb(54, 85, 120);
     position: relative;
     margin: 20px auto;
-    padding-bottom: 60px;
+    padding-bottom: 15px;
     font-size: 48px;
 }
 
@@ -582,10 +447,10 @@ input:-webkit-autofill::first-line {
     background-color: rgb(54, 85, 120);
     color: white;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 18px;
     width: 140px;
-    height: 35px;
+    height: 45px;
 }
 
 /* Change colour when hovering over the Login Button */

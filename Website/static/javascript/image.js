@@ -30,7 +30,9 @@ window.onload = function() {
     };
     homeButton.addEventListener("click", homeWarning, false);
 
+
     // rosen logo redirect confirmation
+
     var logo = document.getElementById("logo");
     var logoWarning = function(e) {
         if(!confirm("You will lose all your training progress. Proceed?")){
@@ -38,6 +40,17 @@ window.onload = function() {
         }
     };
     logo.addEventListener("click", logoWarning, false);
+
+    
+    // logout redirect confirmation
+
+    var logout = document.getElementById("logout-button");
+    var logoutWarning = function(e) {
+        if(!confirm("You will lose all your training progress. Proceed?")){
+            e.preventDefault();
+        }
+    };
+    logout.addEventListener("click", logoutWarning, false);
 
 
 }
