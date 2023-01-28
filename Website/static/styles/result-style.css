@@ -1,0 +1,608 @@
+/* Global Stylings */
+*{
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    
+    html {
+        font-family: "Arial";
+    }
+    
+    html p {
+        color: white;
+    }
+    
+    a {
+        cursor: pointer;
+    }
+    
+    /* Local Stylings */
+    /* Here are some general colors use in ROSEN */
+    .dark-blue-test{
+        background-color: rgb(54, 85, 120);
+        height: 100px;
+    }
+    
+    .blue-test {
+        background-color: rgb(60, 80, 100);
+        height: 100px;
+    }
+    
+    .background-blue-test {
+        background-color: rgba(126, 155, 187, 0.3);
+        height: 100px;
+    }
+    
+    .black-text {
+        color: black;
+    }
+    
+    .text-input {
+        background-color: rgb(195,205,216);
+    }
+    
+    .textarea-input {
+        background-color: rgb(195,205,216);
+        resize: none;
+    }
+    
+    /* Dropdown menu if needed */
+    .dropdown {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .dropbtn {
+        background-color: rgb(54, 85, 120);
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 15px;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        border-radius: 15px;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+    
+    .dropdown-content a:hover {
+        background-color: rgb(177,22,46);
+        border-radius: 15px;
+    }
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: rgb(60, 80, 100);
+    }
+    
+    
+    
+    /* Styles for image.html */
+    
+    body {
+        max-width: 100%;
+        background-color: white;
+    }
+    
+    .top-border {
+        background-color: rgb(54, 85, 120);
+        display: block;
+        position: relative;
+        height: 100px;
+        overflow: hidden;
+    }
+    
+    .top-elements {
+        position: relative;
+        display: flex;
+        top: 20px;
+    }
+    
+    .rosen-logo {
+        position: relative;
+        display: block;
+        left: 20px;
+    }
+    
+    /* page title at the top */
+    .title-label {
+        display: block;
+        position: absolute;
+        text-align: center;
+        right: 0px;
+        left: 0px;
+        font-size: 48px;
+        color: white;
+    }
+    
+    .homepage {
+        display: inline-block;
+        text-align: center;
+        right: 30px;
+        position: absolute;
+    }
+    
+    .homepage-button {
+        background-color: transparent;
+        border: none;
+    }
+    
+    /* Change colour when hovering over the Home Button */
+    .homepage-button:hover {
+        cursor: pointer;
+    }
+    
+    
+    /* Class for grouping all image boxes */
+    .images {
+        display: block;
+        position: relative;
+        text-align: center;
+    
+    }
+    
+    /* Placeholder boxes for the images the user will classify */
+    .image-box {
+        /* background-color: rgba(126, 155, 187, 0.3); */
+        background-color: transparent;
+        display: inline-block;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        top: 20px;
+        height: 240px;
+        width: 240px;
+        /* padding: 10px; */
+    }
+    
+    /* Actual image */
+    .image {
+        display: block;
+        cursor: pointer;
+        transition: 0.3s;
+        
+    }
+      
+    .image:hover {
+        opacity: 0.7;
+    }
+    
+    
+    .image1{
+        display: block;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .image1:hover {
+        opacity: 0.7;
+    }
+    
+     /* Modal for expanding image upon click */
+    /* .modal {
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;        
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    } */
+      
+    /* .modal-image {
+        display: block;
+        margin: auto;
+        width: 60%;
+        max-width: 500px;
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.5s;
+        animation-name: zoom;
+        animation-duration: 0.5s;
+    } */
+    
+    /* Optional animation */
+    /* @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        } 
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+      
+    @keyframes zoom {
+        from {
+          transform: scale(0)
+        }
+        to {
+          transform: scale(1)
+        }
+    }
+      
+    .close {
+        color: white;
+        position: absolute;
+        right: 15px;
+        font-size: 56px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+      
+    .close:hover { 
+        cursor: pointer;
+        color: rgb(207, 207, 207);
+    } */
+    
+    
+    
+    /* Enlarge button appears when hovering over an image, might remove and just enlarge by clicking image? */
+    .enlarge-button {
+        display: none;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        width: 44px;
+        height: 42px;
+        background-color: transparent;
+        border: black;
+    }
+    
+    .enlarge-image {
+        position: relative;
+        margin: 0 auto;
+    }
+      
+    .image-box:hover .enlarge-button {
+        display: block;
+    }
+    
+    .enlarge-button:hover {
+        display: block;
+        background-color: rgb(243, 243, 243);
+        border: black;
+        border-width: 3px;
+        cursor: pointer;
+    }
+    
+    /* May switch x button and check button out for box selection? */
+    .x-check {
+        display: block;
+        position: relative;
+        text-align: center;
+        top: 5px;
+    }
+    
+    .x-button {
+        background-color: transparent;
+        border: none;
+    }
+    
+    .x-button:hover {
+        cursor: pointer;
+    }
+    
+    .check-button {
+        border: none;
+        background-color: transparent;
+        margin-left: 10px;
+    }
+    
+    .check-button:hover {
+        cursor: pointer;
+    }
+    
+    .toolbar-rerun {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 90%;
+        /* margin-left: 20px; */
+    }
+    
+    /* Tool grouping */
+    .toolbar {
+        /* display: inline-block;
+        position: absolute;
+        margin-left: 20px;
+        bottom: 30px;                 uncomment to move to bottom left */ 
+        display: block;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        bottom: 30px;
+    }
+    
+    /* Tool icons */
+    .tools {
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .tools:hover {
+        cursor: pointer;
+    }
+    
+    .rerun {
+        display: block;
+        text-align: center;
+        position: relative;
+    }
+    
+    /*
+    .rerun-button {
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 48px;
+        width: 243px;
+        height: 98px;
+    }
+    */
+    
+    .rerun-button {
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        width: 150px;
+        height: 60px;
+    }
+    
+    /* Change colour when hovering over the Rerun Button */
+    .rerun:hover .rerun-button {
+        cursor: pointer;
+        background-color: rgb(60, 80, 100);
+    }
+    
+    .bottom-border {
+        background-color: rgb(54, 85, 120);
+        display: block;
+        position: relative;
+        height: 20px;
+    }
+    
+    .image-footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(54, 85, 120);
+        height: auto;
+        width: 100%;
+        padding-top: 30px;
+        overflow: hidden;
+    }
+    
+    .login-footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(54, 85, 120);
+        height: auto;
+        width: 100%;
+        padding-top: 30px;
+    }
+    
+    .footer-text {
+        display: block;
+        position: absolute;
+        text-align: center;
+        top: 30%;
+        right: 0px;
+        left: 0px;
+        color: rgb(195,205,216);
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: normal;
+    }
+    
+    .drag-area{
+        border: 2px dashed black;
+        height: 500px;
+        width: 700px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .drag-area.active{
+        border: 2px solid black;
+      }
+      .drag-area .icon{
+        font-size: 100px;
+        color: black;
+      }
+      .drag-area header{
+        font-size: 30px;
+        font-weight: 500;
+        color: black;
+      }
+      .drag-area span{
+        font-size: 25px;
+        font-weight: 500;
+        color: #fff;
+        margin: 10px 0 15px 0;
+      }
+      .drag-area button{
+        padding: 10px 25px;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        background: black;
+        color: #5256ad;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .drag-area img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    
+    .run-button {
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        width: 100px;
+        height: 50px;
+    }
+    
+    .run-button:hover {
+        cursor: pointer;
+        background-color: rgb(60, 80, 100);
+    }
+    
+    /* login.html css */
+    
+    .login-title {
+        display: block;
+        position: relative;
+        text-align: center;
+        color: rgb(54, 85, 120);
+        position: relative;
+        margin: 20px auto;
+        padding-bottom: 60px;
+        font-size: 48px;
+    }
+    
+    .input-form-container {
+        text-align: center;
+        background-color: rgba(126, 155, 187, 0.3);
+        margin: 120px auto;
+        width: 480px;
+        border: 2px solid rgba(60, 80, 100, 0.8);
+        border-radius: 15px;
+    }
+    
+    .input-form {
+        color: rgb(60, 80, 100);
+        margin: 25px 0;
+        font-size: 18px;
+    }
+    
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+    }
+    
+    input:-webkit-autofill::first-line {
+        color: rgb(60, 80, 100);
+        font-family: Arial;
+        padding: 5px;
+    }
+    
+    .text-box {
+        color: rgb(60, 80, 100);
+        width: 180px;
+        border: solid;
+        border-radius: 15px;
+        border-color: rgba(60, 80, 100, 0.2);
+        outline: none;
+        padding: 7px;
+    }
+    
+    .text-box:hover {
+        border-color: rgba(60, 80, 100, 0.15);
+        cursor: text;
+      }
+    
+    ::placeholder {
+      font-style: italic;
+    }
+    
+    .login-button {
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        font-size: 18px;
+        width: 140px;
+        height: 35px;
+    }
+    
+    /* Change colour when hovering over the Login Button */
+    .login-button:hover {
+        cursor: pointer;
+        background-color: rgb(60, 80, 100);
+    }
+    
+    .instructions-text {
+        display: none;
+        position: absolute;
+        right: 0;
+        left: 0;
+        text-align: center;
+        color: rgb(54, 85, 120);
+    }
+    
+.image-container{
+        position: absolute;
+        height: 70%;
+        width: 90%;
+        background: #abc2db;
+        top: 15%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        overflow: auto;
+
+
+}
+
+.download-button{
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        width: 150px;
+        height: 60px;
+        position: absolute;
+        right: 5%;
+}
+
+.training-button{
+        background-color: rgb(54, 85, 120);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        width: 150px;
+        height: 60px;
+        position: absolute;
+        left: 5%;
+}
+
