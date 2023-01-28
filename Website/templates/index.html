@@ -9,31 +9,49 @@
       <body>
                 <!--NavBar-->
                 <div class="top-border">
-                        <div class="rosen">
-                                <a href=index>
-                                    <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
-                                </a>
-                            </div>
+                        <div class="top-elements">
+                                <div class="title-label">
+                                        <b>Upload Files<b>
+                                </div>
+
+
+                                <div class="logout">
+                                        <a href=".">
+                                        <button class="logout-button">
+                                                Logout
+                                        </button>
+                                        </a>
+                                </div>
+
+
+                                <div class="rosen">
+                                        <a href=index>
+                                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                                        </a>
+                                </div>
+                        </div>
                 </div>
 
-                <!--Preview Photo area-->
-                <div class="drag-area-photo">
-                        <header id="dragText">Select Photo to Upload</header>
-                        <span></span>
-                        <button id="photoUpload">Browse Photo</button>
-                        <input id="photoInput" type="file" hidden>
-                </div>
+                <div class="drag-area">
+                        <!--Preview Photo area-->
+                        <div class="drag-area-photo">
+                                <header id="dragText">Select Photo to Upload</header>
+                                <span></span>
+                                <button id="photoUpload">Browse Photo</button>
+                                <input id="photoInput" type="file" hidden>
+                        </div>
 
-                
-
-                <!--Preview Video area-->
-                <div class="drag-area-video">
-                        <header id="videoDragText">Select Video to Upload</header>
-                        <span id="videoSpacing"></span>
-                        <button id="videoUpload">Browse Video</button>
-                        <input id="videoInput" type="file" hidden>
-                        <video id="video" width="300" height="300" controls></video>
                         
+
+                        <!--Preview Video area-->
+                        <div class="drag-area-video">
+                                <header id="videoDragText">Select Video to Upload</header>
+                                <span id="videoSpacing"></span>
+                                <button id="videoUpload">Browse Video</button>
+                                <input id="videoInput" type="file" hidden>
+                                <video id="video" width="300" height="300" controls></video>
+                                
+                        </div>
                 </div>
 
                 <!--Run button-->
@@ -41,7 +59,7 @@
                         <!--a href to redirect page to image.html-->
                         <a href=image>
                                 <button class="run-button">
-                                <b>Run</b>
+                                        <b>Run</b>
                                 </button>
                         </a>
                 </div>
