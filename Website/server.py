@@ -23,5 +23,9 @@ def index():
 def image():
    return render_template('image.html')
 
+@app.route('/frames')
+def frames():
+   return render_template('frames.html')
+
 if __name__ == '__main__':
    app.run()
