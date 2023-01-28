@@ -1,8 +1,12 @@
 /* Global Stylings */
-*{
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
     border: 0;
     padding: 0;
     margin: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -146,6 +150,28 @@ body {
 
 /* Change colour when hovering over the Home Button */
 .homepage-button:hover {
+    cursor: pointer;
+}
+
+
+.logout {
+    display: inline-block;
+    text-align: center;
+    top: 50px;
+    right: 32px;
+    position: absolute;
+}
+
+.logout-button {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: 14px;
+    border: none;
+}
+
+.logout-button:hover {
+    color: rgb(241, 241, 241);
     cursor: pointer;
 }
 
