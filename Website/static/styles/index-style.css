@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-        margin: 0;
-        padding: 0;
+        /* margin: 0; */
+        /* padding: 0; */
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
         max-width: 100%;
@@ -18,13 +18,13 @@ body{
 .drag-area {
     display: flex;
     max-width: 100%;
-    margin-top: 125px;
+    margin-top: 0;
 }
 
 .drag-area-photo{
         border: 2px dashed rgb(54, 85, 120);
-        height: 500px;
-        width: 700px;
+        height: 350px;
+        width: 350px;
         border-radius: 5px;
         display: flex;
         align-items: center;
