@@ -22,6 +22,18 @@
 
 - We have to select a hyperplane, for which the margin, i.e the distance between support vectors and hyper-plane is maximum. Even a little interference in the position of these support vectors can change the hyper-plane.
 
+## How SVM works?
+There are few rules that can help us to identify the best solution.
+
+### Maximum classification
+- The selected line must be able to successfully segregate all the data points into the respective classes.
+
+### Best Separation
+- We must choose a line such that it is perfectly able to separate the points.
+
+
+
+
 
 
 
