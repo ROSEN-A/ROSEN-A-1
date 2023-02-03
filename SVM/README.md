@@ -53,8 +53,16 @@ There are few rules that can help us to identify the best solution.
 
 - Return all elements that are within a given radius of the query point (range search)store the index on disk rather than in RAM.
 
+## Install 
+- The recommended way to install Faiss is through Conda:
 
+> `$ conda install -c pytorch faiss-cpu`
 
+- The `faiss-gpu` package povides CUDA-enabled indices: 
+
+> `$ conda install -c pytorch faiss-gpu`
+
+- Note that either package should be installed, but not both, as the latter is a superset of the former.
 
 
 
