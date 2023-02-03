@@ -32,45 +32,17 @@
                         </div>
                 </div>
 
-                <!-- <div class="drag-area">
-                        <div class="drag-area-photo">
-                                <header id="dragText">Select Photo to Upload</header>
-                                <span></span>
-                                <button id="photoUpload">Browse Photo</button>
-                                <input id="photoInput" type="file" hidden>
-                        </div>
 
-                        
-
-                        <div class="drag-area-video">
-                                <header id="videoDragText">Select Video to Upload</header>
-                                <span id="videoSpacing"></span>
-                                <button id="videoUpload">Browse Video</button>
-                                <input id="videoInput" type="file" hidden>
-                                <video id="video" width="300" height="300" controls></video>
-                                
-                        </div>
-                </div> -->
                 <div>
                         <h1>File Upload</h1>
                         <form method="POST" action="" enctype="multipart/form-data">
-                        <p><input type="file" name="file"></p>
-                        <p><input type="submit" value="Submit"></p>
+                        <p><input type="file" class=" file_multi_video" name="file" accept="video/*"/></p>
+                        <video autoplay id="video" controls width="800" height="600">
+                        </video>
+                        <p><input class="run-button" type="submit" value="Submit"></p>
                         </form>
-                        <hr>
-                        {% for file in files %}
-                        <img src="{{ url_for('upload', filename=file) }}" style="width: 64px">
-                        {% endfor %}
                 </div>
-                <!--Run button-->
-                <div class="run">
-                        <!--a href to redirect page to image.html-->
-                        <a href=image>
-                                <button class="run-button">
-                                        <b>Run</b>
-                                </button>
-                        </a>
-                </div>
+
 
                 <!--Footer div-->
                 <div>
