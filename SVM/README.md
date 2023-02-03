@@ -31,6 +31,29 @@ There are few rules that can help us to identify the best solution.
 ### Best Separation
 - We must choose a line such that it is perfectly able to separate the points.
 
+# Faiss
+- Faiss is a library for efficient similarity search and clustering of dense vectors. It contains algorithms that search in sets of vectors of any size, up to ones that possibly do not fit in RAM. It also contains supporting code for evaluation and parameter tuning.
+
+- Faiss is written in C++ with complete wrappers for Python. Some of the most useful algorithms are implemented on the GPU.
+
+## What is similarity search?
+- Given a set of vectors *x*<sub>i</sub> in dimension *d*, Faiss build a data structure in RAM from it. After the structure is constructed, when given a new vector *x* in dimension *d* it performs efficiently the operation:
+
+> *j* = *argmin*<sub>i</sub>||*x*-*x*<sub>i</sub>||
+
+- where ||•|| is the Euclidean distance (L<sup>2</sup>).
+
+- In Faiss terms, the data structure is an *index*, an object that has an add method to add *x*<sub>i</sub> vectors. Note that the *x*<sub>i</sub>’s are assumed to be fixed.
+
+- Computing the argmin is the *search* operation on the index.
+
+- This is all what Faiss is about. It can also: return not just the nearest neighbor, but also the 2nd nearest, 3rd, …, k-th nearest neighbor search several vectors at a time rather than one (batch processing). 
+
+- For many index types, this is faster than searching one vector after another trade precision for speed, ie. give an incorrect result 10% of the time with a method that’s 10x faster or uses 10x less memory perform maximum inner product search *argmax*<sub>i</sub><x, x<sub>i</sub>> instead of minimum Euclidean search. There is also limited support for other distances (L1, Linf, etc.).
+
+- Return all elements that are within a given radius of the query point (range search)store the index on disk rather than in RAM.
+
+
 
 
 
