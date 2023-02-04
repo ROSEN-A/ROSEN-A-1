@@ -7,30 +7,30 @@
 </head>
 
 <body>
-          <!--NavBar-->
-          <div class="top-border">
-                  <div class="top-elements">
-                          <div class="title-label">
-                                  <b>Upload Files<b>
-                          </div>
+        <!--NavBar-->
+        <div class="top-border">
+                <div class="top-elements">
+                        <div class="title-label">
+                                <b>File Upload<b>
+                        </div>
 
 
-                          <div class="logout">
-                                  <a href=".">
-                                  <button class="logout-button">
-                                          Logout
-                                  </button>
-                                  </a>
-                          </div>
+                        <div class="logout">
+                                <a href=".">
+                                <button class="logout-button">
+                                        Logout
+                                </button>
+                                </a>
+                        </div>
 
 
-                          <div class="rosen">
-                                  <a href=index>
-                                  <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
-                                  </a>
-                          </div>
-                  </div>
-          </div>
+                        <div class="rosen">
+                                <a href=index>
+                                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                                </a>
+                        </div>
+                </div>
+        </div>
 
           <!-- <div class="drag-area">
                   <div class="drag-area-photo">
@@ -51,25 +51,28 @@
                           
                   </div>
           </div> -->
-          <div>
-                  <h1>File Upload</h1>
-                  <form method="POST" action="" enctype="multipart/form-data">
-                  <p><input type="file" name="file"></p>
-                  <p><input type="submit" value="Submit"></p>
-                  </form>
-                  <hr>
+          
+        <div class="upload-area">
+                <div class="upload-buttons">
+                        <h1 class="upload-image-title">Upload Image</h1>
+                        <form method="POST" action="" enctype="multipart/form-data">
+                        <p><label for="file" class="file-label"><input type="file" name="file" class="file"></label></p>
+                        <input type="submit" value="Upload" class="submit">
+                        </form>
+                        <hr>
+                </div>
   
 
-          <div class="drag-area">
-            <div class="drag-area-photo">
-              <header id="dragText">Photo Preview</header>
-              <div class="drag-area-photo">
-                {% for file in files %}
-                <img src="{{ url_for('upload', filename=file) }}" style="width: 100%">
-                {% endfor %}
-              </div>
-            </div>
-          </div>
+                <div class="drag-area">
+                        <div class="drag-area-photo">
+                                <header id="dragText">Photo Preview</header>
+                                <div class="drag-area-photo">
+                                        {% for file in files %}
+                                        <img src="{{ url_for('upload', filename=file) }}" style="width: 100%">
+                                        {% endfor %}
+                                </div>
+                        </div>
+                </div>
                   
                   
                   <!--<div class="drag-area-video">
@@ -80,27 +83,28 @@
                           <video id="video" width="300" height="300" controls></video>
                           
                   </div>-->
-          </div> 
-          <!--Run button-->
-          <div class="run">
-                  <!--a href to redirect page to image.html-->
-                  <a href=image>
-                          <button class="run-button">
-                                  <b>Run</b>
-                          </button>
-                  </a>
-          </div>
+        </div>
 
-          <!--Footer div-->
-          <div>
-                  <footer>
-                          <div class="footer-text">
-                                  ROSEN Team A
-                              </div>
-                  </footer>
-          </div>
+        <!--Run button-->
+        <div class="run">
+                <!--a href to redirect page to image.html-->
+                <a href=image>
+                        <button class="run-button">
+                                <b>Run</b>
+                        </button>
+                </a>
+        </div>
 
-          <script src="../static/javascript/indexPage.js"></script>
+        <!--Footer div-->
+        <div>
+                <footer>
+                        <div class="footer-text">
+                                ROSEN Team A
+                        </div>
+                </footer>
+        </div>
+
+        <script src="../static/javascript/indexPage.js"></script>
           
 </body>
 </html>
