@@ -11,7 +11,7 @@
           <div class="top-border">
                   <div class="top-elements">
                           <div class="title-label">
-                                  <b>Upload Files<b>
+                                  <b>File Upload<b>
                           </div>
 
 
@@ -51,13 +51,16 @@
                           
                   </div>
           </div> -->
-          <div>
-                  <h1>File Upload</h1>
-                  <form method="POST" action="" enctype="multipart/form-data">
-                  <p><input type="file" name="file"></p>
-                  <p><input type="submit" value="Submit"></p>
-                  </form>
-                  <hr>
+          
+          <div class="upload-area">
+                <div class="upload-buttons">
+                        <h1 class="upload-image-title">Upload Image</h1>
+                        <form method="POST" action="" enctype="multipart/form-data">
+                        <p><label for="file" class="file-label"><input type="file" name="file" class="file"></label></p>
+                        <input type="submit" value="Upload" class="submit">
+                        </form>
+                        <hr>
+                </div>
   
 
           <div class="drag-area">
@@ -80,7 +83,7 @@
                           <video id="video" width="300" height="300" controls></video>
                           
                   </div>-->
-          </div> 
+        </div> 
           <!--Run button-->
           <div class="run">
                   <!--a href to redirect page to image.html-->
