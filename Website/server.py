@@ -18,14 +18,14 @@ def login():
       if request.form['username'] != 'RosenA' or request.form['password'] != 'RosenA':
          return home()
       else:
-         return redirect(url_for('index'))
+         return redirect(url_for('uploadImage'))
 
-@app.route('/index')
-def index():
+@app.route('/uploadImage')
+def uploadImage():
     files = os.listdir(app.config['UPLOAD_PATH'])
-    return render_template('index.html', files=files)
+    return render_template('uploadImage.html', files=files)
 
-@app.route('/index', methods=['POST'])
+@app.route('/uploadImage', methods=['POST'])
 def upload_files():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
@@ -34,18 +34,18 @@ def upload_files():
         if file_ext not in app.config['PHOTO_EXTENSIONS']:
             abort(400)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], filename))
-    return redirect(url_for('index'))
+    return redirect(url_for('uploadImage'))
 
 @app.route('/uploads/<filename>')
 def upload(filename):
     return send_from_directory(app.config['UPLOAD_PATH'], filename)
 
-@app.route('/index2')
-def index2():
+@app.route('/uploadVideo')
+def uploadVideo():
    files = os.listdir(app.config['UPLOAD_PATH'])
-   return render_template('index2.html')
+   return render_template('uploadVideo.html')
 
-@app.route('/index2', methods=['POST'])
+@app.route('/uploadVideo', methods=['POST'])
 def upload_video():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
@@ -54,7 +54,7 @@ def upload_video():
         if file_ext not in app.config['VIDEO_EXTENSIONS']:
             abort(400)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], filename))
-    return redirect(url_for('index2'))
+    return redirect(url_for('uploadVideo'))
 
 @app.route('/image')
 def image():
