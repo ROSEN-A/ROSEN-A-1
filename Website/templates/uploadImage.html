@@ -50,7 +50,7 @@
                                 <header id="dragText">Photo Preview</header>
                                 <div class="drag-area-photo">
                                         {% for file in files %}
-                                        <img src="{{ url_for('upload', filename=file) }}" style="width: 100%">
+                                        <img src="{{ url_for('upload_image', filename=file) }}" style="width: 100%">
                                         {% endfor %}
                                 </div>
                         </div>
