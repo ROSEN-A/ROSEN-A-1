@@ -16,21 +16,21 @@ body{
 }
 
 .drag-area {
-    display: flex;
+    /* display: flex; */
     max-width: 100%;
     margin-top: 0;
 }
 
 .drag-area-photo{
         border: 2px dashed rgb(54, 85, 120);
-        height: 350px;
-        width: 450px;
+        height: 450px;
+        width: 800px;
         border-radius: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin: 10px;
+        /* margin: 10px; */
         background-color: #abc2db;
 }
 .drag-area-photo.active{
@@ -196,7 +196,7 @@ body{
     width: 150px;
     height: 55px;
     position: absolute;
-    bottom: 10%;
+    bottom: 6.5%;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -237,9 +237,16 @@ footer{
     margin-top: 105px;
 }
 
-.upload-image-title {
+.upload-area p {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.upload-file-title {
     position: relative;
     margin-top: 30px;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -269,7 +276,7 @@ footer{
 .submit {
     background-color: rgb(54, 85, 120);
     color: white;
-    margin-left: 70px;
+    margin-right: 75px;
     border: none;
     border-radius: 6px;
     width: 72px;
