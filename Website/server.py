@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, abort, sen
 import imghdr
 import os
 from werkzeug.utils import secure_filename
+import deepImageSearch
 
 app = Flask(__name__)
 
@@ -72,7 +73,7 @@ def upload_video():
         if file_ext not in app.config['VIDEO_EXTENSIONS']:
             abort(400)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_VIDEO'], filename))
-    return redirect(url_for('uploadVideo'))
+    return redirect(url_for('result'))
 
 # To be deleted later if not needed
 # To be used similar to upload_image, but this will be called in uploadVideo.html to preview video
@@ -90,9 +91,21 @@ def image():
 def frames():
    return render_template('frames.html')
 
+
+
+################################################ OUTPUT RESULT PAGE ####################################################
 @app.route('/result')
 def result():
+   resultArray = deepImageSearch.imageSearch()
+   
    return render_template('result.html')
 
+
+
+
+
+
+
+################################################ RUN THE APPLICATION ####################################################
 if __name__ == '__main__':
    app.run()
