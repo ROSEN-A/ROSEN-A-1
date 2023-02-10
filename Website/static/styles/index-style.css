@@ -1,12 +1,15 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+* {
         /* margin: 0; */
         /* padding: 0; */
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
         max-width: 100%;
 }
-body{
+
+body {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -21,7 +24,7 @@ body{
     margin-top: 0;
 }
 
-.drag-area-photo{
+.drag-area-photo {
         border: 2px dashed rgb(54, 85, 120);
         height: 450px;
         width: 800px;
@@ -33,25 +36,25 @@ body{
         /* margin: 10px; */
         background-color: #abc2db;
 }
-.drag-area-photo.active{
+.drag-area-photo.active {
         border: 2px solid rgb(54, 85, 120);
 }
-.drag-area-photo .icon{
+.drag-area-photo .icon {
         font-size: 100px;
         color: rgb(54, 85, 120);
 }
-.drag-area-photo header{
+.drag-area-photo header {
         font-size: 30px;
         font-weight: 500;
         color: rgb(54, 85, 120);
 }
-.drag-area-photo span{
+.drag-area-photo span {
         font-size: 25px;
         font-weight: 500;
         color: rgb(54, 85, 120);
         margin: 10px 0 15px 0;
 }
-.drag-area-photo button{
+.drag-area-photo button {
         padding: 10px 25px;
         font-size: 20px;
         font-weight: 500;
@@ -62,14 +65,14 @@ body{
         border-radius: 5px;
         cursor: pointer;
 }
-.drag-area-photo img{
+.drag-area-photo img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 5px;
 }
 
-.drag-area-video{
+.drag-area-video {
     border: 2px dashed rgb(54, 85, 120);
     height: 500px;
     width: 700px;
@@ -81,25 +84,25 @@ body{
     margin: 10px;
     background-color: #abc2db;
 }
-.drag-area-video.active{
+.drag-area-video.active {
     border: 2px solid rgb(54, 85, 120);
 }
-.drag-area-video .icon{
+.drag-area-video .icon {
     font-size: 100px;
     color: rgb(54, 85, 120);
 }
-.drag-area-video header{
+.drag-area-video header {
     font-size: 30px;
     font-weight: 500;
     color: rgb(54, 85, 120);
 }
-.drag-area-video span{
+.drag-area-video span {
     font-size: 25px;
     font-weight: 500;
     color: rgb(54, 85, 120);
     margin: 10px 0 15px 0;
 }
-.drag-area-video button{
+.drag-area-video button {
     padding: 10px 25px;
     font-size: 20px;
     font-weight: 500;
@@ -110,7 +113,7 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
-.drag-area-video video{
+.drag-area-video video {
     height: 100%;
     width: 100%;
     object-fit: cover;
