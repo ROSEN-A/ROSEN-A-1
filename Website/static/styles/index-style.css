@@ -69,6 +69,54 @@ body{
         border-radius: 5px;
 }
 
+.drag-area-video{
+    border: 2px dashed rgb(54, 85, 120);
+    height: 500px;
+    width: 700px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    background-color: #abc2db;
+}
+.drag-area-video.active{
+    border: 2px solid rgb(54, 85, 120);
+}
+.drag-area-video .icon{
+    font-size: 100px;
+    color: rgb(54, 85, 120);
+}
+.drag-area-video header{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(54, 85, 120);
+}
+.drag-area-video span{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(54, 85, 120);
+    margin: 10px 0 15px 0;
+}
+.drag-area-video button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: rgb(54, 85, 120);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.drag-area-video video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: none;
+}
 
 
 
@@ -233,29 +281,3 @@ footer{
 .submit:hover {
     background-color: rgb(60, 80, 100);
 }
-
-#video {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 0;
-}
-
-#submitVideo {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 10%;
-}
-
-
-.video-upload {
-        position: absolute;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: 20%;
-}
-
