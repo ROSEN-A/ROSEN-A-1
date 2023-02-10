@@ -16,7 +16,7 @@ body{
 }
 
 .drag-area {
-    display: flex;
+    /* display: flex; */
     max-width: 100%;
     margin-top: 0;
 }
@@ -30,7 +30,7 @@ body{
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin: 10px;
+        /* margin: 10px; */
         background-color: #abc2db;
 }
 .drag-area-photo.active{

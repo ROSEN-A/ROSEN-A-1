@@ -47,14 +47,14 @@
   
 
                 <div class="drag-area">
-                        <div class="drag-area-photo">
-                                <header id="dragText">Photo Preview</header>
+                        <!-- <div class="drag-area-photo"> -->
                                 <div class="drag-area-photo">
+                                        <header id="dragText">Photo Preview</header>
                                         {% for file in files %}
                                         <img src="{{ url_for('upload_image', filename=file) }}" style="width: 100%">
                                         {% endfor %}
                                 </div>
-                        </div>
+                        <!-- </div> -->
                 </div>
         </div>
 
