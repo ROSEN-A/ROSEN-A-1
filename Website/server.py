@@ -2,9 +2,11 @@ from flask import Flask, render_template, redirect, url_for, request, abort, sen
 import imghdr
 import os
 from werkzeug.utils import secure_filename
+import deepImageSearch
 from os import getcwd
 from datetime import datetime
 import cv2
+
 
 app = Flask(__name__)
 
@@ -85,7 +87,6 @@ def upload_video():
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_VIDEO'], filename))
     return redirect(url_for('loading'))
 
-
 # To be deleted later if not needed
 # To be used similar to upload_image, but this will be called in uploadVideo.html to preview video
 # @app.route('/uploadedVideo/<filename>')
@@ -125,12 +126,21 @@ def loading():
     redirect(url_for('result'))
     return render_template('loading.html')
 
+
+
+################################################ OUTPUT RESULT PAGE ####################################################
 @app.route('/result')
 def result():
-    return render_template('result.html')
+   resultArray = deepImageSearch.imageSearch()
+   
+   return render_template('result.html')
 
 
+
+
+
+
+
+################################################ RUN THE APPLICATION ####################################################
 if __name__ == '__main__':
-    app.run()
-
-
+   app.run()
