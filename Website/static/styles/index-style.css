@@ -2,20 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
-        /* margin: 0; */
-        /* padding: 0; */
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        max-width: 100%;
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    max-width: 100%;
 }
 
 body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* min-height: 100vh; */
-        min-height: 100%;
-        background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+    min-height: 100%;
+    background: white;
 }
 
 .drag-area {
@@ -25,51 +25,57 @@ body {
 }
 
 .drag-area-photo {
-        border: 2px dashed rgb(54, 85, 120);
-        height: 450px;
-        width: 800px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        /* margin: 10px; */
-        background-color: #abc2db;
+    border: 2px dashed rgb(54, 85, 120);
+    height: 450px;
+    width: 800px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin: 10px; */
+    background-color: #abc2db;
 }
+
 .drag-area-photo.active {
-        border: 2px solid rgb(54, 85, 120);
+    border: 2px solid rgb(54, 85, 120);
 }
+
 .drag-area-photo .icon {
-        font-size: 100px;
-        color: rgb(54, 85, 120);
+    font-size: 100px;
+    color: rgb(54, 85, 120);
 }
+
 .drag-area-photo header {
-        font-size: 30px;
-        font-weight: 500;
-        color: rgb(54, 85, 120);
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(54, 85, 120);
 }
+
 .drag-area-photo span {
-        font-size: 25px;
-        font-weight: 500;
-        color: rgb(54, 85, 120);
-        margin: 10px 0 15px 0;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(54, 85, 120);
+    margin: 10px 0 15px 0;
 }
+
 .drag-area-photo button {
-        padding: 10px 25px;
-        font-size: 20px;
-        font-weight: 500;
-        border: none;
-        outline: none;
-        background: rgb(54, 85, 120);
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: rgb(54, 85, 120);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .drag-area-photo img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .drag-area-video {
@@ -84,24 +90,29 @@ body {
     margin: 10px;
     background-color: #abc2db;
 }
+
 .drag-area-video.active {
     border: 2px solid rgb(54, 85, 120);
 }
+
 .drag-area-video .icon {
     font-size: 100px;
     color: rgb(54, 85, 120);
 }
+
 .drag-area-video header {
     font-size: 30px;
     font-weight: 500;
     color: rgb(54, 85, 120);
 }
+
 .drag-area-video span {
     font-size: 25px;
     font-weight: 500;
     color: rgb(54, 85, 120);
     margin: 10px 0 15px 0;
 }
+
 .drag-area-video button {
     padding: 10px 25px;
     font-size: 20px;
@@ -113,6 +124,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .drag-area-video video {
     height: 100%;
     width: 100%;
