@@ -11,7 +11,7 @@
                 <div class="top-border">
                         <div class="top-elements">
                                 <div class="title-label">
-                                        <b>Upload Files<b>
+                                        <b>File Upload<b>
                                 </div>
 
 
@@ -33,14 +33,32 @@
                 </div>
 
 
-                <div>
-                        <h1>File Upload</h1>
-                        <form method="POST" action="" enctype="multipart/form-data">
-                        <p><input type="file" class=" file_multi_video" name="file" accept="video/*"/></p>
-                        <video autoplay id="video" controls width="800" height="600">
+                 <!-- Image Upload -->
+                <div class="upload-area">
+                        <div class="upload-buttons">
+                                <h1 class="upload-file-title">Upload Video</h1>
+                                <form method="POST" action="" enctype="multipart/form-data">
+                                        <p><label for="file" class="file-label">
+                                                <input type="file" class=" file_multi_video" name="file" accept="video/*"/>
+                                        </label>
+                                        <input class="submit" type="submit" value="Upload"></p>
+                                </form>
+                        </div>
+
+                        <video autoplay id="video" controls width="800" height="450">
                         </video>
-                        <p><input class="run-button" type="submit" value="Submit"></p>
-                        </form>
+                </div>
+
+
+
+                <!--Run button-->
+                <div class="run">
+                        <!--a href to redirect page to image.html-->
+                        <a href=uploadVideo>
+                                <button class="run-button">
+                                        <b>Next</b>
+                                </button>
+                        </a>
                 </div>
 
 
