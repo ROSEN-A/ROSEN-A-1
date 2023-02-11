@@ -6,7 +6,7 @@
 # Project Setup [Important]
 How to run our code?
 
-Requirements: 
+### Requirements: 
 - Python version 3.9 can be found [here](https://www.python.org/downloads/release/python-3916/)
 - Flask version 2.2.2 can be installed using `pip install flask==2.2.2`
 - DeepImageSearch Library can be installed using `pip install DeepImageSearch`
@@ -21,8 +21,8 @@ Here are the steps to fix this problem:
 7) Run install
 8) Restart computer, and rerun `pip install DeepImageSearch`
 
-To run the code:
-1) Navigate to our website directory through console
+### How to run the code?
+1) Navigate to our website directory through console `cd Website`
 2) Run this code `python server.py`
 3) You will see output similar to 
 ``` 
@@ -31,7 +31,22 @@ To run the code:
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
 * Running on http://127.0.0.1:5000
 ```
-4) Head to google chrome and copy paste `http://127.0.0.1:5000`
+4) Head to google chrome and copy paste `http://127.0.0.1:5000` or Hold left `ctrl` and click on the link given
+
+### What does the program do and how to use it?
+1) First page is the **login page** 
+        - Enter *RosenA* as username and password and click login
+2) Second page is the **upload image page**
+        - Click on **Choose Image** button to choose the *reference image* you would like to use for classification
+        - Click **Upload** to save the image in the program
+        - Click next to go to next page
+
+3) Third page is the **upload video page**
+        - Click on **Choose Video** to choose the video you would like to be classified
+        - Click **Upload** to save the image in the program
+        - Click next to go to the next page
+
+4) Last page will be the **result page** where you will be able to see the corresponding result classified from uploaded video (3), using the reference image uploaded (2)
 
 ## Introduction
 
