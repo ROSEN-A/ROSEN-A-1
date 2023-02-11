@@ -6,7 +6,9 @@ import deepImageSearch
 from os import getcwd
 from datetime import datetime
 import cv2
-
+import deepImageSearch
+import os
+import time
 
 app = Flask(__name__)
 
@@ -123,17 +125,18 @@ def loading():
     videoName = os.listdir(app.config['UPLOAD_PATH_VIDEO'])[0]
     videoFile = os.path.join(app.config['UPLOAD_PATH_VIDEO'], videoName)
     extractImages(videoFile)
-    redirect(url_for('result'))
     return render_template('loading.html')
 
-
+##### processing ####
+@app.route('/search')
+def search():
+    deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages')
+    return render_template('search.html')
 
 ################################################ OUTPUT RESULT PAGE ####################################################
 @app.route('/result')
 def result():
-   resultArray = deepImageSearch.imageSearch()
-   
-   return render_template('result.html')
+    return render_template('result.html')
 
 
 
