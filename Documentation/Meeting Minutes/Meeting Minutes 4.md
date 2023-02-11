@@ -54,6 +54,7 @@ ROSEN C is under big confusion.
 
 
 
+
 ###### **These are all the updates. Thank you for tuning into this week's minutes.**
 
 
