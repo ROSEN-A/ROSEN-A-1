@@ -7,8 +7,19 @@
 How to run our code?
 
 Requirements: 
-- Python version 3.11 can be found [here](https://www.python.org/downloads/release/python-3110/)
+- Python version 3.9 can be found [here](https://www.python.org/downloads/release/python-3916/)
 - Flask version 2.2.2 can be installed using `pip install flask==2.2.2`
+- DeepImageSearch Library can be installed using `pip install DeepImageSearch`
+**Note:** Installing DeepImageSearch might fail due to error in `annoy` package as DeepImageSearch utilizes this package. 
+Here are the steps to fix this problem:
+1) Navigate to https://visualstudio.microsoft.com/downloads/
+2) Scroll down to *All Downloads* and find *Tools for Visual Studio*
+3) Download *Build Tools for Visual Studio 2022*
+4) Run the program
+5) Under *Workloads* find *Desktop development with C++*
+6) By default, the first 5 options under *optional* are checked
+7) Run install
+8) Restart computer, and rerun `pip install DeepImageSearch`
 
 To run the code:
 1) Navigate to our website directory through console
