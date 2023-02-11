@@ -6,7 +6,7 @@ import deepImageSearch
 from os import getcwd
 from datetime import datetime
 import cv2
-from DeepImageSearch import Index,LoadData,SearchImage
+import deepImageSearch
 import os
 import time
 
@@ -130,18 +130,7 @@ def loading():
 ##### processing ####
 @app.route('/search')
 def search():
-    def imageSearch(pathIn):
-        image_list = LoadData().from_folder([pathIn])
-        start = time.time();
-        Index(image_list).Start()
-            # for searching, you need to give the image path and the number of the similar image you want
-        ctr = 0
-        for image in os.listdir(pathIn):
-            ctr = ctr + 1
-        print(SearchImage().get_similar_images(image_path=image_list[0],number_of_images=ctr))
-        end = time.time();
-        print(end-start);
-    imageSearch('./static/extractedImages')
+    deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages')
     return render_template('search.html')
 
 ################################################ OUTPUT RESULT PAGE ####################################################
