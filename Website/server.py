@@ -1,3 +1,4 @@
+import shutil
 from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory
 import imghdr
 import os
@@ -28,6 +29,13 @@ app.config['EXTRACTED_IMAGES'] = './static/extractedImages'
 # First rendered papge
 @app.route('/')
 def home():
+    # make a dir for uploaded image
+    os.mkdir('./static/uploadedImage')
+    # make a dir for uploaded video
+    os.mkdir('./static/uploadedVideo')
+    # make a dir for extracted images from the uploaded video
+    os.mkdir('./static/extractedImages')
+
     return render_template('login.html')
 
 
@@ -87,7 +95,7 @@ def upload_video():
         if file_ext not in app.config['VIDEO_EXTENSIONS']:
             abort(400)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_VIDEO'], filename))
-    return redirect(url_for('loading'))
+    return redirect(url_for('uploadVideo'))
 
 # To be deleted later if not needed
 # To be used similar to upload_image, but this will be called in uploadVideo.html to preview video
@@ -131,6 +139,19 @@ def loading():
 @app.route('/search')
 def search():
     deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages')
+
+    # remove dirs to replace manual deletions of images and videos
+
+    # remove the index dir for deep image search
+    shutil.rmtree('./meta-data-files')
+    # remove the dir uploadedImage 
+    shutil.rmtree('./static/uploadedImage')
+    # remove the dir uploadedVideo
+    shutil.rmtree('./static/uploadedVideo')
+    # remove the dir extractedImages
+    shutil.rmtree('./static/extractedImages')
+
+
     return render_template('search.html')
 
 ################################################ OUTPUT RESULT PAGE ####################################################

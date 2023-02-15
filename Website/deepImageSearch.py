@@ -1,4 +1,5 @@
 # Importing the proper classes
+import shutil
 from DeepImageSearch import Index,LoadData,SearchImage
 import os
 import time
@@ -11,7 +12,9 @@ import time
 def imageSearch(referencePathIn, pathIn):
         image_list = LoadData().from_folder([referencePathIn, pathIn])
         start = time.time();
-        #if not os.path.exists('./meta-data-files'):
+        indexDir = './meta-data-files'
+        if os.path.exists(indexDir):
+                shutil.rmtree(indexDir)
         Index(image_list).Start()
             # for searching, you need to give the image path and the number of the similar image you want
         ctr = 0
