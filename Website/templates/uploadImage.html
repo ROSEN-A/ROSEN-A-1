@@ -51,7 +51,7 @@
                                 <div class="drag-area-photo">
                                         <header id="dragText">Photo Preview</header>
                                         {% for file in files %}
-                                        <img src="{{ url_for('upload_image', filename=file) }}" style="width: 100%">
+                                        <img src="{{ url_for('upload_image', filename=file) }}">
                                         {% endfor %}
                                 </div>
                         <!-- </div> -->
@@ -61,12 +61,10 @@
 
         <!--Run button-->
         <div class="run">
-                <!--a href to redirect page to image.html-->
-                <a href=uploadVideo>
-                        <button class="run-button">
-                                <b>Next</b>
-                        </button>
-                </a>
+                <!--onclick location.href to redirect page to uploadVideo-->
+                <button class="run-button" id="run-button" onclick="location.href='uploadVideo'">
+                        <b>Next</b>
+                </button>
         </div>
 
 
