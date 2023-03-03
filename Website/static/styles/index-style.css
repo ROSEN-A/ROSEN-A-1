@@ -265,6 +265,33 @@ footer{
     text-align: center;
 }
 
+.tooltip {
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 40%;
+    background-color: #ABC2DB;
+    opacity: 0.9;
+    color: #3C5064;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+
+    font-size: small;
+    font-weight: lighter;
+  
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 10px;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
 .upload-buttons {
     color: rgb(60, 80, 100);
     position: relative;

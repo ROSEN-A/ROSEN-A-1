@@ -135,7 +135,7 @@ def image():
 def frames():
     return render_template('frames.html')
 
-#### loading ####
+#### chop video to images ####
 @app.route('/loading')
 def loading():
     def extractImages(pathIn):
@@ -159,6 +159,7 @@ def loading():
 ##### processing ####
 @app.route('/search')
 def search():
+    # implement deepImageSearch on chopped images
     deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages')
 
     # remove dirs to replace manual deletions of images and videos
@@ -181,8 +182,8 @@ def result():
     return render_template('result.html')
 
 
-@app.route('choppedImages')
-def result():
+@app.route('/choppedImages')
+def choppedImages():
     return render_template('choppedImages.html')
 
 
