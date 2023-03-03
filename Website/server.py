@@ -181,8 +181,8 @@ def result():
     return render_template('result.html')
 
 
-@app.route('choppedImages')
-def result():
+@app.route('/choppedImages')
+def choppedImages():
     return render_template('choppedImages.html')
 
 
