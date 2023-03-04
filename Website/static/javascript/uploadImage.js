@@ -42,9 +42,33 @@ function showFile(){
 
 
 
+
+
+
+var interval = setInterval(check, 1000);
+function check() { // maybe helpful for disabling the button?
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                        // console.log(this.responseText);
+                        if(this.responseText == 'True') {
+                                // remove disabled attribute to enable button
+                                document.getElementById("run-button").removeAttribute('disabled');
+                                clearTimeout(interval);
+                        }
+                }
+        }; 
+        xhttp.open("GET", "/uploadImage", true);
+        xhttp.send();
+}
 // const nextButton = document.getElementById("run-button");
 // // function not working, need to fetch from flask
 // function checkFiles() { 
+//         let check = '{{ check | tojson }}';
+//         if(check == true) {
+//                 nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
+//         }
+// }
 //         // let check = '{{ check | tojson }}';
 //         // if(check == true) {
 //         //         nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
