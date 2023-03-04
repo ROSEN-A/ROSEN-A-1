@@ -17,7 +17,7 @@ def imageSearch(referencePathIn, pathIn, numOfImagesWanted):
             shutil.rmtree(indexDir)
     Index(image_list).Start()
         # for searching, you need to give the image path and the number of the similar image you want
-    imageList = SearchImage().get_similar_images(image_path=image_list[0],number_of_images=numOfImagesWanted))
+    imageList = SearchImage().get_similar_images(image_path=image_list[0],number_of_images=numOfImagesWanted)
     end = time.time();
     print(end-start);
     return imageList
