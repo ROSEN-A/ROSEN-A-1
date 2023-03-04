@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Frames
-        </title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles/frames-style.css') }}">
-    </head>
-    <body>
-    <input type="file" accept="video/*" />
-    <p id="progress"></p>
-    <script>
-        document.querySelector('input').addEventListener('change', extractFrames, false);
-
-        function extractFrames() {
-        var video = document.createElement('video');
-        var array = [];
-        var canvas = document.createElement('canvas');
-        var ctx = canvas.getContext('2d');
-        var pro = document.querySelector('#progress');
 
         function initCanvas(e) {
             canvas.width = this.videoWidth;
