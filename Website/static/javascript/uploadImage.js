@@ -51,3 +51,20 @@ function checkFiles() {
         }
 }
 
+
+var interval = setInterval(check, 1000);
+function check() { // maybe helpful for disabling the button?
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                        // console.log(this.responseText);
+                        if(this.responseText == 'True') {
+                                // remove disabled attribute to enable button
+                                document.getElementById("run-button").removeAttribute('disabled');
+                                clearTimeout(interval);
+                        }
+                }
+        }; 
+        xhttp.open("GET", "/uploadImage", true);
+        xhttp.send();
+}
