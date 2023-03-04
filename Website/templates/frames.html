@@ -1,24 +1,4 @@
 
-        function initCanvas(e) {
-            canvas.width = this.videoWidth;
-            canvas.height = this.videoHeight;
-        }
-
-        function drawFrame(e) {
-            this.pause();
-            ctx.drawImage(this, 0, 0);
-            /* 
-            this will save as a Blob, less memory consumptive than toDataURL
-            a polyfill can be found at
-            https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob#Polyfill
-            */
-            canvas.toBlob(saveFrame, 'image/jpeg');
-            pro.innerHTML = ((this.currentTime / this.duration) * 100).toFixed(2) + ' %';
-            if (this.currentTime < this.duration) {
-            this.play();
-            }
-        }
-
         function saveFrame(blob) {
             array.push(blob);
         }
