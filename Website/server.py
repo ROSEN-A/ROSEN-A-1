@@ -178,14 +178,14 @@ def search():
     return render_template('search.html')
 
 ################################################ OUTPUT RESULT PAGE ####################################################
-#@app.route('/result')
-#def result():
-#    return render_template('result.html')
+@app.route('/result')
+def result():
+    return render_template('result.html')
 
 
-#@app.route('/choppedImages')
-#def result():
-#    return render_template('choppedImages.html')
+@app.route('/choppedImages')
+def result():
+    return render_template('choppedImages.html')
 
 
 
