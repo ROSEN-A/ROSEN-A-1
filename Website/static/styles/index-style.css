@@ -47,6 +47,7 @@ body {
 }
 
 .drag-area-photo header {
+    position: absolute;
     font-size: 30px;
     font-weight: 500;
     color: rgb(54, 85, 120);
@@ -101,6 +102,7 @@ body {
 }
 
 .drag-area-video header {
+    position: absolute;
     font-size: 30px;
     font-weight: 500;
     color: rgb(54, 85, 120);
