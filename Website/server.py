@@ -78,11 +78,12 @@ def upload_image(filename):
     return send_from_directory(app.config['UPLOAD_PATH_IMAGE'], filename)
 
 
-# Function to check if there are files in the uploadedImage directory
-@app.route('/uploadedImage')
+# Function to check if there are files in the uploadedImage directory, if false disable button
+@app.route('/uploadImage')
 def check_image_files():
+    check = True
     if (len(os.listdir(app.config['UPLOAD_PATH_IMAGE'])) > 0):
-        check = True
+       check = True
     else:
         check = False
     return render_template('uploadImage.html', check=check) # check if output is correct
@@ -109,8 +110,9 @@ def upload_video():
 
 
 # Function to check if there are files in the uploadedVideo directory
-@app.route('/uploadedVideo')
+@app.route('/uploadVideo')
 def check_video_files():
+    check = True
     if (len(os.listdir(app.config['UPLOAD_PATH_VIDEO'])) > 0):
         check = True
     else:
@@ -183,8 +185,9 @@ def result():
 
 
 @app.route('/choppedImages')
+
 def choppedImages():
-    return render_template('choppedImages.html')
+  return render_template('choppedImages.html')
 
 
 

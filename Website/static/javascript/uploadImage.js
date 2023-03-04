@@ -42,14 +42,7 @@ function showFile(){
 
 
 
-// const nextButton = document.getElementById("run-button");
-// // function not working, need to fetch from flask
-// function checkFiles() { 
-//         let check = '{{ check | tojson }}';
-//         if(check == true) {
-//                 nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
-//         }
-// }
+
 
 
 var interval = setInterval(check, 1000);
@@ -68,3 +61,29 @@ function check() { // maybe helpful for disabling the button?
         xhttp.open("GET", "/uploadImage", true);
         xhttp.send();
 }
+// const nextButton = document.getElementById("run-button");
+// // function not working, need to fetch from flask
+// function checkFiles() { 
+//         let check = '{{ check | tojson }}';
+//         if(check == true) {
+//                 nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
+//         }
+// }
+//         // let check = '{{ check | tojson }}';
+//         // if(check == true) {
+//         //         nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
+//         // }
+//         // nextButton.removeAttribute("disabled");
+//         $('.run-button').removeProp('disabled'); 
+// }
+
+
+
+// window.onload = function() {
+//         let nextButton = document.getElementById("run-button");
+
+//         var form = document.querySelector("form");
+//         form.addEventListener("submit", (event) => {
+//                 nextButton.removeAttribute('disabled'); 
+//         });
+// }
