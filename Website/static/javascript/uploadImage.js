@@ -42,14 +42,14 @@ function showFile(){
 
 
 
-const nextButton = document.getElementById("run-button");
-// function not working, need to fetch from flask
-function checkFiles() { 
-        let check = '{{ check | tojson }}';
-        if(check == true) {
-                nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
-        }
-}
+// const nextButton = document.getElementById("run-button");
+// // function not working, need to fetch from flask
+// function checkFiles() { 
+//         let check = '{{ check | tojson }}';
+//         if(check == true) {
+//                 nextButton.removeAttribute("disabled"); // need to add disabled attribute to run-button in html
+//         }
+// }
 
 
 var interval = setInterval(check, 1000);
