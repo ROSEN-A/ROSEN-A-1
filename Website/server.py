@@ -4,12 +4,12 @@ import imghdr
 import os
 from werkzeug.utils import secure_filename
 import deepImageSearch
-from os import getcwd
 from datetime import datetime
 import cv2
-import deepImageSearch
-import os
+# import deepImageSearch
+from DeepImageSearch import Index,LoadData,SearchImage
 import time
+import glob
 
 app = Flask(__name__)
 
@@ -24,17 +24,37 @@ app.config['UPLOAD_PATH_VIDEO'] = './static/uploadedVideo'
 # Config for extracted images from video
 app.config['EXTRACTED_IMAGES'] = './static/extractedImages'
 
+app.config['SIMILAR_IMAGES'] = './static/similarImages'
+
 
 ################################################ LOGIN PAGE ####################################################
 # First rendered papge
 @app.route('/')
 def home():
+    # DELETE ALL EXISTING FILES BEFORE PROGRAM STARTS
+    # remove the index dir for deep image search
+    if(os.path.exists('./meta-data-files')):
+        shutil.rmtree('./meta-data-files')
+    # remove the dir uploadedImage 
+    if(os.path.exists('./static/uploadedImage')):
+        shutil.rmtree('./static/uploadedImage')
+    # remove the dir uploadedVideo
+    if(os.path.exists('./static/uploadedVideo')):
+        shutil.rmtree('./static/uploadedVideo')
+    # remove the dir extractedImages
+    if(os.path.exists('./static/extractedImages')):
+        shutil.rmtree('./static/extractedImages')
+    if(os.path.exists('./static/similarImages')):
+        shutil.rmtree('./static/similarImages')
+    
+    # MAKE FILES FOR PROGRAM
     # make a dir for uploaded image
     os.mkdir('./static/uploadedImage')
     # make a dir for uploaded video
     os.mkdir('./static/uploadedVideo')
     # make a dir for extracted images from the uploaded video
     os.mkdir('./static/extractedImages')
+    os.mkdir('./static/similarImages')
 
     return render_template('login.html')
 
@@ -77,9 +97,8 @@ def upload_files():
 def upload_image(filename):
     return send_from_directory(app.config['UPLOAD_PATH_IMAGE'], filename)
 
-
-# Function to check if there are files in the uploadedImage directory, if false disable button
-@app.route('/uploadImage')
+# Function to check if there are files in the uploadedImage directory
+@app.route('/uploadedImage')
 def check_image_files():
     check = True
     if (len(os.listdir(app.config['UPLOAD_PATH_IMAGE'])) > 0):
@@ -137,22 +156,23 @@ def image():
 def frames():
     return render_template('frames.html')
 
-#### chop video to images ####
+#### loading ####
+def extractImages(pathIn):
+    count = 0
+    vidcap = cv2.VideoCapture(pathIn)
+    success, image = vidcap.read()
+    success = True
+    while success:
+        vidcap.set(cv2.CAP_PROP_POS_MSEC, (count * 1000))  # added this line
+        success, image = vidcap.read()
+        # print('Read a new frame: ', success)
+        if not success:
+            break
+        cv2.imwrite(os.path.join(app.config['EXTRACTED_IMAGES'], "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
+        count = count + 1
+
 @app.route('/loading')
 def loading():
-    def extractImages(pathIn):
-        count = 0
-        vidcap = cv2.VideoCapture(pathIn)
-        success, image = vidcap.read()
-        success = True
-        while success:
-            vidcap.set(cv2.CAP_PROP_POS_MSEC, (count * 1000))  # added this line
-            success, image = vidcap.read()
-            # print('Read a new frame: ', success)
-            if not success:
-                break
-            cv2.imwrite(os.path.join(app.config['EXTRACTED_IMAGES'], "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
-            count = count + 1
     videoName = os.listdir(app.config['UPLOAD_PATH_VIDEO'])[0]
     videoFile = os.path.join(app.config['UPLOAD_PATH_VIDEO'], videoName)
     extractImages(videoFile)
@@ -161,33 +181,50 @@ def loading():
 ##### processing ####
 @app.route('/search')
 def search():
-    # implement deepImageSearch on chopped images
-    deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages')
+    imagesFrameList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
 
+    # Save all extractedFiles in the cv_image
+    cv_img = []
+    for img in glob.glob("./static/extractedImages/*.jpg"):
+        n= cv2.imread(img)
+        cv_img.append(n)
+
+    
+    # write all similar files indexed at imagesFrameList, and stored at cv_img to app.config['SIMILAR_IMAGES']
+    for i in imagesFrameList:
+        cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'] + "/frame" + str(i) + ".jpg"), cv_img[i])
+        
+    # for idx, image in enumerate(similarImagesList):
+    #     cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'], "frame" + str(idx) + ".jpg"), image)
+        
+    return render_template('search.html')
     # remove dirs to replace manual deletions of images and videos
 
-    # remove the index dir for deep image search
-    shutil.rmtree('./meta-data-files')
-    # remove the dir uploadedImage 
-    shutil.rmtree('./static/uploadedImage')
-    # remove the dir uploadedVideo
-    shutil.rmtree('./static/uploadedVideo')
-    # remove the dir extractedImages
-    shutil.rmtree('./static/extractedImages')
-
-
-    return render_template('search.html')
 
 ################################################ OUTPUT RESULT PAGE ####################################################
 @app.route('/result')
 def result():
-    return render_template('result.html')
+    imageList = os.listdir(app.config['SIMILAR_IMAGES'])
+    imageList = ["similarImages/" + image for image in imageList]
+    
+    if(os.path.exists('./meta-data-files')):
+        shutil.rmtree('./meta-data-files')
+    # remove the dir uploadedImage 
+    if(os.path.exists('./static/uploadedImage')):
+        shutil.rmtree('./static/uploadedImage')
+    # remove the dir uploadedVideo
+    if(os.path.exists('./static/uploadedVideo')):
+        shutil.rmtree('./static/uploadedVideo')
+    # remove the dir extractedImages
+    if(os.path.exists('./static/extractedImages')):
+        shutil.rmtree('./static/extractedImages')
+        
+    return render_template('result.html', imageList=imageList)
 
 
-@app.route('/choppedImages')
-
-def choppedImages():
-  return render_template('choppedImages.html')
+# @app.route('choppedImages')
+# def result():
+#     return render_template('choppedImages.html')
 
 
 
