@@ -6,8 +6,21 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading-style.css') }}">
    </head>
    <body>
-                <h2 class="center">Loading...</h2>
+    
+                <h2 class="center">Extracting images from the video...</h2>
+                
                 <div class="loader"></div>
+
+                <!-- Progress Bar -->
+                <nav class="navmenu">
+                        <ul>
+                                <li>Upload Image</li>
+                                <li>Upload Video</li>
+                                <li class="active">Chopping Frames</li>
+                                <li>Image Searching</li>
+                                <li>Result</li>
+                        </ul>
+                </nav>
      
    </body>
 </html>
