@@ -10,6 +10,7 @@ import cv2
 from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
+import datetime
 
 app = Flask(__name__)
 
@@ -206,20 +207,19 @@ def search():
 def result():
     imageList = os.listdir(app.config['SIMILAR_IMAGES'])
     imageList = ["similarImages/" + image for image in imageList]
+    imageName = []
     
-    if(os.path.exists('./meta-data-files')):
-        shutil.rmtree('./meta-data-files')
-    # remove the dir uploadedImage 
-    if(os.path.exists('./static/uploadedImage')):
-        shutil.rmtree('./static/uploadedImage')
-    # remove the dir uploadedVideo
-    if(os.path.exists('./static/uploadedVideo')):
-        shutil.rmtree('./static/uploadedVideo')
-    # remove the dir extractedImages
-    if(os.path.exists('./static/extractedImages')):
-        shutil.rmtree('./static/extractedImages')
+    for image in imageList:
+        imageFrameName = image.replace('.', '/')
+        imageFrameName = imageFrameName.split('/')[1]
+        imageNumber = imageFrameName[5:]
         
-    return render_template('result.html', imageList=imageList)
+        time = str(datetime.timedelta(seconds = int(imageNumber)))
+        imageName.append(time)
+        
+    # imageNameList = ["similarImages/" +  for image in imageList]
+    # return render_template('result.html', imageList=imageList, imageName=imageName)
+    return render_template('result.html', images = zip(imageList, imageName))
 
 
 # @app.route('choppedImages')
