@@ -210,10 +210,13 @@ def result():
     imageName = []
     
     for image in imageList:
+        # takes the string, split and take the number of the frame
+        # frame i = at seconds i since the frame is divided by seconds
         imageFrameName = image.replace('.', '/')
         imageFrameName = imageFrameName.split('/')[1]
         imageNumber = imageFrameName[5:]
         
+        #  convert seconds into hh:mm:ss
         time = str(datetime.timedelta(seconds = int(imageNumber)))
         imageName.append(time)
         
