@@ -56,14 +56,12 @@
   
 
                 <div class="drag-area">
-                        <!-- <div class="drag-area-photo"> -->
-                                <div class="drag-area-photo">
-                                        <header id="dragText">Photo Preview</header>
-                                        {% for file in files %}
-                                        <img src="{{ url_for('upload_image', filename=file) }}">
-                                        {% endfor %}
-                                </div>
-                        <!-- </div> -->
+                        <div class="drag-area-photo">
+                                <header id="dragText">Photo Preview</header>
+                                {% for file in files %}
+                                <img src="{{ url_for('upload_image', filename=file) }}">
+                                {% endfor %}
+                        </div>
                 </div>
         </div>
 
@@ -85,15 +83,6 @@
                 <button class="run-button" id="run-button" onclick="location.href='uploadVideo'" disabled>
                         <b>Next</b>
                 </button>
-                <!-- {% if check %}
-                <button class="run-button" id="run-button" onclick="location.href='uploadVideo'">
-                        <b>Next</b>
-                </button>
-                {% else %}
-                <button class="run-button" id="run-button" onclick="location.href='uploadVideo'" disabled>
-                        <b>Next</b>
-                </button>
-                {% endif %} -->
         </div>
 
 
