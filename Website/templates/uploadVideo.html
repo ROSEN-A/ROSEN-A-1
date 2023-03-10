@@ -52,16 +52,15 @@
                                 </form>
                         </div>
 
-                        <!-- <div class="drag-area">
+                        <div class="drag-area">
                                 <div class="drag-area-video">
-                                        <header id="dragText">Video Preview</header> -->
-                                        <video autoplay id="video" controls width="800" height="450"> <!-- delete when using commented out code -->
-                                        <!-- {% for file in files %} -->
-                                        <!-- <video src="{{ url_for('upload_video', filename=file) }}" autoplay id="video" controls width="800" height="450">   add disabled when preview is working -->
-                                        <!-- </video> -->
-                                        <!-- {% endfor %} -->
-                                <!-- </div>
-                        </div> -->
+                                        <header id="dragText">Video Preview</header>
+                                        {% for file in files %}
+                                        <video src="{{ url_for('upload_video', filename=file) }}" autoplay id="video" controls width="800" height="450">
+                                        </video>
+                                        {% endfor %}
+                                </div>
+                        </div>
                 </div>
 
                 <!-- Progress Bar -->
@@ -78,7 +77,7 @@
                 <!--Run button-->
                 <div class="run">
                         <!--onclick location.href to redirect page to loading-->
-                        <button class="run-button" id="run-button" onclick="location.href='loading'"> <!--  disabled>   add when using commented out code for video (above) and in javascript (onload function) -->
+                        <button class="run-button" id="run-button" onclick="location.href='loading'" disabled>
                                 <b>Next</b>
                         </button>
                 </div>
