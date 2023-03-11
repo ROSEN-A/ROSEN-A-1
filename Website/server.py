@@ -11,6 +11,8 @@ from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
 import datetime
+from zipfile import ZipFile
+import requests
 
 app = Flask(__name__)
 
