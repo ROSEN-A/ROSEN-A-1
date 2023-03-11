@@ -10,6 +10,9 @@ import cv2
 from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
+import datetime
+from zipfile import ZipFile
+import requests
 
 app = Flask(__name__)
 
@@ -81,6 +84,25 @@ def uploadImage():
 # Get the file name of the uploaded file and save to ./static/uploadedImage folder
 @app.route('/uploadImage', methods=['POST'])
 def upload_files():
+
+    ####### if the user returns to this page from result.html, every folder has to be empty ########
+    # make a dir for uploaded image
+    if(os.path.exists('./static/uploadedImage')):
+        shutil.rmtree('./static/uploadedImage')
+    os.mkdir('./static/uploadedImage')
+    # make a dir for uploaded video
+    if(os.path.exists('./static/uploadedVideo')):
+        shutil.rmtree('./static/uploadedVideo')
+    os.mkdir('./static/uploadedVideo')
+    # make a dir for extracted images
+    if(os.path.exists('./static/extractedImages')):
+        shutil.rmtree('./static/extractedImages')
+    os.mkdir('./static/extractedImages')
+    # clear similarImages folder
+    if(os.path.exists('./static/similarImages')):
+        shutil.rmtree('./static/similarImages')
+    os.mkdir('./static/similarImages')
+    
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
     if filename != '':
@@ -134,7 +156,7 @@ def image():
 def frames():
     return render_template('frames.html')
 
-#### loading ####
+############################################ EXTRACTING IMAGES ####################################################
 def extractImages(pathIn):
     count = 0
     vidcap = cv2.VideoCapture(pathIn)
@@ -149,16 +171,25 @@ def extractImages(pathIn):
         cv2.imwrite(os.path.join(app.config['EXTRACTED_IMAGES'], "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
         count = count + 1
 
+# render loading page
 @app.route('/loading')
 def loading():
+    return render_template('loading.html')
+
+# after loading.html is loaded, it calls this method
+# once this method is done, it renders search.html and search html call  route '/search'
+@app.route('/extractImage')
+def extractImage():
     videoName = os.listdir(app.config['UPLOAD_PATH_VIDEO'])[0]
     videoFile = os.path.join(app.config['UPLOAD_PATH_VIDEO'], videoName)
     extractImages(videoFile)
-    return render_template('loading.html')
-
-##### processing ####
+    return render_template('search.html')  
+    
+############################################ PROCESSING ####################################################
+# this method runs deep image search
+# once all images are searched, it saves inside similarImages folder in static/
 @app.route('/search')
-def search():
+def searchSimilarImages():
     imagesFrameList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
 
     # Save all extractedFiles in the cv_image
@@ -172,11 +203,8 @@ def search():
     for i in imagesFrameList:
         cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'] + "/frame" + str(i) + ".jpg"), cv_img[i])
         
-    # for idx, image in enumerate(similarImagesList):
-    #     cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'], "frame" + str(idx) + ".jpg"), image)
-        
-    return render_template('search.html')
-    # remove dirs to replace manual deletions of images and videos
+    # once all done, redirect to result
+    return redirect(url_for('result'))
 
 
 ################################################ OUTPUT RESULT PAGE ####################################################
@@ -184,21 +212,20 @@ def search():
 def result():
     imageList = os.listdir(app.config['SIMILAR_IMAGES'])
     imageList = ["similarImages/" + image for image in imageList]
+    imageName = []
     
-    if(os.path.exists('./meta-data-files')):
-        shutil.rmtree('./meta-data-files')
-    # remove the dir uploadedImage 
-    if(os.path.exists('./static/uploadedImage')):
-        shutil.rmtree('./static/uploadedImage')
-    # remove the dir uploadedVideo
-    if(os.path.exists('./static/uploadedVideo')):
-        shutil.rmtree('./static/uploadedVideo')
-    # remove the dir extractedImages
-    if(os.path.exists('./static/extractedImages')):
-        shutil.rmtree('./static/extractedImages')
+    for image in imageList:
+        # takes the string, split and take the number of the frame
+        # frame i = at seconds i since the frame is divided by seconds
+        imageFrameName = image.replace('.', '/')
+        imageFrameName = imageFrameName.split('/')[1]
+        imageNumber = imageFrameName[5:]
         
-    return render_template('result.html', imageList=imageList)
-
+        #  convert seconds into hh:mm:ss
+        time = str(datetime.timedelta(seconds = int(imageNumber)))
+        imageName.append(time)
+        
+    return render_template('result.html', images = zip(imageList, imageName))
 
 # @app.route('choppedImages')
 # def result():

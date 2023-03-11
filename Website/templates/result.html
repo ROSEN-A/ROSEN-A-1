@@ -4,6 +4,7 @@
 
     <head>
         <title>Result</title>
+        <!-- <meta http-equiv = "refresh" content = "2; url = http://127.0.0.1:5000/result" /> -->
         <link rel="stylesheet" href="{{ url_for('static', filename='styles/result-style.css') }}">
         <!-- <script src="{{url_for('static', filename='javascript/image.js')}}"></script>   -->
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -13,41 +14,35 @@
     <body>
         
         <div class="top-border">
-                <div class="top-elements">
+            <div class="top-elements">
+                    <div class="title-label">
+                            <b>Result<b>
+                    </div>
 
-                        <div class="title-label">
-                        <b>Result<b>
-                        </div>
+                    <div class="logout">
+                            <a href=".">
+                            <button class="logout-button">
+                                    Logout
+                            </button>
+                            </a>
+                    </div>
 
 
-
-                        <div class="homepage">
-                        <!--a href to redirect page to index.html-->
+                    <div class="rosen-logo">
                         <a href=uploadImage>
-                                <button class="homepage-button" id="homepage-button">
-                                <img src="{{url_for('static', filename='images/home-button-white.svg')}}" onmouseover="this.src='{{url_for('static', filename='images/home-button-white-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/home-button-white.svg')}}'" width="50px" height="50px">
-                                </button>
-                        </a>
-                        </div>
-
-
-
-                        <div class="rosen-logo">
-                        <a href=index>
                                 <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
                         </a>
-                        </div>
-
-
-                </div>
-        </div>
+                    </div>
+            </div>
+    </div>
 
         <div class="image-container">
 
             <div class="images">
-                {% for imageList in imageList %}
+                {% for imageList, imageName in images %}
                 <div class="image-box">
                     <img class="image" src="{{url_for('static', filename=imageList)}}" id="image1" width="240px" height="240px">
+                    <p>{{ imageName }}</p>
                 <!-- <button class="enlarge-button">
                     <img src="{{url_for('static', filename='images/enlarge-button.svg')}}" class="enlarge-image" onmouseover="this.src='{{url_for('static', filename='images/enlarge-button-dark.svg')}}'" onmouseout="this.src='{{url_for('static', filename='images/enlarge-button.svg')}}'" width="40px" height="40px">
                 </button>
@@ -67,15 +62,18 @@
 
         <div>
             <div class="toolbar-rerun">
-                <div class="rerun">
+                <!-- <div class="rerun">
                         <a href=image>
                                 <button class="training-button">
                                     <b>Back to Training</b>
                                 </button>
-                            </a>
+                            </a> -->
                         <!--a href to redirect page to rerun.html-->
-                        <a href=image>
-                                <button class="download-button">
+
+                        <!-- the download link is invalid as for now -->
+
+                        <a href = "../similar_images.zip" download>
+                                <button class="download-button" >
                                 <b>Download</b>
                                 </button>
                         </a>
