@@ -10,6 +10,9 @@ import cv2
 from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
+from zipfile import ZipFile
+import requests
+
 
 app = Flask(__name__)
 
@@ -225,7 +228,8 @@ def search():
 def result():
     imageList = os.listdir(app.config['SIMILAR_IMAGES'])
     imageList = ["similarImages/" + image for image in imageList]
-    
+    shutil.make_archive("similar_images", 'zip', app.config['SIMILAR_IMAGES'])
+
     if(os.path.exists('./meta-data-files')):
         shutil.rmtree('./meta-data-files')
     # remove the dir uploadedImage 
