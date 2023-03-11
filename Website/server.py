@@ -10,9 +10,9 @@ import cv2
 from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
+import datetime
 from zipfile import ZipFile
 import requests
-
 
 app = Flask(__name__)
 
@@ -228,25 +228,24 @@ def search():
 def result():
     imageList = os.listdir(app.config['SIMILAR_IMAGES'])
     imageList = ["similarImages/" + image for image in imageList]
-    shutil.make_archive("similar_images", 'zip', app.config['SIMILAR_IMAGES'])
-
-    if(os.path.exists('./meta-data-files')):
-        shutil.rmtree('./meta-data-files')
-    # remove the dir uploadedImage 
-    if(os.path.exists('./static/uploadedImage')):
-        shutil.rmtree('./static/uploadedImage')
-    # remove the dir uploadedVideo
-    if(os.path.exists('./static/uploadedVideo')):
-        shutil.rmtree('./static/uploadedVideo')
-    # remove the dir extractedImages
-    if(os.path.exists('./static/extractedImages')):
-        shutil.rmtree('./static/extractedImages')
-
+    imageName = []
+    
+    for image in imageList:
+        # takes the string, split and take the number of the frame
+        # frame i = at seconds i since the frame is divided by seconds
+        imageFrameName = image.replace('.', '/')
+        imageFrameName = imageFrameName.split('/')[1]
+        imageNumber = imageFrameName[5:]
+        
+        #  convert seconds into hh:mm:ss
+        time = str(datetime.timedelta(seconds = int(imageNumber)))
+        imageName.append(time)
+        
+    # imageNameList = ["similarImages/" +  for image in imageList]
+    
     # make a dir for uploaded video in case user returns to uploadedImage.html
     os.mkdir('./static/uploadedImage')
-
-    return render_template('result.html', imageList=imageList)
-
+    return render_template('result.html', images = zip(imageList, imageName))
 
 # @app.route('choppedImages')
 # def result():
