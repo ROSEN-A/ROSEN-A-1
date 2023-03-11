@@ -247,10 +247,6 @@ def result():
         time = str(datetime.timedelta(seconds = int(imageNumber)))
         imageName.append(time)
         
-    # imageNameList = ["similarImages/" +  for image in imageList]
-    
-    # make a dir for uploaded video in case user returns to uploadedImage.html
-    os.mkdir('./static/uploadedImage')
     return render_template('result.html', images = zip(imageList, imageName))
 
 # @app.route('choppedImages')
