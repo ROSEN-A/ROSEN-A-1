@@ -175,7 +175,7 @@ def image():
 def frames():
     return render_template('frames.html')
 
-#### loading ####
+############################################ EXTRACTING IMAGES ####################################################
 def extractImages(pathIn):
     count = 0
     vidcap = cv2.VideoCapture(pathIn)
@@ -190,16 +190,23 @@ def extractImages(pathIn):
         cv2.imwrite(os.path.join(app.config['EXTRACTED_IMAGES'], "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
         count = count + 1
 
+# render loading page
 @app.route('/loading')
 def loading():
+    return render_template('loading.html')
+
+# after loading.html is loaded, it calls this method
+# once this method is done, it renders search.html
+@app.route('/extractImage')
+def extractImage():
     videoName = os.listdir(app.config['UPLOAD_PATH_VIDEO'])[0]
     videoFile = os.path.join(app.config['UPLOAD_PATH_VIDEO'], videoName)
     extractImages(videoFile)
-    return render_template('loading.html')
-
-##### processing ####
+    return render_template('search.html')
+    
+############################################ PROCESSING ####################################################
 @app.route('/search')
-def search():
+def searchSimilarImages():
     imagesFrameList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
 
     # Save all extractedFiles in the cv_image
@@ -216,7 +223,7 @@ def search():
     # for idx, image in enumerate(similarImagesList):
     #     cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'], "frame" + str(idx) + ".jpg"), image)
         
-    return render_template('search.html')
+    return redirect(url_for('result'))
     # remove dirs to replace manual deletions of images and videos
 
 
@@ -225,21 +232,6 @@ def search():
 def result():
     imageList = os.listdir(app.config['SIMILAR_IMAGES'])
     imageList = ["similarImages/" + image for image in imageList]
-    
-    if(os.path.exists('./meta-data-files')):
-        shutil.rmtree('./meta-data-files')
-    # remove the dir uploadedImage 
-    if(os.path.exists('./static/uploadedImage')):
-        shutil.rmtree('./static/uploadedImage')
-    # remove the dir uploadedVideo
-    if(os.path.exists('./static/uploadedVideo')):
-        shutil.rmtree('./static/uploadedVideo')
-    # remove the dir extractedImages
-    if(os.path.exists('./static/extractedImages')):
-        shutil.rmtree('./static/extractedImages')
-
-    # make a dir for uploaded video in case user returns to uploadedImage.html
-    os.mkdir('./static/uploadedImage')
 
     return render_template('result.html', imageList=imageList)
 
