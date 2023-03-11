@@ -196,15 +196,17 @@ def loading():
     return render_template('loading.html')
 
 # after loading.html is loaded, it calls this method
-# once this method is done, it renders search.html
+# once this method is done, it renders search.html and search html call  route '/search'
 @app.route('/extractImage')
 def extractImage():
     videoName = os.listdir(app.config['UPLOAD_PATH_VIDEO'])[0]
     videoFile = os.path.join(app.config['UPLOAD_PATH_VIDEO'], videoName)
     extractImages(videoFile)
-    return render_template('search.html')
+    return render_template('search.html')  
     
 ############################################ PROCESSING ####################################################
+# this method runs deep image search
+# once all images are searched, it saves inside similarImages folder in static/
 @app.route('/search')
 def searchSimilarImages():
     imagesFrameList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
@@ -220,11 +222,8 @@ def searchSimilarImages():
     for i in imagesFrameList:
         cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'] + "/frame" + str(i) + ".jpg"), cv_img[i])
         
-    # for idx, image in enumerate(similarImagesList):
-    #     cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'], "frame" + str(idx) + ".jpg"), image)
-        
+    # once all done, redirect to result
     return redirect(url_for('result'))
-    # remove dirs to replace manual deletions of images and videos
 
 
 ################################################ OUTPUT RESULT PAGE ####################################################
