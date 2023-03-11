@@ -119,16 +119,6 @@ def upload_files():
 def upload_image(filename):
     return send_from_directory(app.config['UPLOAD_PATH_IMAGE'], filename)
 
-# Function to check if there are files in the uploadedImage directory
-@app.route('/uploadedImage')
-def check_image_files():
-    check = True
-    if (len(os.listdir(app.config['UPLOAD_PATH_IMAGE'])) > 0):
-       check = True
-    else:
-        check = False
-    return render_template('uploadImage.html', check=check) # check if output is correct
-
 
 ################################################ UPLOAD VIDEO  PAGE ####################################################
 
@@ -148,18 +138,6 @@ def upload_video():
             abort(400)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_VIDEO'], filename))
     return redirect(url_for('uploadVideo'))
-
-
-# Function to check if there are files in the uploadedVideo directory
-@app.route('/uploadVideo')
-def check_video_files():
-    check = True
-    if (len(os.listdir(app.config['UPLOAD_PATH_VIDEO'])) > 0):
-        check = True
-    else:
-        check = False
-    return render_template('uploadVideo.html', check=check) # check if output is correct
-
 
 # To be deleted later if not needed
 # To be used similar to upload_image, but this will be called in uploadVideo.html to preview video
