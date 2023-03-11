@@ -405,7 +405,9 @@ ul {
 
 .navmenu ul li.active {
         font-weight: 700;
-        color: black;
+        font-size: 22px;
+        color:black;
+
 }
 
 .navmenu ul li.active::before {
