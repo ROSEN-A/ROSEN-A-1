@@ -10,6 +10,9 @@ import cv2
 from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
+import datetime
+from zipfile import ZipFile
+import requests
 
 app = Flask(__name__)
 
@@ -81,6 +84,25 @@ def uploadImage():
 # Get the file name of the uploaded file and save to ./static/uploadedImage folder
 @app.route('/uploadImage', methods=['POST'])
 def upload_files():
+
+    ####### if the user returns to this page from result.html, every folder has to be empty ########
+    # make a dir for uploaded image
+    if(os.path.exists('./static/uploadedImage')):
+        shutil.rmtree('./static/uploadedImage')
+    os.mkdir('./static/uploadedImage')
+    # make a dir for uploaded video
+    if(os.path.exists('./static/uploadedVideo')):
+        shutil.rmtree('./static/uploadedVideo')
+    os.mkdir('./static/uploadedVideo')
+    # make a dir for extracted images
+    if(os.path.exists('./static/extractedImages')):
+        shutil.rmtree('./static/extractedImages')
+    os.mkdir('./static/extractedImages')
+    # clear similarImages folder
+    if(os.path.exists('./static/similarImages')):
+        shutil.rmtree('./static/similarImages')
+    os.mkdir('./static/similarImages')
+    
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
     if filename != '':
@@ -206,21 +228,24 @@ def search():
 def result():
     imageList = os.listdir(app.config['SIMILAR_IMAGES'])
     imageList = ["similarImages/" + image for image in imageList]
+    imageName = []
     
-    if(os.path.exists('./meta-data-files')):
-        shutil.rmtree('./meta-data-files')
-    # remove the dir uploadedImage 
-    if(os.path.exists('./static/uploadedImage')):
-        shutil.rmtree('./static/uploadedImage')
-    # remove the dir uploadedVideo
-    if(os.path.exists('./static/uploadedVideo')):
-        shutil.rmtree('./static/uploadedVideo')
-    # remove the dir extractedImages
-    if(os.path.exists('./static/extractedImages')):
-        shutil.rmtree('./static/extractedImages')
+    for image in imageList:
+        # takes the string, split and take the number of the frame
+        # frame i = at seconds i since the frame is divided by seconds
+        imageFrameName = image.replace('.', '/')
+        imageFrameName = imageFrameName.split('/')[1]
+        imageNumber = imageFrameName[5:]
         
-    return render_template('result.html', imageList=imageList)
-
+        #  convert seconds into hh:mm:ss
+        time = str(datetime.timedelta(seconds = int(imageNumber)))
+        imageName.append(time)
+        
+    # imageNameList = ["similarImages/" +  for image in imageList]
+    
+    # make a dir for uploaded video in case user returns to uploadedImage.html
+    os.mkdir('./static/uploadedImage')
+    return render_template('result.html', images = zip(imageList, imageName))
 
 # @app.route('choppedImages')
 # def result():
