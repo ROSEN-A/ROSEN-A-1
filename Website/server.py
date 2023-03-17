@@ -152,9 +152,9 @@ def image():
     return render_template('image.html')
 
 
-@app.route('/frames')
+@app.route('/frameCount')
 def frames():
-    return render_template('frames.html')
+    return render_template('frameCount.html');
 
 ############################################ EXTRACTING IMAGES ####################################################
 def extractImages(pathIn):
