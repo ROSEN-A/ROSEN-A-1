@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+        <title>Title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/index-style.css') }}">
+</head>
+
+<body>
+        <!--NavBar-->
+        <div class="top-border">
+                <div class="top-elements">
+                        <div class="title-label">
+                                <b>Title<b>
+                        </div>
+
+                        <div class="logout">
+                                <a href=".">
+                                <button class="logout-button">
+                                        Logout
+                                </button>
+                                </a>
+                        </div>
+
+
+                        <div class="rosen">
+                                <a href=uploadImage>
+                                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                                </a>
+                        </div>
+                </div>
+        </div>
+
+
+        <!-- Image Upload -->
+        <div class="upload-area">
+                <div class="upload-buttons">
+                        <h1>Title</h1>                            
+                </div>
+  
+
+                <div class="drag-area">
+                        <div class="drag-area-photo">
+            
+                        </div>
+                </div>
+        </div>
+
+
+        <!-- Progress Bar -->
+        <nav class="navmenu">
+                 <ul>
+                        <li>Upload Image</li>
+                        <li>Upload Video</li>
+                        <li>Extracting Frames</li>
+                        <li>Count Specification</li>
+                        <li>Image Searching</li>
+                        <li>Result</li>
+                </ul>
+        </nav>
+
+        <!--Run button-->
+        <div class="run">
+                <button class="run-button" id="run-button" disabled>
+                        <b>Next</b>
+                </button>
+        </div>
+
+
+        <!--Footer div-->
+        <div>
+                <footer>
+                        <div class="footer-text">
+                                ROSEN Team A
+                        </div>
+                </footer>
+        </div>
+
+          
+</body>
+</html>
