@@ -313,7 +313,7 @@ footer{
     /* Position the tooltip */
     position: absolute;
     bottom: -12px;
-    right: -52px;
+    right: -60px;
     z-index: 1;
   }
   
