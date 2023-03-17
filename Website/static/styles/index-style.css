@@ -247,11 +247,11 @@ body {
         cursor: pointer;
     }
     
-    .previous-button:hover {
+.previous-button:hover {
         background-color: rgb(60, 80, 100);
     }
 
-footer{
+footer {
     position: absolute;
     bottom: 0;
     left: 0;
