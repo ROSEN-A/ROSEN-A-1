@@ -156,7 +156,7 @@
         display: block;
         position: relative;
         text-align: center;
-    
+        padding-bottom: 3em;
     }
     
     /* Placeholder boxes for the images the user will classify */
@@ -172,7 +172,17 @@
         top: 20px;
         height: 240px;
         width: 240px;
-        /* padding: 10px; */
+        padding: 5px;
+        border: 3px solid rgba(126, 155, 187, 0.8);
+    }
+
+    .image-box p {
+        width: 35%;
+        margin: 0.8em auto 0 auto;
+        background-color: white;
+        color:rgb(54, 85, 120);
+        border-radius: 0.5em;
+        border: 1px solid rgba(126, 155, 187, 0.8);
     }
     
     /* Actual image */
