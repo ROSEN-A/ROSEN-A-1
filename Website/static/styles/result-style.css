@@ -703,7 +703,11 @@ ul {
     cursor: pointer;
 }
 
-
+.home-button {
+    top: 44px;
+    right: 100px;
+    position: absolute;
+}
 
 
 
