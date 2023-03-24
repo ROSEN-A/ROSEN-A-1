@@ -29,7 +29,6 @@ app.config['EXTRACTED_IMAGES'] = './static/extractedImages'
 
 app.config['SIMILAR_IMAGES'] = './static/similarImages'
 
-
 ################################################ LOGIN PAGE ####################################################
 # First rendered papge
 @app.route('/')
@@ -224,7 +223,7 @@ def result():
         #  convert seconds into hh:mm:ss
         time = str(datetime.timedelta(seconds = int(imageNumber)))
         imageName.append(time)
-        
+
     return render_template('result.html', images = zip(imageList, imageName))
 
 # @app.route('choppedImages')
