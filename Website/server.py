@@ -129,7 +129,7 @@ def uploadVideo():
 
 
 @app.route('/uploadVideo', methods=['POST'])
-def upload_video():
+def upload_video_files():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
     if filename != '':
@@ -142,9 +142,9 @@ def upload_video():
 
 # To be deleted later if not needed
 # To be used similar to upload_image, but this will be called in uploadVideo.html to preview video
-# @app.route('/uploadedVideo/<filename>')
-# def upload_video(filename):
-#     return send_from_directory(app.config['UPLOAD_PATH_VIDEO'], filename)
+@app.route('/uploadedVideo/<filename>')
+def upload_video(filename):
+    return send_from_directory(app.config['UPLOAD_PATH_VIDEO'], filename)
 
 
 ################################################ TO BE ADDED ####################################################

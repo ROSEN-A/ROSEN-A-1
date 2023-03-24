@@ -42,6 +42,7 @@
 
 
 window.onload = function() {
+        var dragArea = document.querySelector(".drag-area-photo");
         var img = document.querySelector(".drag-area-photo img");
         var button = document.querySelector("#run-button");
         var previewText = document.querySelector("#dragText");
@@ -49,9 +50,11 @@ window.onload = function() {
         if(!img.src) {
                 button.setAttribute("disabled", "");
                 previewText.style.display = "block";
+                dragArea.classList.remove("active");
         } else {
                 button.removeAttribute("disabled");
                 previewText.style.display = "none";
+                dragArea.classList.add("active");
         }
 }
 

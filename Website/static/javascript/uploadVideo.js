@@ -16,18 +16,23 @@ inputNode.addEventListener('change', Play_Video, false)
 })()
 
 window.onload = function() {
-        var video = document.querySelector("video");
+        var dragArea = document.querySelector(".drag-area-video");
+        var video = document.querySelector(".drag-area-video video");
         var button = document.querySelector("#run-button");
         var previewText = document.querySelector("#dragText");
-        // console.log(video.src);
+        console.log(video.src);
         if(!video.src) {
                 button.setAttribute("disabled", "");
                 previewText.style.display = "block";
+                dragArea.classList.remove("active");
         } else {
                 button.removeAttribute("disabled");
                 previewText.style.display = "none";
+                dragArea.classList.add("active");
         }
 }
+
+
 
 
 function invalidFileType() {
