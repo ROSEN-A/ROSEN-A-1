@@ -54,3 +54,12 @@ window.onload = function() {
                 previewText.style.display = "none";
         }
 }
+
+
+function invalidFileType() {
+        var form = document.querySelector("form");
+        var file = document.querySelector("#file");
+                if(!file.files[0].type.match("image/*")) {
+                        alert("Invalid file type!");
+                }
+}
