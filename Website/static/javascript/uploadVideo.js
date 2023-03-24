@@ -1,3 +1,4 @@
+
 (function Preview_Video() {
         'use strict'
 var URL = window.URL || window.webkitURL
@@ -15,6 +16,7 @@ var inputNode = document.querySelector('input')
 inputNode.addEventListener('change', Play_Video, false)
 })()
 
+
 window.onload = function() {
         var dragArea = document.querySelector(".drag-area-video");
         var video = document.querySelector(".drag-area-video video");
@@ -31,8 +33,6 @@ window.onload = function() {
                 dragArea.classList.add("active");
         }
 }
-
-
 
 
 function invalidFileType() {

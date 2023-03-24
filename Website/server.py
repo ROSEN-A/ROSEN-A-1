@@ -140,7 +140,6 @@ def upload_video_files():
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_VIDEO'], filename))
     return redirect(url_for('uploadVideo'))
 
-# To be deleted later if not needed
 # To be used similar to upload_image, but this will be called in uploadVideo.html to preview video
 @app.route('/uploadedVideo/<filename>')
 def upload_video(filename):
@@ -155,7 +154,7 @@ def image():
 
 @app.route('/frameCount')
 def frames():
-    return render_template('frameCount.html');
+    return render_template('frameCount.html')
 
 ############################################ EXTRACTING IMAGES ####################################################
 def extractImages(pathIn):
