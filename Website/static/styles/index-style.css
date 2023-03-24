@@ -431,3 +431,12 @@ ul {
 .navmenu ul li.active::before {
         background: rgb(54, 85, 120);
 }
+
+a {
+    text-decoration: none;
+    
+}
+
+a:link, a:visited {
+    color:rgb(54, 85, 120);
+}
