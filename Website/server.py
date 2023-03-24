@@ -107,7 +107,8 @@ def upload_files():
     if filename != '':
         file_ext = os.path.splitext(filename)[1]
         if file_ext not in app.config['PHOTO_EXTENSIONS']:
-            abort(400)
+            #abort(400)
+            return redirect(request.url)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_IMAGE'], filename))
     return redirect(url_for('uploadImage'))
 
@@ -134,7 +135,8 @@ def upload_video():
     if filename != '':
         file_ext = os.path.splitext(filename)[1]
         if file_ext not in app.config['VIDEO_EXTENSIONS']:
-            abort(400)
+            #abort(400)
+            return redirect(request.url)
         uploaded_file.save(os.path.join(app.config['UPLOAD_PATH_VIDEO'], filename))
     return redirect(url_for('uploadVideo'))
 

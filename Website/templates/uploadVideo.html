@@ -44,9 +44,9 @@
                                         </span>
                                     </span>
                                 </h1>
-                                <form method="POST" action="" enctype="multipart/form-data">
+                                <form method="POST" action="" enctype="multipart/form-data" onsubmit="invalidFileType()">
                                         <p><label for="file" class="file-label">
-                                                <input type="file" class=" file_multi_video" name="file" accept="video/*"/>
+                                                <input type="file" class=" file_multi_video" id="file" name="file" accept="video/*"/>
                                         </label>
                                         <input class="submit" type="submit" value="Upload"></p>
                                 </form>
@@ -97,7 +97,7 @@
                         </footer>
                 </div>
 
-                <script src="../static/javascript/indexPage.js"></script>
+                <script src="../static/javascript/uploadVideo.js"></script>
                 
       </body>
 </html>
