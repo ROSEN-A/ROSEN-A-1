@@ -5,24 +5,67 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading-style.css') }}">
    </head>
    <body>
-    
-                 <!-- Progress Bar -->
-                 <nav class="navmenu">
-                        <ul>
-                                <li>Upload Image</li>
-                                <li>Upload Video</li>
-                                <li>Chopping Frames</li>
-                                <li class="active">Frame Specification</li>
-                                <li>Image Searching</li>
-                                <li>Result</li>
-                        </ul>
-                </nav>     
 
-                <form class="container">
-                        <input type="number" name="name" class="question" id="nme" required autocomplete="off" />
-                        <label for="nme"><span>Please Enter Your Desired Frame Count</span></label>
-                        <input type="submit" value="Next" />
-                </form>
+        <!--NavBar-->
+        <div class="top-border">
+                <div class="top-elements">
+                        <div class="title-label">
+                                <b>File Upload<b>
+                        </div>
+
+                        <div class="logout">
+                                <a href=".">
+                                <button class="logout-button">
+                                        Logout
+                                </button>
+                                </a>
+                        </div>
+
+
+                        <div class="rosen">
+                                <a href=uploadImage>
+                                        <img src="{{url_for('static', filename='images/2880px-Logo_ROSEN_Group_White.png')}}" id="logo" width="220px" height="63px">
+                                </a>
+                        </div>
+                </div>
+        </div>
+    
+        <!-- Progress Bar -->
+        <nav class="navmenu">
+                <ul>
+                        <li>Upload Image</li>
+                        <li>Upload Video</li>
+                        <li>Chopping Frames</li>
+                        <li class="active">Frame Specification</li>
+                        <li>Image Searching</li>
+                        <li>Result</li>
+                </ul>
+        </nav>     
+
+        <form class="container">
+                <input type="number" name="name" class="question" id="nme" required autocomplete="off" />
+                <label for="nme"><span>Please Enter Your Desired Frame Count</span></label>
+        </form>
+
+        <!--Run button-->
+        <div class="run">
+                <!--onclick location.href to redirect page to search-->
+                <button class="run-button" id="run-button" onclick="location.href='search'">
+                        <b>Next</b>
+                </button>
+        </div>
+
+
+        <!--Footer div-->
+        <div>
+                <footer>
+                        <div class="footer-text">
+                                ROSEN Team A
+                        </div>
+                </footer>
+        </div>
      
    </body>
 </html>
+
+
