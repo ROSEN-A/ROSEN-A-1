@@ -39,6 +39,7 @@ body {
 
 .drag-area-photo.active {
     border: 2px solid rgb(54, 85, 120);
+    border-radius: 7px;
 }
 
 .drag-area-photo .icon {
@@ -94,6 +95,7 @@ body {
 
 .drag-area-video.active {
     border: 2px solid rgb(54, 85, 120);
+    border-radius: 7px;
 }
 
 .drag-area-video .icon {
@@ -132,7 +134,7 @@ body {
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
-    display: none;
+    display: block;
 }
 
 
@@ -430,4 +432,13 @@ ul {
 
 .navmenu ul li.active::before {
         background: rgb(54, 85, 120);
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+a:link, a:visited {
+    color:rgb(54, 85, 120);
 }
