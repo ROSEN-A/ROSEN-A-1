@@ -260,3 +260,12 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
         margin: auto;
         
 }
+
+a {
+    text-decoration: none;
+    
+}
+
+a:link, a:visited {
+    color:rgb(54, 85, 120);
+}
