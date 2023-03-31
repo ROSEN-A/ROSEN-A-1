@@ -1,5 +1,5 @@
 import shutil
-from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory
+from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory, flash
 import imghdr
 import os
 from werkzeug.utils import secure_filename
@@ -28,6 +28,8 @@ app.config['UPLOAD_PATH_VIDEO'] = './static/uploadedVideo'
 app.config['EXTRACTED_IMAGES'] = './static/extractedImages'
 
 app.config['SIMILAR_IMAGES'] = './static/similarImages'
+
+app.secret_key="anystringhere"
 
 ################################################ LOGIN PAGE ####################################################
 # First rendered papge
@@ -66,6 +68,8 @@ def home():
 def login():
     if request.method == 'POST':
         if request.form['username'] != 'RosenA' or request.form['password'] != 'RosenA':
+            # display alert message
+            flash("Incorrect username or password, try again!")
             return home()
         else:
             return redirect(url_for('uploadImage'))
