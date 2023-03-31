@@ -24,6 +24,15 @@
                 <b>Login<b>
             </div>
 
+            <!-- Incorrect username/password alert -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
             <form class="input-form" action="" method="POST">
                 <label for="username"><b>Username</b></label>
                 <br>
