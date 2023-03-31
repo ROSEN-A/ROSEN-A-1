@@ -589,9 +589,11 @@ ul {
 }
 
 .home-button {
-    top: 44px;
-    right: 100px;
+    display: inline-block;
+    text-align: center;
+    right: 44px;
     position: absolute;
+    bottom: 30px;
 }
 
 

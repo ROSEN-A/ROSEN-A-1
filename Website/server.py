@@ -224,6 +224,15 @@ def result():
         #  convert seconds into hh:mm:ss
         time = str(datetime.timedelta(seconds = int(imageNumber)))
         imageName.append(time)
+        
+        # remake empty uploadedImage directory 
+        if(os.path.exists('./static/uploadedImage')):
+            shutil.rmtree('./static/uploadedImage')
+        os.mkdir('./static/uploadedImage')
+        # remake empty uploadedVideo directory
+        if(os.path.exists('./static/uploadedVideo')):
+            shutil.rmtree('./static/uploadedVideo')
+        os.mkdir('./static/uploadedVideo')
 
     return render_template('result.html', images = zip(imageList, imageName))
 
