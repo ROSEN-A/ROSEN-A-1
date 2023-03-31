@@ -528,3 +528,14 @@ ul {
 .navmenu ul li.active::before {
         background: rgb(54, 85, 120);
 }
+
+.alert {
+    color: #B5858C;
+    background-color: #F8D8DA;
+    font-weight: lighter;
+    font-size: medium;
+    padding: 2%;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
