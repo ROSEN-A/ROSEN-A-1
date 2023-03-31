@@ -208,62 +208,6 @@
         opacity: 0.7;
     }
     
-    /* Enlarge button appears when hovering over an image, might remove and just enlarge by clicking image? */
-    .enlarge-button {
-        display: none;
-        position: absolute;
-        top: 3px;
-        right: 3px;
-        width: 44px;
-        height: 42px;
-        background-color: transparent;
-        border: black;
-    }
-    
-    .enlarge-image {
-        position: relative;
-        margin: 0 auto;
-    }
-      
-    .image-box:hover .enlarge-button {
-        display: block;
-    }
-    
-    .enlarge-button:hover {
-        display: block;
-        background-color: rgb(243, 243, 243);
-        border: black;
-        border-width: 3px;
-        cursor: pointer;
-    }
-    
-    /* May switch x button and check button out for box selection? */
-    .x-check {
-        display: block;
-        position: relative;
-        text-align: center;
-        top: 5px;
-    }
-    
-    .x-button {
-        background-color: transparent;
-        border: none;
-    }
-    
-    .x-button:hover {
-        cursor: pointer;
-    }
-    
-    .check-button {
-        border: none;
-        background-color: transparent;
-        margin-left: 10px;
-    }
-    
-    .check-button:hover {
-        cursor: pointer;
-    }
-    
     .toolbar-rerun {
         display: block;
         position: absolute;
