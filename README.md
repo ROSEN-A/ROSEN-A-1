@@ -1,9 +1,20 @@
-# COSC499 Capstone Software Engineering Project - ROSEN A
+<p align="center">
+        <img src="https://user-images.githubusercontent.com/77523948/229239097-366ce370-49a0-494f-8680-f1414b8b3e50.png" width="500" height="250">
+</p>
+
+<h1 align="center">
+        COSC499 Capstone Software Engineering Project - ROSEN A
+</h1>
+
+<h4 align="center">
+        <b>Team members:&nbsp;</b> Qingyan Hu&nbsp;&nbsp;&nbsp;&nbsp;Orvin Tritama&nbsp;&nbsp;&nbsp;&nbsp;Fareeha Hayat&nbsp;&nbsp;&nbsp;&nbsp;Ryan Lu
+
+</h4>
 
 
-**Team members:** `Qingyan Hu`  `Orvin Tritama`  `Fareeha Hayat`  `Ryan Lu`
+<br>
 
-# Project Setup [Important]
+# Project Setup [IMPORTANT]
 How to run our code?
 
 ### Requirements: 
@@ -21,7 +32,9 @@ Here are the steps to fix this problem:
 7) Run install
 8) Restart computer, and rerun `pip install DeepImageSearch`
 
-### How to run the code?
+<br>
+
+### How to run the application?
 1) Navigate to our website directory through console `cd Website`
 2) Run this code `python server.py`
 3) You will see output similar to 
@@ -33,27 +46,32 @@ WARNING: This is a development server. Do not use it in a production deployment.
 ```
 4) Head to google chrome and copy paste `http://127.0.0.1:5000` or Hold left `ctrl` and click on the link given
 
+
+<br>
+
 ### What does the program do and how to use it?
-1) First page is the **login page** 
+1) First page is the **Login page** 
         - Enter *RosenA* as username and password and click login
-2) Second page is the **upload image page**
+        
+2) Second page is the **Upload image page**
         - Click on **Choose Image** button to choose the *reference image* you would like to use for classification
         - Click **Upload** to save the image in the program
         - Click next to go to next page
 
-3) Third page is the **upload video page**
+3) Third page is the **Upload video page**
         - Click on **Choose Video** to choose the video you would like to be classified
         - Click **Upload** to save the image in the program
         - Click next to go to the next page
 
-4) Last page will be the **result page** where you will be able to see the corresponding result classified from uploaded video (3), using the reference image uploaded (2)
-
-## Introduction
+4) Last page will be the **Result page** where you will be able to see the corresponding result classified from uploaded video (3), using the reference image uploaded (2)
 
 
-### Project Description
+<br>
 
-The project will develop a web application offered to the data scientists working in the ROSEN Group and will seek to simplify data scientist’s workload in classifying concerned objects within a water pipeline while advancing the accuracy in detection. Users will be able to utilize the software to classify large amounts of images from a video recorded by the water pipeline inspection system in a highly efficient manner. The concerned objects will not be predefined by the software, instead the users are able to define the objects they are interested in, such that the web application would be vastly versatile in detecting the user-defined objects. The web application will be supported by an active learning algorithm that will use a vectorized sample image as reference to classify the video frames uploaded by the user.
+<h2 align="center">
+        System Description
+</h2>
+We have developed a web application offered to data scientists working in the ROSEN  group that aims to simplify a data scientist’s workload in classifying concerned objects inside a water pipeline, while advancing the accuracy in object detection. The application utilizes an approximate-nearest-neighbors machine learning algorithm to classify large amounts of images from a video recorded by the water pipeline inspection system in a highly efficient manner. The concerned objects will not be predefined by the software, instead the users are able to define the objects they are interested in, such that the web application would be vastly versatile in detecting user-defined objects.
 
 
 ### Target Users
@@ -64,145 +82,13 @@ The project is catered for data scientists working for the ROSEN Group. These in
 ##### *Data Evaluators*
 The project can be used by data evaluators working in the ROSEN Group. These individuals are likely to be working in a team to evaluate the integrity of the data source as well as the output of the web application.
 
+<br>
 
-### Project Scope
-Our development team plans to decompose the project into two major deliverables, web user interface and the active learning algorithm. The deliverables will cover research, documentation, development and optimizing the components. Based on the client requirements, our focus will be on the active learning algorithm, rather than the user interface. It is also noted that the active learning algorithm does not need to be optimized. Our development team will specifically focus on one object class detection for this project.
 
+<h2 align="center">
+        Tech Stack
+</h2>
 
-
-## Project Milestone
-
-### Milestone 1
-This particular milestone represents that the  project scope and requirement has been agreed upon between our team and the client. We host the requirement presentation with our client and make sure that all required features are clear and achievable. By October, we will submit the requirements report to the instructor and begin our project development.
-
-
-### Milestone 2
-Our aim is to present a functioning web user interface by December, by which the user interface will be available to the client and peers for feedback. Though our focus is on the user interface, the active learning algorithm will be developed concurrently.
-
-
-### Milestone 3
-The main objective of milestone 3 is to complete the implementation of our active learning algorithm as well as refining our user interface based on the feedback we received from milestone 2. We will also begin integrating our machine learning algorithm into our web application.
-
-
-### Milestone 4
-By February 2023, we will finish our implementation and testing phase for our software. The fully functional web application will be available to the client and peers to review. We will perform our hand-off session with the client which will mark the completion of our capstone project.
-
-
-
-## Data Flow Diagram
-
-
-
-
-## Functional Requirements
-
-##### Deliverable #1 - Web User Interface
-
-1. The system should be a web application with a user interface.
-
-
-2. The web user interface shall have a button ‘Upload video’ for users to browse videos on their local machines and select one. 
-
-3. After the video is selected, the web user interface shall have a ‘Confirm’ button for users to confirm uploading. 
-
-4. After the video is uploaded, the web user interface shall have two buttons: ‘Choose a local image’ and ‘Choose an image from video’. 
-
-5. If users on ‘Choose an image from video’, a dialogue box of all frames will be prompted. Users shall scroll down, select one frame and click on the ‘Confirm’ button for confirmation. 
-
-6. After the sample image is uploaded, the active learning algorithm takes it as its training data for the first training process iteration. During the processing phase, a loading page will be displayed. 
-
-7. After the first iteration is finished, the web application shall display a number of images with their timestamps. 
-
-8. The web user interface shall allow users to label each image displayed by using tick-boxes. The options of ‘Select All’ and “Deselect All’ should be given to users. Images that are ticked by users are labeled ‘Interested’, those un-ticked are labeled ‘Not Interested’. Images that are labeled ‘Interested’ should include target objects. 
-
-9.  After the labeling process is done, the web user interface shall allow users to submit labels by clicking the ‘Submit’ button.
-
-10. The web user interface shall be able to display all images containing target objects. Users shall be allowed to sort images according to their timestamps by clicking the sort button. 
-
-11. The web application shall allow users to download the selected images by clicking the button ‘Download’. 
-
-12. The web user interface shall prompt a dialogue box asking if users want to download the algorithm that is done training.
-
-
-
-##### Deliverable #2 - Active Learning Algorithm and Classification Task
-
-1. The web application shall allow users to upload a reference video from their local machines. 
-
-
-2. (Optional) The web application shall allow users to create multiple projects on the same video without repetitive uploads. If the same uploaded video is detected, the system shall inform users of existing projects related to the video. 
-
-3. After the video is uploaded, the video is converted to a series of frames. The web application shall add a timestamp to each frame automatically. 
-
-4. The web application shall allow users to choose a frame or upload another image from their local machines as a sample image. 
-
-5. The active learning algorithm shall take  the sample image as training data for the first training iteration. 
-
-
-6. After the first iteration is finished, the web application shall display a number of images with their timestamps queried by the active learning algorithm from the backend database, of which the number is determined by the length of video uploaded by the users. That is to say, the longer the video is, the more images will be proposed by the algorithm. 
-
-
-7. The web application shall allow users to label each image displayed. 
-
-8. The web application shall allow users to submit labeled (ticked) and unlabeled (un-ticked) images back to the active learning algorithm for training. 
-
-9. After several iterations, the web application shall indicate that the algorithm training process is done. 
-
-10. All images containing the target object shall be shown to users, and they shall be able to to be sorted based on their timestamps. 
-
-11. The web application shall allow users to download the selected images.  
-
-12. The web application shall ask  if users want to download the algorithm that is done training. 
-
-
-13. (Optional) The web application shall be able to be saved by users whenever they feel like to exit the training process by clicking the button ‘Save Project’. 
-
-
-
-## Non-Functional Requirements
-
-Set of specifications/requirements that constraints/restricts in order to attempt to improve functionality against different backlogs. Non-functional requirements are also known as Backlog constraints. This is to make sure that our software system follows legal and adherence rules, and specifically specifies the attributes of the software. Here are some non-functional requirements our team has agreed to, to ensure a production of a good user experience software with ease of operating the software.
-
-##### Performance
-        Website should take no longer than 1 second to load
-        Active Learning Algorithm should be able to query database within 1-2s
-
-##### Security
-        Software will not save data automatically, this will be an option to user
-        Database will only store filepath, hence images will not be floating around in cloud
-        Real images will be stored locally, confidential data is kept local
-
-##### Reliability
-        Software will be able to handle large amount of image processing without failure
-        Ensure software will be able to classify image as close to 100% accuracy
-        Ensure consistency in input processing and output over the lifecycle of the software
-
-##### Usability
-        Website will be simple and easy to navigate and browse around
-        Intuitive features will be integrated to website such as magnifying glass to zoom into image
-
-##### Robustness
-        Software will catch any invalid input to avoid any processing problems
-        Prevent any unwanted behaviors when image processing or learning algorithm is under progress
-
-
-
-## Environmental Constraints
-
-In software development, constraints are restrictions on the degree of freedom the developers are offered  in implementing a solution. They are effectively global requirements that specify device capabilities, system representations for which the application will be operated on. For our project, our client from ROSEN has detailed a series of constraints that we will adhere to when developing the application. We have classified the requirements into three classes:
-
-##### *Programming Language and Framework Constraints*
-The target users for our web application are mainly data scientists from ROSEN, whose programming background revolves heavily around Python. To ease daily user interaction and future maintenance, the client has requested our team to use Python as the main development language. Our client also requested the use of Javascript when developing the web application. Though not required, frameworks such as Dash, D3 and Plotly are recommended to us for adding features to the application.
-
-
-##### *Equipment Constraints*
-The client has required the application to be operable on a standard data scientist development system with the following configuration:
-Laptop: CPU - Intel core i5/i7 11th gen, RAM - 16GB, Hard-disk space - 256GB SSD
-Desktop: CPU - Intel core i5/i7 11th gen, RAM - 16/32GB, Hard-disk space - 512GB/1TB SSD
-
-
-
-# Tech Stack
 ## Front-End Technologies
 ##### *Python*
 We will use python with its libraries to render HTML pages into our website
@@ -232,11 +118,6 @@ Our development team aims to use the database to store file paths to images and 
 VGG16 will be used in our project for image processing of the sample image that is the reference to the object we intend our Active Learning Algorithm to be able to classify
 It is a Convolutional Neural Network that will be able to chop our input image into 16 layers with 4096 high-dimensional pixels. With this, we will be able to find using its neighboring points any images that are similar amongst the images in our database.
 
-
-## Prototype Modeling and Simulation
-##### *Blender*
-Blender will be used for prototype modeling and simulation. It is an open-source software for 3D computer graphics, and has rendering and animation capabilities. It can also be used as a video editor and for compositing.
-Blender is free and flexible, and has many tools to aid the user in creating 3D models. It has been recommended by the client to create simulation prototypes of the water pipeline with debris inside.
 
 
 ## System Testing
