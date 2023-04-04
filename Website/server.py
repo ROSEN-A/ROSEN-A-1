@@ -1,5 +1,5 @@
 import shutil
-from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory, flash
+from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory, flash, session
 import imghdr
 import os
 from werkzeug.utils import secure_filename
@@ -176,6 +176,8 @@ def extractImages(pathIn):
             break
         cv2.imwrite(os.path.join(app.config['EXTRACTED_IMAGES'], "frame" + str(count) + ".jpg"), image)  # save frame as JPEG file
         count = count + 1
+    
+    return count
 
 # render loading page
 @app.route('/loading')
@@ -188,17 +190,30 @@ def loading():
 def extractImage():
     videoName = os.listdir(app.config['UPLOAD_PATH_VIDEO'])[0]
     videoFile = os.path.join(app.config['UPLOAD_PATH_VIDEO'], videoName)
-    extractImages(videoFile)
-    return render_template('search.html')  
+    frameCount = extractImages(videoFile)
+    return render_template('frameCount.html', maxCount=frameCount)  
     
 ############################################ PROCESSING ####################################################
+@app.route('/searchLoader')
+def searchLoader():
+    return render_template('search.html')
+
+@app.route('/frameCount', methods = ['POST'])
+def frameCount():
+    if request.method == 'POST':
+        count = request.form['frameCount']
+        session['similarImagesCount'] = count
+        return redirect(url_for('searchLoader'))
+
 # this method runs deep image search
 # once all images are searched, it saves inside similarImages folder in static/
 @app.route('/search')
 def searchSimilarImages():
+    similarImagesCount = int(session.get('similarImagesCount'))
+
     # grab the key-value pair of the result
-    similarImagesList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
- 
+    similarImagesList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', similarImagesCount)
+
     # store the frame number into imagesFrameList
     imagesFrameList =[]
 

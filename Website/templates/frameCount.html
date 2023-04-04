@@ -42,18 +42,23 @@
                 </ul>
         </nav>     
 
-        <form class="container">
-                <input type="number" name="name" class="question" id="nme" required autocomplete="off" />
+        <form id="frameCountForm" class="container" method="POST" action="/frameCount">
+                <input type="number" name="frameCount" class="question" id="nme" min="1" max="{{maxCount}}" value="1" required autocomplete="off" />
                 <label for="nme"><span>Please Enter Your Desired Frame Count</span></label>
+                
+                <!--<input type="submit" value="Upload" class="submit">-->
+                <div class="run">
+                        <!--onclick location.href to redirect page to search-->
+                        <button type="submit" class="run-button" id="run-button">
+                                <b>Next</b>
+                        </button>
+                </div>
+
+        
         </form>
 
         <!--Run button-->
-        <div class="run">
-                <!--onclick location.href to redirect page to search-->
-                <button class="run-button" id="run-button" onclick="location.href='search'">
-                        <b>Next</b>
-                </button>
-        </div>
+       
 
 
         <!--Footer div-->
