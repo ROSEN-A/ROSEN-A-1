@@ -13,6 +13,8 @@ import glob
 import datetime
 from zipfile import ZipFile
 import requests
+from skimage.io import imread_collection
+from natsort import natsorted
 
 app = Flask(__name__)
 
@@ -194,18 +196,31 @@ def extractImage():
 # once all images are searched, it saves inside similarImages folder in static/
 @app.route('/search')
 def searchSimilarImages():
-    imagesFrameList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
+    # grab the key-value pair of the result
+    similarImagesList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', 10)
+ 
+    # store the frame number into imagesFrameList
+    imagesFrameList =[]
 
-    # Save all extractedFiles in the cv_image
+    similarImagesListValues = list(similarImagesList.values());
+    
+    # get the frames number
+    for item in similarImagesListValues[1:]:
+        imagesFrameList.append(item[30:-4])
+        
+    # Save all extractedFiles in the cv_image sorted.
     cv_img = []
-    for img in glob.glob("./static/extractedImages/*.jpg"):
+    for img in natsorted(glob.glob("./static/extractedImages/*.jpg")):
         n= cv2.imread(img)
         cv_img.append(n)
-
     
-    # write all similar files indexed at imagesFrameList, and stored at cv_img to app.config['SIMILAR_IMAGES']
+    # other way to do it.
+    # cv_img = imread_collection("./static/extractedImages/*.jpg")
+    
+    # write all similar files indexed at imagesFrameList, 
+    # and stored at cv_img to app.config['SIMILAR_IMAGES']
     for i in imagesFrameList:
-        cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'] + "/frame" + str(i) + ".jpg"), cv_img[i])
+        cv2.imwrite(os.path.join(app.config['SIMILAR_IMAGES'] + "/frame" + str(i) + ".jpg"), cv_img[int(i)])
         
     # once all done, redirect to result
     return redirect(url_for('result'))
