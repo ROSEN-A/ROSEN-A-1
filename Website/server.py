@@ -209,7 +209,7 @@ def frameCount():
 # once all images are searched, it saves inside similarImages folder in static/
 @app.route('/search')
 def searchSimilarImages():
-    similarImagesCount = int(session.get('similarImagesCount'))
+    similarImagesCount = int(session.get('similarImagesCount')) + 1
 
     # grab the key-value pair of the result
     similarImagesList = deepImageSearch.imageSearch('./static/uploadedImage','./static/extractedImages', similarImagesCount)
