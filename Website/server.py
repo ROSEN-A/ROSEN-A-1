@@ -1,5 +1,5 @@
 import shutil
-from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory, flash, session
+from flask import Flask, render_template, redirect, url_for, request, abort, send_from_directory, flash, session, send_file
 import imghdr
 import os
 from werkzeug.utils import secure_filename
@@ -11,10 +11,10 @@ from DeepImageSearch import Index,LoadData,SearchImage
 import time
 import glob
 import datetime
-from zipfile import ZipFile
+import zipfile
 import requests
-from skimage.io import imread_collection
 from natsort import natsorted
+from io import BytesIO
 
 app = Flask(__name__)
 
@@ -274,7 +274,17 @@ def result():
 # def result():
 #     return render_template('choppedImages.html')
 
-
+@app.route('/download')
+def download():
+    file_path = app.config['SIMILAR_IMAGES']
+    zipf = zipfile.ZipFile('SimilarImages.zip','w', zipfile.ZIP_DEFLATED)
+    for root,dirs, files in os.walk(file_path):
+        for file in files:
+            zipf.write(os.path.join(file_path,file))
+    zipf.close()
+    return send_file('SimilarImages.zip',
+            mimetype = 'zip',
+            as_attachment = True)
 
 ################################################ RUN THE APPLICATION ####################################################
 if __name__ == '__main__':
