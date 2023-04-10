@@ -322,7 +322,7 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
 .logout {
     display: inline-block;
     text-align: center;
-    top: 66px;
+    top: 48px;
     right: 32px;
     position: absolute;
 }
