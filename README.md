@@ -21,6 +21,8 @@ How to run our code?
 - Python version 3.9 can be found [here](https://www.python.org/downloads/release/python-3916/)
 - Flask version 2.2.2 can be installed using `pip install flask==2.2.2`
 - DeepImageSearch Library can be installed using `pip install DeepImageSearch`
+- natsorted library can be installed using `pip install natsort`
+- opencv library can be installed using `pip install opencv-python`
 **Note:** Installing DeepImageSearch might fail due to error in `annoy` package as DeepImageSearch utilizes this package. 
 Here are the steps to fix this problem:
 1) Navigate to https://visualstudio.microsoft.com/downloads/
